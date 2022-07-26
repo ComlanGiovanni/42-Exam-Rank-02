@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 21:50:56 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/25 00:13:05 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/07/27 00:33:33 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,6 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_alpha(int count, char c)
-{
-	while (count >= 0)
-	{
-		ft_putchar(c);
-		count--;
-	}
-}
-
-//A 65
-//a 94
 char	ft_repeat_alpha(char *str)
 {
 	int	idx;
@@ -35,17 +24,25 @@ char	ft_repeat_alpha(char *str)
 
 	idx = 0;
 	pos = 0;
-	while (str[idx] != '\0')
+	while (str[idx])
 	{
 		if (str[idx] >= 'A' && str[idx] <= 'Z')
 		{
-			pos = str[idx] - 'A';
-			ft_print_alpha(pos, str[idx]);
+			pos = str[idx] - 65;
+			while (pos >= 0)
+			{
+				ft_putchar(str[idx]);
+				pos--;
+			}
 		}
 		else if (str[idx] >= 'a' && str[idx] <= 'z')
 		{
-			pos = str[idx] - 'a';
-			ft_print_alpha(pos, str[idx]);
+			pos = str[idx] - 97;
+			while (pos >= 0)
+			{
+				ft_putchar(str[idx]);
+				pos--;
+			}
 		}
 		else
 			ft_putchar(str[idx]);
@@ -55,7 +52,7 @@ char	ft_repeat_alpha(char *str)
 	return (*str);
 }
 
-int	main(int argc, char **argv)
+int	main(int argc char const *argv[])
 {
 	if (argc == 2)
 		ft_repeat_alpha(argv[1]);

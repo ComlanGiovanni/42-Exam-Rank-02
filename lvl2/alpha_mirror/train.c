@@ -5,21 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 00:13:42 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/26 00:35:54 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/07/27 01:27:02 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/07/27 01:35:35 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *s1, char *s2)
+#include <unistd.h>
+
+int	main(int argc, char **argv)
 {
 	int	idx;
 
 	idx = 0;
-	while (s2[idx] != '\0')
+	if (argc == 2)
 	{
-		s1[idx] = s2[idx];
-		idx++;
+		while (argv[1][idx] != '\0')
+		{
+			if (argv[1][idx] >= 'A' && argv[1][idx] <= 'Z')
+				argv[1][idx] = 'M' - (argv[1][idx] - 'N');
+			else if (argv[1][idx] >= 'a' && argv[1][idx] <= 'z')
+				argv[1][idx] = 'm' - (argv[1][idx] - 'n');
+			write (1, &argv[1][idx], 1);
+			idx++;
+		}
 	}
-	s1[idx] = '\0';
-	return(s1);
+	write(1, "\n", 1);
+	return (0);
 }

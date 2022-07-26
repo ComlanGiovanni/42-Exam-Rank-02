@@ -5,21 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 00:13:42 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/26 00:35:54 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/07/27 01:03:58 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/07/27 01:14:44 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *s1, char *s2)
+#include <unistd.h>
+
+void	ft_rot_one(char *str)
 {
 	int	idx;
 
 	idx = 0;
-	while (s2[idx] != '\0')
+	while (str[idx] != '\0')
 	{
-		s1[idx] = s2[idx];
+		if ((str[idx] >= 'A' && str[idx] <= 'Y')
+			|| (str[idx] >= 'a' && str[idx] <= 'y'))
+				str[idx] += 1;
+		else if (str[idx] == 'Z' || str[idx] == 'z')
+			str[idx] -= 25;
+		write(1, &str[idx], 1);
 		idx++;
 	}
-	s1[idx] = '\0';
-	return(s1);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+		ft_rot_one(argv[1]);
+	write(1, "\n", 1);
 }

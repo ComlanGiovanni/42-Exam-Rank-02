@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 21:49:41 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/23 22:14:47 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/07/27 01:16:41 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,16 @@ int	main(int argc, char *argv[])
 	write(1, "\n", 1);
 	return (0);
 }
+
+/*
+void	rot13(char *str)
+int	main(int ac, char **av)
+{
+	if (ac == 2)
+		rot13(av[1]);
+	write(1, "\n", 1);
+}
+*/
 
 /*
 #include <unistd.h>
