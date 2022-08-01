@@ -6,18 +6,46 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 00:27:38 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/27 00:59:18 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/01 14:47:21 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+int	ft_strlen(char *str)
+{
+	int	size;
+
+	size = 0;
+	while (str[size] != '\0')
+		size++;
+	return (size);
+}
+
+void	ft_putchar(char c)
+{
+	write (1, &c, 1);
+}
 
 int	main(int argc, char **argv)
 {
 	int	idx;
 
 	idx = 0;
+	if (argc == 2)
+	{
+		idx = ft_strlen(argv[1]);
+		while (idx)
+			ft_putchar(argv[1][--idx]);
+	}
+}
 
+/*
+int	main(int argc, char **argv)
+{
+	int	idx;
+
+	idx = 0;
 	if (argc == 2)
 	{
 		while (argv[1][idx])
@@ -27,6 +55,7 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+*/
 
 /*
 #include <unistd.h>
