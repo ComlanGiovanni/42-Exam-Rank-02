@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alpha_mirror.c                                     :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:21:43 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 11:37:32 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/02 12:35:05 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/02 12:39:22 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	main(int argc, char **argv)
+int		ft_strlen(char *str)
 {
-	int	idx;
+	int i;
 
-	idx = 0;
-	if (argc == 2)
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(char *src)
+{
+	int	i;
+	int	len;
+	char	*copy;
+
+	i = 0;
+	len = ft_strlen(src);
+	copy = (char*)malloc(sizeof(char) * len + 1);
+	if (copy == NULL)
+		return (NULL);
+	while (src[i] != '\0')
 	{
-		while (argv[1][idx] != '\0')
-		{
-			if (argv[1][idx] >= 'A' && argv[1][idx] <= 'Z')
-				argv[1][idx] = 'M' - (argv[1][idx] - 'N');
-			else if (argv[1][idx] >= 'a' && argv[1][idx] <= 'z')
-				argv[1][idx] = 'm' - (argv[1][idx] - 'n');
-			write (1, &argv[1][idx], 1);
-			idx++;
-		}
+		copy[i] = src[i];
+		i++;
 	}
-	write(1, "\n", 1);
-	return (0);
+	copy[i] = '\0';
+	return (copy);
 }

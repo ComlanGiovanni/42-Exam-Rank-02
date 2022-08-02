@@ -6,10 +6,38 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/24 23:44:40 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/02 11:54:00 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
+void	camel_to_snake(char *str)
+{
+	int	idx;
+
+	idx = 0;
+	while (str[idx] != '\0')
+	{
+		if (str[idx] >= 'A' && str[idx] <= 'Z')
+		{
+			write(1, "_", 1);
+			str[idx] = str[idx] + ('a' - 'A');
+		}
+		write(1, &str[idx], 1);
+		idx++;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+		camel_to_snake(argv[1]);
+	write(1, "\n", 1);
+	return (0);
+}
+
+/*
 #include <unistd.h>
 
 void	camel_to_snake(char *str)
@@ -34,9 +62,8 @@ int		main(int argc, char **argv)
 	write(1, "\n", 1);
 	return (0);
 }
-
-
-
+*/
+/*
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -90,3 +117,4 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+*/

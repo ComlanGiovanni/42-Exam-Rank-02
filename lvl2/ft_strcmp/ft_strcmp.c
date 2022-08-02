@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alpha_mirror.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:21:43 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 11:37:32 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/02 12:12:36 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/02 12:33:43 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	idx;
 
 	idx = 0;
-	if (argc == 2)
-	{
-		while (argv[1][idx] != '\0')
-		{
-			if (argv[1][idx] >= 'A' && argv[1][idx] <= 'Z')
-				argv[1][idx] = 'M' - (argv[1][idx] - 'N');
-			else if (argv[1][idx] >= 'a' && argv[1][idx] <= 'z')
-				argv[1][idx] = 'm' - (argv[1][idx] - 'n');
-			write (1, &argv[1][idx], 1);
-			idx++;
-		}
-	}
-	write(1, "\n", 1);
-	return (0);
+	while (s1[idx] == s2[idx] && (s1[idx] != '\0' || s2[idx] != '\0'))
+		idx++;
+	return (s1[idx] - s2[idx]);
 }

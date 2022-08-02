@@ -5,40 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 22:16:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/01 22:57:19 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/02 12:33:52 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/02 12:33:54 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_search_and_replace(char *str, char search, char replace)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	idx;
 
 	idx = 0;
-	while (str[idx] != '\0')
-	{
-		if (str[idx] == search)
-			ft_putchar(replace);
-		else
-			ft_putchar(str[idx]);
+	while (s1[idx] == s2[idx] && (s1[idx] != '\0' || s2[idx] != '\0'))
 		idx++;
-	}
+	return (s1[idx] - s2[idx]);
 }
 
-int	main(int argc, char **argv)
-{
-	if (argc == 4)
-	{
-		if (argv[2][1] == '\0' && argv[3][1] == '\0')
-			ft_search_and_replace(argv[1], argv[2][0], argv[3][0]);
-	}
-	ft_putchar('\n');
-	return (0);
-}

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 22:16:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/01 22:57:19 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/02 12:07:45 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,27 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_search_and_replace(char *str, char search, char replace)
+void	camel_to_snake(char *str)
 {
 	int	idx;
 
 	idx = 0;
 	while (str[idx] != '\0')
 	{
-		if (str[idx] == search)
-			ft_putchar(replace);
-		else
-			ft_putchar(str[idx]);
+		if (str[idx] >= 'A' && str[idx] <= 'Z')
+		{
+			ft_putchar('_');
+			str[idx] = str[idx] + ('a' - 'A');
+		}
+		ft_putchar(str[idx]);
 		idx++;
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	if (argc == 4)
-	{
-		if (argv[2][1] == '\0' && argv[3][1] == '\0')
-			ft_search_and_replace(argv[1], argv[2][0], argv[3][0]);
-	}
+	if (argc == 2)
+		camel_to_snake(argv[1]);
 	ft_putchar('\n');
 	return (0);
 }
