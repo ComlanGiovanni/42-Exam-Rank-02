@@ -6,38 +6,44 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 12:35:05 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 12:39:22 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/02 19:05:43 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	size;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	size = 0;
+	while (str[size] != '\0')
+		size++;
+	return (size);
+}
+
+char	*ft_strcpy(char *s1, char *s2)
+{
+	int	idx;
+
+	idx = 0;
+	while (s2[idx] != '\0')
+	{
+		s1[idx] = s2[idx];
+		idx++;
+	}
+	s1[idx] = '\0';
+	return (s1);
 }
 
 char	*ft_strdup(char *src)
 {
-	int	i;
-	int	len;
+	int		size;
 	char	*copy;
 
-	i = 0;
-	len = ft_strlen(src);
-	copy = (char*)malloc(sizeof(char) * len + 1);
+	size = ft_strlen(src);
+	copy = (char *)malloc(sizeof(char) * size + 1);
 	if (copy == NULL)
 		return (NULL);
-	while (src[i] != '\0')
-	{
-		copy[i] = src[i];
-		i++;
-	}
-	copy[i] = '\0';
-	return (copy);
+	return (ft_strcpy(copy, src));
 }

@@ -6,29 +6,37 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:21:43 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 11:37:32 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/02 16:22:28 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	alpha_mirror(char *str)
 {
 	int	idx;
 
 	idx = 0;
-	if (argc == 2)
+	while (str[idx] != '\0')
 	{
-		while (argv[1][idx] != '\0')
-		{
-			if (argv[1][idx] >= 'A' && argv[1][idx] <= 'Z')
-				argv[1][idx] = 'M' - (argv[1][idx] - 'N');
-			else if (argv[1][idx] >= 'a' && argv[1][idx] <= 'z')
-				argv[1][idx] = 'm' - (argv[1][idx] - 'n');
-			write (1, &argv[1][idx], 1);
-			idx++;
-		}
+		if (str[idx] >= 'A' && str[idx] <= 'Z')
+			str[idx] = 'M' - (str[idx] - 'N');
+		else if (str[idx] >= 'a' && str[idx] <= 'z')
+			str[idx] = 'm' - (str[idx] - 'n');
+		ft_putchar(str[idx]);
+		idx++;
 	}
-	write(1, "\n", 1);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+		alpha_mirror(argv[1]);
+	ft_putchar('\n');
 	return (0);
 }

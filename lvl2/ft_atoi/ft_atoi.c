@@ -6,33 +6,33 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 13:31:01 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 13:31:03 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/02 18:50:37 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int sign;
-	int result;
+	int	idx;
+	int	sign;
+	int	result;
 
-	i = 0;
-	sign = 1;
+	idx = 0;
 	result = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-')
+	sign = 1;
+	while (str[idx] == ' ' || (str[idx] >= '\t' && str[idx] <= '\r'))
+		idx++;
+	if (str[idx] == '-')
 	{
 		sign = -1;
-		i++;
+		idx++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+	else if (str[idx] == '+')
+		idx++;
+	while (str[idx] != '\0' && str[idx] >= '0' && str[idx] <= '9')
 	{
 		result *= 10;
-		result += str[i] - '0';
-		i++;
+		result += str[idx] - '0';
+		idx++;
 	}
 	return (result * sign);
 }

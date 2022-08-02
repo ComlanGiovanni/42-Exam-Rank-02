@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   camel_to_snake.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:44:35 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/24 23:45:18 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/02 16:53:36 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
-{
-	int i;
-	int sign;
-	int result;
+#include <unistd.h>
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-')
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	camel_to_snake(char *str)
+{
+	int	idx;
+
+	idx = 0;
+	while (str[idx] != '\0')
 	{
-		sign = -1;
-		i++;
+		if (str[idx] >= 'A' && str[idx] <= 'Z')
+		{
+			ft_putchar('_');
+			str[idx] += ' ';
+		}
+		ft_putchar(str[idx]);
+		idx++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
-	{
-		result *= 10;
-		result += str[i] - '0';
-		i++;
-	}
-	return (result * sign);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+		camel_to_snake(argv[1]);
+	ft_putchar('\n');
+	return (0);
 }

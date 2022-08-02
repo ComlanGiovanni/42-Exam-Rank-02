@@ -1,43 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   train.c                                            :+:      :+:    :+:   */
+/*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 16:53:28 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/07/24 23:43:22 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/02 17:26:30 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	camel_to_snake(char *str)
+void	do_op(char *operand_1, char operator, char *operand_2)
 {
-	int	idx;
+	int		first;
+	int		second;
+	int		result;
 
-	idx = 0;
-	while (str[idx] != '\0')
-	{
-		if (str[idx] >= 'A' && str[idx] <= 'Z')
-		{
-			ft_putchar('_');
-			str[idx] += ' ';
-		}
-		ft_putchar(str[idx]);
-		idx++;
-	}
+
+	first = atoi(operand_1);
+	second = atoi(operand_2);
+	result = 0;
+	if (operator == '+')
+		result = first + second;
+	else if (operator == '-')
+		result = first - second;
+	else if (operator == '/')
+		result = first / second;
+	else if (operator == '%')
+		result = first % second;
+	printf("%d\n", result);
 }
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
-		camel_to_snake(argv[1]);
-	ft_putchar('\n');
+	if (argc == 4)
+		do_op(argv[1], argv[2][0], argv[3]);
+	else
+		ft_putchar('\n');
 	return (0);
 }
