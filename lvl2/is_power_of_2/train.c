@@ -6,38 +6,33 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 16:53:28 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/04 15:52:36 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	is_power_of_2(unsigned int n)
 {
-	write(1, &c, 1);
-}
+	unsigned long	idx;
 
-void	camel_to_snake(char *str)
-{
-	int	idx;
-
-	idx = 0;
-	while (str[idx] != '\0')
+	idx = 1;
+	while (idx <= n)
 	{
-		if (str[idx] >= 'A' && str[idx] <= 'Z')
-		{
-			ft_putchar('_');
-			str[idx] += ' ';
-		}
-		ft_putchar(str[idx]);
-		idx++;
+		if (idx == n)
+			return (1);
+		idx *= 2;
 	}
+	return (0);
 }
 
-int	main(int argc, char **argv)
+#include <stdio.h>
+
+int	main(void)
 {
-	if (argc == 2)
-		camel_to_snake(argv[1]);
-	ft_putchar('\n');
+	printf("%d\n", is_power_of_2(4));
+	printf("%d\n", is_power_of_2(2));
+	printf("%d\n", is_power_of_2(64));
+	printf("%d\n", is_power_of_2(186));
+	printf("%d\n", is_power_of_2(100));
+	printf("%d\n", is_power_of_2(41));
 	return (0);
 }

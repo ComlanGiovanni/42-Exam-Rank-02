@@ -1,57 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   camel_to_snake.c                                   :+:      :+:    :+:   */
+/*   union.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/03 10:17:21 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/04 16:53:58 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int    check_tab(char c, int *tab)
+void	ft_putchar(char c)
 {
-    int    nb;
-
-    nb = c;
-
-    if (tab[nb] == 0)
-    {
-        tab[nb] = 1 ;
-        write(1, &c, 1);
-    }
+	write(1, &c, 1);
 }
 
-
-
-int    ft_union(char *s1, char *s2)
+void	check_tab(char c, int *tab)
 {
-    int    i;
-    int    tab[256] = {0};
+	int	nbr;
 
-    i = 0;
-    while (s1[i])
-    {
-        check_tab(s1[i], tab);
-        i++;
-    }
-    i = 0;
-    while (s2[i])
-    {
-        check_tab(s2[i],tab);
-        i++;
-    }
-
+	nbr = c;
+	if (tab[nbr] == 0)
+	{
+		tab[nbr] = 1;
+		ft_putchar(c);
+	}
 }
 
-int    main(void)
+void	ft_union(char *s1, char *s2)
 {
-    ft_union("rien","cette phrase ne cache rien");
+	int	idx;
+	int tab[256] = {0};
+
+	idx = 0;
+	while (s1[idx] != '\0')
+	{
+		check_tab(s1[idx], tab);
+		idx++;
+	}
+	idx = 0;
+	while (s2[idx] != '\0')
+	{
+		check_tab(s2[idx], tab);
+		idx++;
+	}
 }
 
+int	main(int argc, char **argv)
+{
+	if (argc == 3)
+		ft_union(argv[1], argv[2]);
+	ft_putchar('\n');
+	return (0);
+	//ft_union("rien","cette phrase ne cache rien");
+	return (0);
+}
 
 
 
@@ -120,7 +125,7 @@ int		main(int ac, char **av)
 	return (0);
 }
 
-*/
+
 
 
 #include <unistd.h>
@@ -161,3 +166,4 @@ int		main(int argc, char **argv)
 	write(1, "\n", 1);
 	return (0);
 }
+*/

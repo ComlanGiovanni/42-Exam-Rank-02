@@ -12,7 +12,7 @@ The exam has 4 questions total. A random question is picked from each level belo
 
 There is no Norminette in the exam.
 
-Good luck in The exams :)
+Good luck in The exams
 
 # Asccii
 
@@ -37,3 +37,6 @@ Vertiacal tab '\v' (11)
 New Line  \n (10)
 Form feed '\f' (12)
 Carriage return '\r' (13)
+
+https://github.com/JCluzet/42_GradeMe
+https://grademe.fr/

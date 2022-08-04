@@ -1,60 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   camel_to_snake.c                                   :+:      :+:    :+:   */
+/*   print_bits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/03 10:06:31 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/04 16:33:45 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	print_bits(unsigned char octet)
 {
-	int				i;
+	int				idx;
+	unsigned char	mask;
 	unsigned char	bit;
 
-	i = 8;
-	while (i--)
+	idx = 8;
+	mask = 1;
+	while (idx >= 0)
 	{
-		bit = ((octet >> i) & 1) + '0';
-		write(1, &bit, 1);
+		bit = ((octet >> idx) & mask) + '0';
+		ft_putchar(bit);
+		idx--;
 	}
 }
 
+int	main(void)
+{
+	print_bits(2);
+	write(1, "\n", 1);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Passed Moulinette 2019.09.01
-
+/*
 #include <unistd.h>
 
 void	print_bits(unsigned char octet)
@@ -80,25 +65,6 @@ int	main(void)
 #endif
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #include <unistd.h>
 
 void	print_bits(unsigned char octet)
@@ -121,3 +87,4 @@ void	print_bits(unsigned char octet)
 		}
 	}
 }
+*/

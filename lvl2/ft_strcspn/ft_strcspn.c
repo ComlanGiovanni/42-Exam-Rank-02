@@ -1,33 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 23:14:06 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/04 14:20:38 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/02 12:12:36 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/04 14:11:47 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stddef.h>
 
-void	ft_putstr(char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	int	idx;
+	size_t	idx;
 
 	idx = 0;
-	while (str[idx] != '\0')
+	while (s[idx] != '\0')
 	{
-		write(1, &str[idx], 1);
+		if (s[idx] == c)
+			return ((char *)s);
 		idx++;
 	}
+	return ((void *)0);
+}
+
+size_t	ft_strcspn(const char *s, const char *reject)
+{
+	size_t	idx;
+
+	idx = 0;
+	while (s[idx] != '\0')
+	{
+		if (ft_strchr(reject, s[idx]))
+			break ;
+		idx++;
+	}
+	return (idx);
 }
 
 /*
-void	ft_putstr(char *str)
+#include <stdio.h>
+
+int	main(void)
 {
-	while (*str)
-		write(1, str++, 1);
+	printf("Code: %ld\n", ft_strcspn("trojan3", "1234" ));
+	return (0);
 }
 */
