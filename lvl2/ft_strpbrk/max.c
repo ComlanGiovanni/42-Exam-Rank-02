@@ -6,10 +6,9 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 16:16:19 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/05 00:11:19 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/05 00:31:01 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -21,6 +20,7 @@ char	*ft_strchr(const char *s, int c)
 		return (ft_strchr(s + 1, c));
 }
 
+
 char	*ft_strpbrk(const char *s1, const char *s2)
 {
 	while (*s1)
@@ -31,17 +31,7 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 	}
 	return (NULL);
 }
-
-
-
-
-
-
-
-
-
-
-
+//
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
@@ -52,7 +42,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((void *)0);
 }
-
+//edwel
 char	*ft_strpbrk(const char *s1, const char *s2)
 {
 	while (*s1)
@@ -64,7 +54,8 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 	return ((void *)0);
 }
 
-int		main(void)
+
+nt		main(void)
 {
    char str[] = "1234567890";
    char sym[] = "9876";
