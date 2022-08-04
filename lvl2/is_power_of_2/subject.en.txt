@@ -1,10 +1,12 @@
-Assignment name  : ft_strdup
-Expected files   : ft_strdup.c
-Allowed functions: malloc
+Assignment name  : is_power_of_2
+Expected files   : is_power_of_2.c
+Allowed functions: None
 --------------------------------------------------------------------------------
 
-Reproduce the behavior of the function strdup (man strdup).
+Write a function that determines if a given number is a power of 2.
+
+This function returns 1 if the given number is a power of 2, otherwise it returns 0.
 
 Your function must be declared as follows:
 
-char    *ft_strdup(char *src);
+int	    is_power_of_2(unsigned int n);

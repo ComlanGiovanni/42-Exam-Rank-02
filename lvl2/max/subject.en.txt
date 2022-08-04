@@ -1,10 +1,15 @@
-Assignment name  : ft_strdup
-Expected files   : ft_strdup.c
-Allowed functions: malloc
+Assignment name  : max
+Expected files   : max.c
+Allowed functions:
 --------------------------------------------------------------------------------
 
-Reproduce the behavior of the function strdup (man strdup).
+Write the following function:
 
-Your function must be declared as follows:
+int		max(int* tab, unsigned int len);
 
-char    *ft_strdup(char *src);
+The first parameter is an array of int, the second is the number of elements in
+the array.
+
+The function returns the largest number found in the array.
+
+If the array is empty, the function returns 0.

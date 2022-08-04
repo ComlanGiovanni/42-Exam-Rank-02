@@ -1,10 +1,11 @@
-Assignment name  : ft_strdup
-Expected files   : ft_strdup.c
-Allowed functions: malloc
---------------------------------------------------------------------------------
+Assignment name	: ft_strcspn
+Expected files	: ft_strcspn.c
+Allowed functions: None
+---------------------------------------------------------------
 
-Reproduce the behavior of the function strdup (man strdup).
+Reproduce exactly the behavior of the function strcspn
+(man strcspn).
 
-Your function must be declared as follows:
+The function should be prototyped as follows:
 
-char    *ft_strdup(char *src);
+size_t	ft_strcspn(const char *s, const char *reject);

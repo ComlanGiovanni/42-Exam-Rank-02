@@ -1,10 +1,12 @@
-Assignment name  : ft_strdup
-Expected files   : ft_strdup.c
-Allowed functions: malloc
+Assignment name  : ft_strrev
+Expected files   : ft_strrev.c
+Allowed functions:
 --------------------------------------------------------------------------------
 
-Reproduce the behavior of the function strdup (man strdup).
+Write a function that reverses (in-place) a string.
+
+It must return its parameter.
 
 Your function must be declared as follows:
 
-char    *ft_strdup(char *src);
+char    *ft_strrev(char *str);
