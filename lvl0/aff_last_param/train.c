@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:27:51 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/24 23:31:53 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/05 14:02:23 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/05 14:28:30 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(int ac, char **av)
+void	ft_putchar(char c)
 {
-	int i;
+	write(1, &c, 1);
+}
 
-	i = 0;
-	if (ac == 2)
+void	ft_putstr(char *str)
+{
+	int	idx;
+
+	idx = 0;
+	while (str[idx] != '\0')
 	{
-		while (av[1][i] != '\0')
-		{
-			if (av[1][i] == 'a')
-			{
-				write(1, "a\n", 2);
-				return (0);
-			}
-			i++;
-		}
-		write(1, "\n", 1);
-		return (0);
+		ft_putchar(str[idx]);
+		idx++;
 	}
-	write(1, "a\n", 2);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc > 1)
+	{
+		argc--;
+		ft_putstr(argv[argc]);
+	}
+	ft_putchar('\n');
 	return (0);
 }

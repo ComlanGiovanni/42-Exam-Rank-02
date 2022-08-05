@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   hello.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:27:51 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/24 23:31:49 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/05 13:18:08 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(int ac, char **av)
+void	ft_putstr(char *str)
 {
-	int i;
+	while (*str)
+		write(1, str++, 1);
+}
 
-	i = 0;
-	if (ac > 1)
-	{
-		ac--;
-		while (av[ac][i] != '\0')
-		{
-			write(1, &av[ac][i], 1);
-			i++;
-		}
-	}
-	write(1, "\n", 1);
+int	main(void)
+{
+	ft_putstr("Hello World!\n");
 	return (0);
 }

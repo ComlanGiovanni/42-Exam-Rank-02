@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   aff_first_param.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:27:51 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/05 13:33:53 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/05 13:57:12 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,22 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_numbers(void)
+void	ft_putstr(char *str)
 {
-	char	digit;
+	int	idx;
 
-	digit = '0';
-	while (digit <= '9')
-		ft_putchar(digit--);
+	idx = 0;
+	while (str[idx] != '\0')
+	{
+		ft_putchar(str[idx]);
+		idx++;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc > 1)
+		ft_putstr(argv[1]);
+	ft_putchar('\n');
+	return (0);
 }

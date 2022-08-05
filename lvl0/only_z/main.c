@@ -6,24 +6,19 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:27:51 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/24 23:39:32 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/05 13:04:53 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(void)
+void	ft_putchar(char c)
 {
-	write(1, "z", 1);
-	return (0);
+	write(1, &c, 1);
 }
 
-#include <unistd.h>
-
-int		main(int ac, char **av)
+int	main(void)
 {
-	(void)ac;
-	(void)av;
-	write(1, "z", 1);
+	ft_putchar('z');
 	return (0);
 }

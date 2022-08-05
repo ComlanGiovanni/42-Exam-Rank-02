@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:27:51 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/05 13:33:53 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/05 13:18:51 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/05 13:20:48 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	while (*str)
+		write(1, str++, 1);
 }
 
-void	ft_print_numbers(void)
+int	main(void)
 {
-	char	digit;
-
-	digit = '0';
-	while (digit <= '9')
-		ft_putchar(digit--);
+	ft_putstr("Hello World!\n");
+	return (0);
 }

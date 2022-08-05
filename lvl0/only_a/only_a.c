@@ -6,14 +6,19 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:27:51 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/24 23:34:01 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/05 13:00:52 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(void)
+void	ft_putchar(char c)
 {
-	write(1, "Hello World!\n", 13);
+	write(1, &c, 1);
+}
+
+int	main(void)
+{
+	ft_putchar('a');
 	return (0);
 }

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:27:51 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/24 23:32:32 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/05 13:32:02 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/05 13:35:59 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(void)
+void	ft_putchar(char c)
 {
-	char digit;
+	write(1, &c, 1);
+}
 
-	digit = '9';
-	while (digit >= '0')
-	{
-		write(1, &digit, 1);
-		digit--;
-	}
-	write(1, "\n", 1);
-	return (0);
+void	ft_print_numbers(void)
+{
+	char	digit;
+
+	digit = '0';
+	while (digit <= '9')
+		ft_putchar(digit--);
 }

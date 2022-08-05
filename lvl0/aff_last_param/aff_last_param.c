@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   aff_last_param.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:27:51 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/24 23:29:31 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/05 14:24:16 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(int ac, char **av)
+void	ft_putchar(char c)
 {
-	(void)ac;
-	(void)av;
-	write(1, "z\n", 2);
-	return (0);
+	write(1, &c, 1);
 }
 
-write(1, "z", 1);
+void	ft_putstr(char *str)
+{
+	int	idx;
+
+	idx = 0;
+	while (str[idx] != '\0')
+	{
+		ft_putchar(str[idx]);
+		idx++;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc > 1)
+	{
+		argc--;
+		ft_putstr(argv[argc]);
+	}
+	ft_putchar('\n');
+	return (0);
+}
