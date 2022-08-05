@@ -6,36 +6,32 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 21:31:41 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/23 15:02:43 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/05 16:19:12 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-/**
- * @brief
- *
- * ' ' 32 in ascii
- * '\t' 9 in ascii
- *
- * @param argc
- * @param argv
- * @return int
- */
-int	main(int argc, const char **argv)
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	first_word(char *str)
 {
 	int	idx;
 
 	idx = 0;
+	while (str[idx] == ' ' || str[idx] == '\t')
+		idx++;
+	while ((str[idx] != ' ' && str[idx] != '\t') && str[idx] != '\0')
+		ft_putchar(str[idx++]);
+}
+
+int	main(int argc, char **argv)
+{
 	if (argc == 2)
-	{
-		while (argv[1][idx] == ' ' || argv[1][idx] == '\t')
-			idx++;
-		while ((argv[1][idx] != ' ' && argv[1][idx] != '\t') && argv[1][idx])
-		{
-			write(1, &argv[1][idx], 1);
-			idx++;
-		}
-	}
-	write(1, "\n", 1);
+		first_word(argv[1]);
+	ft_putchar('\n');
+	return (0);
 }

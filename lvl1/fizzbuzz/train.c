@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 23:48:01 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/01 13:00:02 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/05 17:23:12 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_nbr(int number)
 {
 	if (number > 9)
 		ft_nbr(number / 10);
-	write (1, &"0123456789"[number % 10], 1);
+	ft_putchar("0123456789"[number % 10]);
 }
 
 int	main(void)
@@ -55,13 +55,25 @@ int	main(void)
 	{
 		if (((number % 3) == 0) && ((number % 5) == 0))
 			ft_putstr("fizzbuzz");
-		else if (number % 3 == 0)
+		else if ((number % 3) == 0)
 			ft_putstr("fizz");
-		else if (number % 5 == 0)
+		else if ((number % 5) == 0)
 			ft_putstr("buzz");
 		else
 			ft_nbr(number);
 		ft_putchar('\n');
 		number++;
 	}
+	return (0);
 }
+
+/*
+void	ft_write_number(int number)
+{
+	char	str[10] = "0123456789";
+
+	if (number > 9)
+		ft_write_number(number / 10);
+	write (1, &str[number % 10], 1);
+}
+*/

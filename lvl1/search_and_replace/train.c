@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 22:16:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/01 22:57:19 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/05 21:09:56 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_search_and_replace(char *str, char search, char replace)
+void	search_and_replace(char *str, char search, char replace)
 {
 	int	idx;
 
@@ -37,8 +37,7 @@ int	main(int argc, char **argv)
 	if (argc == 4)
 	{
 		if (argv[2][1] == '\0' && argv[3][1] == '\0')
-			ft_search_and_replace(argv[1], argv[2][0], argv[3][0]);
+			search_and_replace(argv[1], argv[2][0], argv[3][0]);
 	}
-	ft_putchar('\n');
 	return (0);
 }

@@ -13,6 +13,7 @@
         "doublon",
         "fizzbuzz",
         "gcomlan",
-        "putstr"
+        "putstr",
+        "ulstr"
     ]
 }

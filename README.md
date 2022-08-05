@@ -38,5 +38,8 @@ New Line  \n (10)
 Form feed '\f' (12)
 Carriage return '\r' (13)
 
+str[idx] += 32; put in lowecase
+str[idx] -= 32; put in upercase
+
 https://github.com/JCluzet/42_GradeMe
 https://grademe.fr/
