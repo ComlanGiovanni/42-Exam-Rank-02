@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -10,6 +11,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -21,13 +23,13 @@ void	alpha_mirror(char *str)
 {
 	int	idx;
 
-	idx = 0;
+	idx  = 0;
 	while (str[idx] != '\0')
 	{
 		if (str[idx] >= 'A' && str[idx] <= 'Z')
 			str[idx] = 'M' - (str[idx] - 'N');
 		else if (str[idx] >= 'a' && str[idx] <= 'z')
-			str[idx] = 'm' - (str[idx] - 'n');
+			str[idx] =  'm' - (str[idx] - 'n');
 		ft_putchar(str[idx]);
 		idx++;
 	}

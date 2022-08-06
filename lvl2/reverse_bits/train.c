@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:33:35 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/05 00:00:20 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/06 18:18:39 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ unsigned char	reverse_bits(unsigned char octet)
 	res = 0;
 	while (idx > 0)
 	{
-		res  = res * 2 + (octet % 2);
+		res = res * 2 + (octet % 2);
 		octet /= 2;
 		idx--;
 	}

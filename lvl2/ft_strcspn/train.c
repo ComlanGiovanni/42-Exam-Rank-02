@@ -6,38 +6,36 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 16:53:28 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/06 12:25:21 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stddef.h>
 
-void	ft_putchar(char c)
+char	*ft_strchr(const char *s, int c)
 {
-	write(1, &c, 1);
-}
-
-void	camel_to_snake(char *str)
-{
-	int	idx;
+	size_t	idx;
 
 	idx = 0;
-	while (str[idx] != '\0')
+	while (s[idx] != '\0')
 	{
-		if (str[idx] >= 'A' && str[idx] <= 'Z')
-		{
-			ft_putchar('_');
-			str[idx] += ' ';
-		}
-		ft_putchar(str[idx]);
+		if (s[idx] == c)
+			return ((char *)s);
 		idx++;
 	}
+	return ((void *)0);
 }
 
-int	main(int argc, char **argv)
+size_t	ft_strcspn(const char *s, const char *reject)
 {
-	if (argc == 2)
-		camel_to_snake(argv[1]);
-	ft_putchar('\n');
-	return (0);
+	size_t	idx;
+
+	idx = 0;
+	while (s[idx] != '\0')
+	{
+		if (ft_strchr(reject, s[idx]))
+			break ;
+		idx++;
+	}
+	return (idx);
 }

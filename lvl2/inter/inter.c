@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:36:37 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/04 15:36:58 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/06 14:46:15 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,26 @@ int	check_doublon(char *str, char c, int pos)
 
 void	inter(char *first, char *second)
 {
-	int	firs_idx;
+	int	first_idx;
 	int	second_idx;
 
-	firs_idx = 0;
-	while (first[firs_idx] != '\0')
+	first_idx = 0;
+	while (first[first_idx] != '\0')
 	{
 		second_idx = 0;
 		while (second[second_idx] != '\0')
 		{
-			if (first[firs_idx] == second[second_idx])
+			if (first[first_idx] == second[second_idx])
 			{
-				if (check_doublon(first, first[firs_idx], firs_idx) == 1)
+				if (check_doublon(first, first[first_idx], first_idx) == 1)
 				{
-					write(1, &first[firs_idx], 1);
+					write(1, &first[first_idx], 1);
 					break ;
 				}
 			}
 			second_idx++;
 		}
-		firs_idx++;
+		first_idx++;
 	}
 }
 

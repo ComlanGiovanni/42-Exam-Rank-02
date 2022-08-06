@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 12:12:36 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/04 14:11:47 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/06 21:41:04 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,19 @@ int	main(void)
 {
 	printf("Code: %ld\n", ft_strcspn("trojan3", "1234" ));
 	return (0);
+}
+*/
+
+
+/*
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	return ((void *)0);
 }
 */

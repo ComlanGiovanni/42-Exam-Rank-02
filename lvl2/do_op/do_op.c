@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:43:22 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 17:26:30 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/06 11:46:03 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ void	do_op(char *operand_1, char operator, char *operand_2)
 	int		second;
 	int		result;
 
-
+	result = 0;
 	first = atoi(operand_1);
 	second = atoi(operand_2);
-	result = 0;
 	if (operator == '+')
 		result = first + second;
 	else if (operator == '-')
@@ -43,7 +42,10 @@ void	do_op(char *operand_1, char operator, char *operand_2)
 int	main(int argc, char **argv)
 {
 	if (argc == 4)
-		do_op(argv[1], argv[2][0], argv[3]);
+	{
+		if (argv[2][1] == '\0')
+			do_op(argv[1], argv[2][0], argv[3]);
+	}
 	else
 		ft_putchar('\n');
 	return (0);

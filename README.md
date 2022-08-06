@@ -43,3 +43,15 @@ str[idx] -= 32; put in upercase
 
 https://github.com/JCluzet/42_GradeMe
 https://grademe.fr/
+
+## Functions
+
+|               |             |         |         |         |         |
+| ------------- | ----------- | ------- | ------- | ------- | ------- |
+|				|             | 	    |         | ------- | ------- |
+|				|             |         |         | ------- | ------- |
+|				|			  |         |         | ------- | ------- |
+
+## Not normed
+
+union.c

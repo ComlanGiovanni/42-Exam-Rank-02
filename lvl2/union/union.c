@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/04 16:53:58 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/06 21:34:25 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int	main(int argc, char **argv)
 	if (argc == 3)
 		ft_union(argv[1], argv[2]);
 	ft_putchar('\n');
-	return (0);
 	//ft_union("rien","cette phrase ne cache rien");
 	return (0);
 }

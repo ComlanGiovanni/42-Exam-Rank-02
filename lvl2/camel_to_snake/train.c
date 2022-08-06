@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 16:53:28 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/06 11:25:41 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	camel_to_snake(char *str)
 		if (str[idx] >= 'A' && str[idx] <= 'Z')
 		{
 			ft_putchar('_');
-			str[idx] += ' ';
+			str[idx] += 32;
 		}
 		ft_putchar(str[idx]);
 		idx++;

@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/04 16:44:50 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/06 14:56:15 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ int	main(void)
 
 	number = 192;
 	printf("Should be 12: %d\n", swap_bits(number));
+	number = 42;
+	printf("Should be 162: %d\n", swap_bits(number));
+	number = 69;
+	printf("Should be 84: %d\n", swap_bits(number));
 }
 */
 /*

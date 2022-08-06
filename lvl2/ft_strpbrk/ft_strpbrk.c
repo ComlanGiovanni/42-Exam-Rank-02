@@ -1,48 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max.c                                              :+:      :+:    :+:   */
+/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 16:16:19 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/05 00:31:01 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/06 21:44:46 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 char	*ft_strchr(const char *s, int c)
 {
-	if (*s == c)
-		return ((char *)s);
-	else if (!*s)
-		return (NULL);
-	else
-		return (ft_strchr(s + 1, c));
-}
+	size_t	idx;
 
-
-char	*ft_strpbrk(const char *s1, const char *s2)
-{
-	while (*s1)
+	idx = 0;
+	while (s[idx] != '\0')
 	{
-		if (ft_strchr(s2, *s1))
-			return (char *)s1;
-		s1++;
-	}
-	return (NULL);
-}
-//
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s)
-	{
-		if (*s == c)
+		if (s[idx] == c)
 			return ((char *)s);
-		s++;
+		idx++;
 	}
 	return ((void *)0);
 }
-//edwel
+
 char	*ft_strpbrk(const char *s1, const char *s2)
 {
 	while (*s1)
@@ -54,12 +37,16 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 	return ((void *)0);
 }
 
+/*
+#include <stdio.h>
 
-nt		main(void)
+int	main(void)
 {
-   char str[] = "1234567890";
-   char sym[] = "9876";
+	char str[] = "1234567890";
+	char sym[] = "9876";
 
-   printf ("\"%s\" -.\n", ft_strpbrk(str,sym));
-   return (0);
+	printf ("\"%s\" -.\n", ft_strpbrk(str, sym));
+	return (0);
 }
+*
+/

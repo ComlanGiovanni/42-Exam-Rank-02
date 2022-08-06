@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 13:31:01 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 18:50:37 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/06 12:11:31 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_atoi(const char *str)
 	int	result;
 
 	idx = 0;
-	result = 0;
 	sign = 1;
+	result = 0;
 	while (str[idx] == ' ' || (str[idx] >= '\t' && str[idx] <= '\r'))
 		idx++;
 	if (str[idx] == '-')
