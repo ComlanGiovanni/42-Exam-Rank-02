@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,10 +6,9 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 01:27:02 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 16:21:37 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/07 12:47:48 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <unistd.h>
 
@@ -23,13 +21,13 @@ void	alpha_mirror(char *str)
 {
 	int	idx;
 
-	idx  = 0;
+	idx = 0;
 	while (str[idx] != '\0')
 	{
-		if (str[idx] >= 'A' && str[idx] <= 'Z')
-			str[idx] = 'M' - (str[idx] - 'N');
-		else if (str[idx] >= 'a' && str[idx] <= 'z')
-			str[idx] =  'm' - (str[idx] - 'n');
+		if ((str[idx] >= 'A') && (str[idx] <= 'Z'))
+			str[idx] = ('M' - (str[idx] - 'N'));
+		else if ((str[idx] >= 'a') && (str[idx] <= 'z'))
+			str[idx] = ('m' - (str[idx] - 'n'));
 		ft_putchar(str[idx]);
 		idx++;
 	}

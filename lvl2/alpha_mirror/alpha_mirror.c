@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:21:43 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 16:22:28 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/07 12:47:59 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	alpha_mirror(char *str)
 	idx = 0;
 	while (str[idx] != '\0')
 	{
-		if (str[idx] >= 'A' && str[idx] <= 'Z')
-			str[idx] = 'M' - (str[idx] - 'N');
-		else if (str[idx] >= 'a' && str[idx] <= 'z')
-			str[idx] = 'm' - (str[idx] - 'n');
+		if ((str[idx] >= 'A') && (str[idx] <= 'Z'))
+			str[idx] = ('M' - (str[idx] - 'N'));
+		else if ((str[idx] >= 'a') && (str[idx] <= 'z'))
+			str[idx] = ('m' - (str[idx] - 'n'));
 		ft_putchar(str[idx]);
 		idx++;
 	}

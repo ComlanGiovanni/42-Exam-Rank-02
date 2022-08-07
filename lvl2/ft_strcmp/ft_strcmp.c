@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 12:12:36 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/02 12:33:43 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 00:18:18 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strcmp(char *s1, char *s2)
 	int	idx;
 
 	idx = 0;
-	while (s1[idx] == s2[idx] && (s1[idx] != '\0' || s2[idx] != '\0'))
+	while ((s1[idx] == s2[idx]) && (s1[idx] != '\0' || s2[idx] != '\0'))
 		idx++;
 	return (s1[idx] - s2[idx]);
 }

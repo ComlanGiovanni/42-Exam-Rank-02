@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:43:22 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 11:46:03 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/07 22:47:09 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ void	do_op(char *operand_1, char operator, char *operand_2)
 		result = first + second;
 	else if (operator == '-')
 		result = first - second;
+	else if (operator == '*')
+		result = first * second;
 	else if (operator == '/')
 		result = first / second;
 	else if (operator == '%')
 		result = first % second;
-	printf("%d\n", result);
+	printf("%d", result);
 }
 
 int	main(int argc, char **argv)
@@ -46,7 +48,6 @@ int	main(int argc, char **argv)
 		if (argv[2][1] == '\0')
 			do_op(argv[1], argv[2][0], argv[3]);
 	}
-	else
-		ft_putchar('\n');
+	printf("\n");
 	return (0);
 }
