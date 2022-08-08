@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 23:29:31 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 00:05:35 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	check_doublon(int *tab, char c)
 {
 	if (tab[(int)c] == 1)
 	{
-		ft_putchar(c);
 		tab[(int)c] = 0;
+		ft_putchar(c);
 	}
 }
 
