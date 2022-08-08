@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 21:34:25 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 19:45:41 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@ void	ft_putchar(char c)
 
 void	check_tab(char c, int *tab)
 {
-	int	nbr;
-
-	nbr = c;
-	if (tab[nbr] == 0)
+	if (tab[(int)c] == 0)
 	{
-		tab[nbr] = 1;
+		tab[(int)c] = 1;
 		ft_putchar(c);
 	}
 }
@@ -53,15 +50,8 @@ int	main(int argc, char **argv)
 	if (argc == 3)
 		ft_union(argv[1], argv[2]);
 	ft_putchar('\n');
-	//ft_union("rien","cette phrase ne cache rien");
 	return (0);
 }
-
-
-
-
-
-
 
 
 

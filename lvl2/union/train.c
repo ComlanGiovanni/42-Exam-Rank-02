@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 21:34:02 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 21:34:35 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 20:04:52 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,31 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	check_tab(char c, int *tab)
-{
-	int	nbr;
 
-	nbr = c;
-	if (tab[nbr] == 0)
+void	check_tab(int *tab, char c)
+{
+	if (tab[(int)c] == 0)
 	{
-		tab[nbr] = 1;
+		tab[(int)c] = 1;
 		ft_putchar(c);
 	}
+}
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			idx;
+	unsigned char	*s;
+
+	if (!b)
+		return (NULL);
+	idx = 0;
+	s = (unsigned char *)b;
+	while (idx < len)
+	{
+		s[idx] = c;
+		idx++;
+	}
+	return (s);
 }
 
 void	ft_union(char *s1, char *s2)
@@ -37,13 +52,13 @@ void	ft_union(char *s1, char *s2)
 	idx = 0;
 	while (s1[idx] != '\0')
 	{
-		check_tab(s1[idx], tab);
+		check_tab(tab, s1[idx]);
 		idx++;
 	}
 	idx = 0;
 	while (s2[idx] != '\0')
 	{
-		check_tab(s2[idx], tab);
+		check_tab(tab, s2[idx]);
 		idx++;
 	}
 }
@@ -55,3 +70,21 @@ int	main(int argc, char **argv)
 	ft_putchar('\n');
 	return (0);
 }
+
+/*
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			idx;
+	unsigned char	*s;
+
+	if (!b)
+		return (NULL);
+	idx = 0;
+	s = (unsigned char *)b;
+	while (idx < len)
+	{
+		s[idx] = c;
+		idx++;
+	}
+	return (s);
+}*/
