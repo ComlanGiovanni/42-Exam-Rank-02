@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 14:18:48 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 16:44:04 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,27 +36,21 @@ int	ft_strlen(char *str)
 	return (size);
 }
 
-void	ft_swap_char(char *char_1, char *char_2)
-{
-	char	tmp;
-
-	tmp = *char_1;
-	*char_1 = *char_2;
-	*char_2 = tmp;
-}
-
 char	*ft_strrev(char *str)
 {
 	int		idx;
-	int		len;
+	int		size;
+	char	tmp;
 
 	idx = 0;
-	len = ft_strlen(str) - 1;
-	while (idx < len)
+	size = ft_strlen(str) - 1;
+	while (size > idx)
 	{
-		ft_swap_char(&str[idx], &str[len]);
+		tmp = str[idx];
+		str[idx] = str[size];
+		str[size] = tmp;
+		size--;
 		idx++;
-		len--;
 	}
 	return (str);
 }

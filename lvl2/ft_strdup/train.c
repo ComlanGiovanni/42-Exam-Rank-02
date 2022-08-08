@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 12:34:59 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 00:52:34 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 15:19:18 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@ int	ft_strlen(char *str)
 	return (size);
 }
 
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	int	idx;
 
 	idx = 0;
 	while (src[idx] != '\0')
 	{
-		dst[idx] = src[idx];
+		dest[idx] = src[idx];
 		idx++;
 	}
-	dst[idx]= '\0';
-	return (dst);
+	dest[idx] = '\0';
+	return (dest);
 }
 
 char	*ft_strdup(char *src)

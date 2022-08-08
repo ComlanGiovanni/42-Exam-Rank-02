@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 12:25:21 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 16:00:52 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	idx;
+	int	idx;
 
 	idx = 0;
 	while (s[idx] != '\0')
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		idx++;
 	}
-	return ((void *)0);
+	return (NULL);
 }
 
 size_t	ft_strcspn(const char *s, const char *reject)
@@ -38,4 +38,12 @@ size_t	ft_strcspn(const char *s, const char *reject)
 		idx++;
 	}
 	return (idx);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("Code: %ld\n", ft_strcspn("tro3jan", "1234" ));
+	return (0);
 }

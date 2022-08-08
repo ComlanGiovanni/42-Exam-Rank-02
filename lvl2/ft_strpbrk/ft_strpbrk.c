@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 16:16:19 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 21:44:46 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 16:25:10 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		idx++;
 	}
-	return ((void *)0);
+	return (NULL);
 }
 
 char	*ft_strpbrk(const char *s1, const char *s2)
@@ -34,7 +34,7 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 			return ((char *)s1);
 		s1++;
 	}
-	return ((void *)0);
+	return (NULL);
 }
 
 /*

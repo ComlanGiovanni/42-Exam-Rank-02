@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 16:54:52 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 18:53:17 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-
 void	snake_to_camel(char *str)
 {
 	int	idx;
@@ -25,9 +24,7 @@ void	snake_to_camel(char *str)
 	idx = 0;
 	while (str[idx] != '\0')
 	{
-		if ((str[idx] >= 'A') && (str[idx] <= 'Z'))
-			str[idx] += 32;
-		else if (str[idx] == '_')
+		if (str[idx] == '_')
 		{
 			idx++;
 			str[idx] -= 32;

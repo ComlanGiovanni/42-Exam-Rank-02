@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 17:27:09 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 18:07:28 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_bits(unsigned char octet)
 	unsigned char	mask;
 	unsigned char	bit;
 
-	idx = 8;
+	idx = 7;
 	mask = 1;
 	while (idx >= 0)
 	{

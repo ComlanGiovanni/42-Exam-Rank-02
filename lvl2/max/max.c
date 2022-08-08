@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 16:16:19 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 21:10:28 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 17:10:33 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ int	max(int *tab, unsigned int len)
 {
 	int	max;
 
-	if (!len)
+	if (len <= 0 || tab == NULL)
 		return (0);
-	//if (tab) do this
 	max = tab[--len];
 	while (len--)
 		if (tab[len] > max)
@@ -33,13 +32,19 @@ int	max(int *tab, unsigned int len)
 
 int	main(void)
 {
-	int	arr[] = { 7,2,4,9,3,5,6,1};
+	int	arr[4];
 
-	ft_putchar(max(arr, 8) + '0');
+	arr[0] = 7;
+	arr[1] = 2;
+	arr[2] = 4;
+	arr[3] = 9;
+
+	ft_putchar(max(arr, 4) + '0');
+	ft_putchar(10);
+	ft_putchar(max(NULL, 4) + '0');
 	ft_putchar('\n');
 	return (0);
 }
-
 
 /*
 int		max(int* tab, unsigned int len)

@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 21:44:45 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 16:24:41 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		idx++;
 	}
-	return ((void *)0);
+	return (NULL);
 }
 
 char	*ft_strpbrk(const char *s1, const char *s2)
@@ -37,7 +37,6 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 	return (NULL);
 }
 
-/*
 #include <stdio.h>
 
 int	main(void)
@@ -45,19 +44,7 @@ int	main(void)
 	char str[] = "1234567890";
 	char sym[] = "9876";
 
-	printf ("\"%s\" -.\n", ft_strpbrk(str, sym));
+	printf ("%s\n", ft_strpbrk(str, sym));
 	return (0);
 }
-*/
-/*
-char	*ft_strpbrk(const char *s1, const char *s2)
-{
-	while (*s1)
-	{
-		if (ft_strchr(s2, *s1))
-			return ((char *)s1);
-		s1++;
-	}
-	return ((void *)0);
-}
-*/
+
