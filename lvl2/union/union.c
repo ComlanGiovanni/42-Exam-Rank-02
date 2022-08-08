@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 19:45:41 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 22:54:54 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	check_tab(char c, int *tab)
+void	check_tab(int *tab, char c)
 {
 	if (tab[(int)c] == 0)
 	{
@@ -29,18 +29,24 @@ void	check_tab(char c, int *tab)
 void	ft_union(char *s1, char *s2)
 {
 	int	idx;
-	int tab[256] = {0};
+	int	tab[256];
 
+	idx = 0;
+	while (idx <= 256)
+	{
+		tab[idx] = 0;
+		idx++;
+	}
 	idx = 0;
 	while (s1[idx] != '\0')
 	{
-		check_tab(s1[idx], tab);
+		check_tab(tab, s1[idx]);
 		idx++;
 	}
 	idx = 0;
 	while (s2[idx] != '\0')
 	{
-		check_tab(s2[idx], tab);
+		check_tab(tab, s2[idx]);
 		idx++;
 	}
 }
@@ -53,7 +59,23 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
+/*
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			idx;
+	unsigned char	*s;
 
+	if (!b)
+		return (NULL);
+	idx = 0;
+	s = (unsigned char *)b;
+	while (idx < len)
+	{
+		s[idx] = c;
+		idx++;
+	}
+	return (s);
+}*/
 
 /*
 #include <unistd.h>
@@ -113,8 +135,6 @@ int		main(int ac, char **av)
 	write(1, "\n", 1);
 	return (0);
 }
-
-
 
 
 #include <unistd.h>

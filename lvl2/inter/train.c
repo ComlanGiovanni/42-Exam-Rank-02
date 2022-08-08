@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 14:48:06 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 23:29:31 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,42 +17,37 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	check_doublon(char *str, char c, int pos)
+void	check_doublon(int *tab, char c)
 {
-	int	idx;
-
-	idx = 0;
-	while (idx < pos)
+	if (tab[(int)c] == 1)
 	{
-		if (str[idx] == c)
-			return (0);
-		idx++;
+		ft_putchar(c);
+		tab[(int)c] = 0;
 	}
-	return (1);
 }
 
-void	inter(char *first, char *second)
+void	inter(char *s1, char *s2)
 {
-	int	first_idx;
-	int	second_idx;
+	int	idx;
+	int	tab[256];
 
-	first_idx = 0;
-	while (first[first_idx] != '\0')
+	idx = 0;
+	while (idx <= 256)
 	{
-		second_idx = 0;
-		while (second[second_idx] != '\0')
-		{
-			if (first[first_idx] == second[second_idx])
-			{
-				if (check_doublon(first, first[first_idx], first_idx))
-				{
-					ft_putchar(first[first_idx]);
-					break ;
-				}
-			}
-			second_idx++;
-		}
-		first_idx++;
+		tab[idx] = 0;
+		idx++;
+	}
+	idx = 0;
+	while (s2[idx] != '\0')
+	{
+		tab[(int)s2[idx]] = 1;
+		idx++;
+	}
+	idx = 0;
+	while (s1[idx] != '\0')
+	{
+		check_doublon(tab, s1[idx]);
+		idx++;
 	}
 }
 
