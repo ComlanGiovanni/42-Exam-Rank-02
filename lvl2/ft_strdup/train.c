@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 12:34:59 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 12:54:46 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/08 00:52:34 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,30 @@ int	ft_strlen(char *str)
 	return (size);
 }
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int	idx;
 
 	idx = 0;
 	while (src[idx] != '\0')
 	{
-		dest[idx] = src[idx];
+		dst[idx] = src[idx];
 		idx++;
 	}
-	dest[idx] = '\0';
-	return (dest);
+	dst[idx]= '\0';
+	return (dst);
 }
 
 char	*ft_strdup(char *src)
 {
-	int		len;
-	char	*dest;
+	int		size;
+	char	*duplicate;
 
-	len = ft_strlen(src);
-	dest = (char *)malloc(sizeof(char) * len + 1);
-	if (dest == NULL)
+	size = ft_strlen(src);
+	duplicate = (char *)malloc(sizeof(char) * size + 1);
+	if (duplicate == NULL)
 		return (NULL);
-	return (ft_strcpy(dest, src));
+	return (ft_strcpy(duplicate, src));
 }
 
 #include <stdio.h>
