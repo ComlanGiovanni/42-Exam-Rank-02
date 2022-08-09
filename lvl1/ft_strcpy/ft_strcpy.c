@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan < gcomlan@student.42.fr>           +#+  +:+       +#+        */
+/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:32:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/23 12:03:54 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 19:02:41 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,12 @@ char	*ft_strcpy(char *s1, char *s2)
 	s1[idx] = '\0';
 	return (s1);
 }
+
+/*
+char	*ft_strcpy(char *s1, char *s2)
+{
+	while ((*s1++ = *s2++))
+		;
+	return (s1);
+}
+*/

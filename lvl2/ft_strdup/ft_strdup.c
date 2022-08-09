@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 12:35:05 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 15:19:00 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 19:05:20 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,50 @@ char	*ft_strdup(char *src)
 		return (NULL);
 	return (ft_strcpy(duplicate, src));
 }
+
+/*
+#include <stdlib.h>
+
+char	*ft_strdup(char *src)
+{
+	char	*dup;
+	char	*sptr;
+	char	*dptr;
+
+	sptr = src;
+	while (*sptr++)
+		;
+	dup = malloc(sptr - src + 1);
+	if (!dup)
+		return (NULL);
+	dptr = dup;
+	while ((*dptr++ = *src++) != '\0')
+		;
+	return (dup);
+}
+
+#include <stdlib.h>
+
+char	*ft_strdup(char *src)
+{
+	int		i;
+	int		length;
+	char	*strcpy;
+
+	length = 0;
+	while (src[length])
+		length++;
+	strcpy = malloc(length + 1);
+	if (strcpy != NULL)
+	{
+		i = 0;
+		while (src[i])
+		{
+			strcpy[i] = src[i];
+			i++;
+		}
+		strcpy[i] = '\0';
+	}
+	return (strcpy);
+}
+*/

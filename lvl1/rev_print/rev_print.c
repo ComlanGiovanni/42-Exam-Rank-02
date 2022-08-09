@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:07:47 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 17:49:07 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 19:03:30 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,24 @@ int	main(int argc, char **argv)
 	ft_putchar('\n');
 	return (0);
 }
+
+
+/*
+#include <unistd.h>
+
+int	main(int ac, char *av[])
+{
+	int	i;
+
+	if (ac == 2)
+	{
+		i = 0;
+		while (av[1][i])
+			i += 1;
+		while (i)
+			write(1, &av[1][--i], 1);
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+*/

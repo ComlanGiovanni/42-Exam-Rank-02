@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 13:39:13 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 19:11:41 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,67 @@ int	main(void)
 	ft_putchar('\n');
 	return (0);
 }
+
+/*
+#include <unistd.h>
+
+void print_bits(unsigned char octet)
+{
+	int div = 128;
+	int num = octet;
+
+	while (div != 0)
+	{
+		if (div <= num)
+		{
+			write(1, "1", 1);
+			num = num % div;
+		}
+		else
+			write(1, "0", 1);
+		div = div / 2;
+	}
+}
+
+#include <unistd.h>
+
+void print_bits(unsigned char octet)
+{
+	int	i;
+	unsigned char bit;
+
+	i = 8;
+	while (i--)
+	{
+		bit = (octet >> i & 1) + '0';
+		write(1, &bit, 1);
+	}
+}
+
+#include <unistd.h>
+
+void print_bits(unsigned char octet)
+{
+	int i;
+	char c;
+
+	i = 128;
+	while (i > 0)
+	{
+		if (octet < i)
+		{
+			c = '0';
+			i = i / 2;
+			write(1, &c, 1);
+		}
+		else
+		{
+			c = '1';
+			write(1, &c, 1);
+			octet = octet - i;
+			i = i / 2;
+		}
+	}
+}
+
+*/

@@ -6,10 +6,51 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 18:36:54 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 18:59:51 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+#include <stdlib.h>
+
+int *ft_rrange(int start, int end)
+{
+	int *r;
+	int len;
+
+	len = (end >= start) ? end - start + 1 : start - end + 1;
+	if (!(r = (int*) malloc(sizeof(int) * len)))
+		return (NULL);
+	while (len--)
+		r[len] = (end >= start) ? start++ : start--;
+	return (r);
+}
+
+#include <stdlib.h>
+
+int *ft_rrange(int start, int end)
+{
+	int *range;
+	int i;
+	int n;
+
+	i = 0;
+	if (start > end)
+		return (ft_rrange(end, start));
+	n = end - start + 1;
+	range = (int *)malloc(sizeof(int) * n);
+	if (range)
+	{
+		while (i < n)
+		{
+			range[i] = start;
+			start++;
+			i++;
+		}
+	}
+	return (range);
+}
+*/
 #include <stdlib.h>
 
 int *ft_rrange(int start, int end)
@@ -32,7 +73,6 @@ int *ft_rrange(int start, int end)
 	}
 	return (range);
 }
-
 
 /*
 #include <stdlib.h>

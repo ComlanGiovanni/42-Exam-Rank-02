@@ -6,11 +6,27 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 18:41:04 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 18:58:07 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+#include <stdlib.h>
 
+int	*ft_range(int min, int max)
+{
+	int	n;
+	int	*s;
+
+	n = max >= min ? max - min : min - max;
+	if (!(s= (int *)malloc(sizeof(int) * (n))))
+		return (NULL);
+	while (max != min)
+		*s++ = max > min ? min++ : min--;
+	*s = min;
+	return (s - n);
+}
+*/
 
 #include <stdlib.h>
 #include <stdio.h>
