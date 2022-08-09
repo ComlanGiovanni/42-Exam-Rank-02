@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 13:28:54 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 00:13:03 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:52:11 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 		idx++;
 	if (str[idx] == '-')
 	{
-		sign *= -1;// or sign = -1;
+		sign *= -1;
 		idx++;
 	}
 	else if (str[idx] == '+')
@@ -37,6 +37,8 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
+/*
+// or sign = -1;
 #include <stdio.h>
 
 int	main(void)
@@ -44,3 +46,4 @@ int	main(void)
 	printf("%d", ft_atoi("    -69252 5"));
 	return (0);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 12:12:36 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 21:41:04 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:54:14 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	main(void)
 	return (0);
 }
 */
-
 
 /*
 char	*ft_strchr(const char *s, int c)

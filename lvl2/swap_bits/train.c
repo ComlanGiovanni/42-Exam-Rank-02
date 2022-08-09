@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:52:57 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 17:24:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:53:06 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,3 @@ unsigned char	swap_bits(unsigned char octet)
 {
 	return ((octet >> 4) | ((octet << 4)));
 }
-

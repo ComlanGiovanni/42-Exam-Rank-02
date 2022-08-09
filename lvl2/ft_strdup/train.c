@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 12:34:59 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 15:19:18 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:52:47 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ char	*ft_strdup(char *src)
 	return (ft_strcpy(duplicate, src));
 }
 
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -55,3 +56,4 @@ int	main(void)
 	printf("%s", ft_strdup("HELLO"));
 	return (0);
 }
+*/

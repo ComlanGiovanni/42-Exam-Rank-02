@@ -1,12 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   camel_to_snake.c                                   :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/04 16:54:52 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/09 18:22:27 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/09 18:26:13 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FT_LIST_H
+# define FT_LIST_H
+
+typedef struct s_list
+{
+	struct s_list	*next;
+	void			*data;
+}	t_list;
+
+#endif

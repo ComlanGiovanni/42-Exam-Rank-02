@@ -1,45 +1,67 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_power_of_2.c                                    :+:      :+:    :+:   */
+/*   pgcd.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 17:49:36 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 18:44:19 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_power_of_2(unsigned int n)
-{
-	unsigned long int	idx;
+#include <stdio.h>
+#include <stdlib.h>
 
-	idx = 1;
-	while (idx <= n)
+int main(int argc, char const *argv[])
+{
+	int nbr1;
+	int nbr2;
+
+	if (argc == 3)
 	{
-		if (idx == n)
-			return (1);
-		idx *= 2;
+		if ((nbr1 = atoi(argv[1])) > 0 && (nbr2 = atoi(argv[2])) > 0)
+		{
+			while (nbr1 != nbr2)
+			{
+				if (nbr1 > nbr2)
+					nbr1 -= nbr2;
+				else
+					nbr2 -= nbr1;
+			}
+			printf("%d", nbr1);
+		}
 	}
+	printf("\n");
 	return (0);
 }
 
-///while (idx < 0xffffffff)
+
 /*
 #include <stdio.h>
+#include <stdlib.h>
 
-int	main(void)
+void	pgcd(int a, int b)
 {
-	printf("%d\n", is_power_of_2(0));
-	printf("%d\n", is_power_of_2(2));
-	printf("%d\n", is_power_of_2(4));
-	printf("%d\n", is_power_of_2(6));
-	printf("%d\n", is_power_of_2(8));
-	printf("%d\n", is_power_of_2(32));
-	printf("%d\n", is_power_of_2(42));
-	printf("%d\n", is_power_of_2(67));
-	printf("%d\n", is_power_of_2(124));
-	printf("%d\n", is_power_of_2(256));
+	int i;
+	int gcd;
+
+	i = 1;
+	gcd = 0;
+	while (i < a && i < b)
+	{
+		if (a % i == 0 && b % i == 0)
+			gcd = i;
+		i++;
+	}
+	printf("%d", gcd);
+}
+
+int		main(int ac, char **av)
+{
+	if (ac == 3)
+		pgcd(atoi(av[1]), atoi(av[2]));
+	printf("\n");
 	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 16:57:09 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:50:07 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	is_power_of_2(unsigned int n)
 	return (0);
 }
 
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -41,3 +42,4 @@ int	main(void)
 	printf("%d\n", is_power_of_2(256));
 	return (0);
 }
+*/

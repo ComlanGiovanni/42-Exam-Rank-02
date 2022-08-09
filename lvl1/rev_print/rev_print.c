@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:07:47 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/05 19:41:42 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:49:07 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	rev_print(char *str)
 		len--;
 	}
 }
-
 
 int	main(int argc, char **argv)
 {

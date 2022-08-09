@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 16:16:19 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 17:10:33 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:51:25 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	main(void)
 	arr[1] = 2;
 	arr[2] = 4;
 	arr[3] = 9;
-
 	ft_putchar(max(arr, 4) + '0');
 	ft_putchar(10);
 	ft_putchar(max(NULL, 4) + '0');

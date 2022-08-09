@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 21:50:56 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/05 19:00:22 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:47:52 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	repeat(char c, int pos)
 		pos--;
 	}
 }
-
 
 void	repeat_alpha(char *str)
 {

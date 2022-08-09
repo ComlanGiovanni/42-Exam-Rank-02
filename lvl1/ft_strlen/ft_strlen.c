@@ -6,10 +6,9 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 22:49:06 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/26 00:49:32 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:48:04 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <unistd.h>
 
@@ -25,7 +24,7 @@ int	ft_strlen(char *str)
 
 int	main(void)
 {
-	write(1,"hello",ft_strlen("hello"));
+	write(1, "hello", ft_strlen("hello"));
 	return (0);
 }
 

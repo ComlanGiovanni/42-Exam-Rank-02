@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 00:27:38 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/05 19:49:01 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:49:14 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-
 /*
 #include <unistd.h>
 
@@ -83,7 +82,6 @@ void	ft_putstr(char *str)
 		str++;
 	}
 }
-
 
 void	rev_print(char *str)
 {

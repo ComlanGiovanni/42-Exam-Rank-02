@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 16:00:52 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 17:54:25 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ size_t	ft_strcspn(const char *s, const char *reject)
 	return (idx);
 }
 
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -47,3 +48,4 @@ int	main(void)
 	printf("Code: %ld\n", ft_strcspn("tro3jan", "1234" ));
 	return (0);
 }
+*/
