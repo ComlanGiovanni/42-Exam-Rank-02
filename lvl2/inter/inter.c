@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:36:37 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 23:30:54 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 12:23:04 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,36 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	check_doublon(int *tab, char c)
+void	check_ascii_tab(int *ascii_tab, char c_str_1)
 {
-	if (tab[(int)c] == 1)
+	if (ascii_tab[(int)c_str_1] == 1)
 	{
-		ft_putchar(c);
-		tab[(int)c] = 0;
+		ascii_tab[(int)c_str_1] = 0;
+		ft_putchar(c_str_1);
 	}
 }
 
-void	inter(char *s1, char *s2)
+void	inter(char *str_1, char *str_2)
 {
 	int	idx;
-	int	tab[256];
+	int	ascii_tab[256];
 
 	idx = 0;
 	while (idx <= 256)
 	{
-		tab[idx] = 0;
+		ascii_tab[idx] = 0;
 		idx++;
 	}
 	idx = 0;
-	while (s2[idx] != '\0')
+	while (str_2[idx] != '\0')
 	{
-		tab[(int)s2[idx]] = 1;
+		ascii_tab[(int)str_2[idx]] = 1;
 		idx++;
 	}
 	idx = 0;
-	while (s1[idx] != '\0')
+	while (str_1[idx] != '\0')
 	{
-		check_doublon(tab, s1[idx]);
+		check_ascii_tab(ascii_tab, str_1[idx]);
 		idx++;
 	}
 }

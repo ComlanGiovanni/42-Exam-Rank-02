@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 00:26:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/07/24 00:26:30 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 15:37:33 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,13 @@ void	ft_swap(int *a, int *b)
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
+}
+
+int		main(void)
+{
+	int x = 10;
+	int y = 20;
+	ft_swap(&x, &y);
+	printf("%d,%d",x,y);
+	return (0);
 }

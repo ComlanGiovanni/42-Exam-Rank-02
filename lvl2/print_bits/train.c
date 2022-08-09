@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 18:34:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 13:39:13 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	print_bits(unsigned char octet)
 		ft_putchar(bit);
 		idx--;
 	}
-
 }
 
 int	main(void)

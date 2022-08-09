@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 19:28:22 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 15:56:32 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,23 @@ void	last_word(char *str)
 	int	idx;
 
 	idx = ft_strlen(str) - 1;
-
+	while (str[idx] == ' ' || str[idx] == '\t')
+		idx--;
+	while (str[idx] != '\0' && (str[idx] != ' ' && str[idx] != '\t'))
+		idx--;
+	idx++;
+	while (str[idx] != '\0' && (str[idx] != ' ' && str[idx] != '\t'))
+	{
+		ft_putchar(str[idx]);
+		idx++;
+	}
 }
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
-		last_word(argv[1]);
-	ft_putchar('\n');
+	if (argc != 2)
+		return (0);
+	last_word(argv[1]);
 	return (0);
 }
 

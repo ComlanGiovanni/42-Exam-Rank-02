@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/06 18:16:54 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 13:39:23 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void	ft_putchar(char c)
 void	print_bits(unsigned char octet)
 {
 	int				idx;
-	unsigned char	mask;
-	unsigned char	bit;
+	unsigned int	mask;
+	unsigned int	bit;
 
-	idx = 8;
+	idx = 7;
 	mask = 1;
 	while (idx >= 0)
 	{
-		bit = ((octet >> idx) & mask) + '0';
+		bit = (((octet >> idx) & mask) + '0');
 		ft_putchar(bit);
 		idx--;
 	}
