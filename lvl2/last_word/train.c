@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 15:56:32 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/09 16:34:37 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	last_word(char *str)
 	while (str[idx] != '\0' && (str[idx] != ' ' && str[idx] != '\t'))
 		idx--;
 	idx++;
-	while (str[idx] != '\0' && (str[idx] != ' ' && str[idx] != '\t'))
+	while (str[idx] != '\0' && str[idx] != ' ' && str[idx] != '\t')
 	{
 		ft_putchar(str[idx]);
 		idx++;
@@ -53,7 +53,6 @@ int	main(int argc, char **argv)
 }
 
 /*
-
 #include <unistd.h>
 
 int		main(int ac, char **av)
