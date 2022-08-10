@@ -6,67 +6,54 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 18:32:31 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/10 17:17:58 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
+#include <stdlib.h>
+#include <stdio.h>
+
 int	ft_list_size(t_list *begin_list)
 {
-	int		size;
-	t_list	*list;
+	int	size;
 
-	list = begin_list;
 	size = 0;
-	while (list)
+	while (begin_list != NULL)
 	{
-		list = list->next;
+		begin_list = begin_list->next;
 		size++;
 	}
 	return (size);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
 
-t_list	*new(void *data)
+t_list	*ft_new_node(void *data)
 {
-	t_list	*n;
+	t_list	*node;
 
-	n = (t_list *)malloc(sizeof(t_list));
-	if (n)
-	{
-		n->data = data;
-		n->next = NULL;
-	}
-	return (n);
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
+		return (node = NULL);
+	node->data = data;
+	node->next = NULL;
+	return (node);
 }
 
 int	main(void)
 {
-	t_list	*list;
-	t_list	*s;
-	t_list	*j;
-	t_list	*t;
+	t_list	*first;
+	t_list	*second;
+	t_list	*third;
+	t_list	*fourth;
 
-	list = new("One");
-	s = new("Two");
-	j = new("Three");
-	t = new("Four");
-	list->next = s;
-	s->next = j;
-	j->next = t;
-	printf("%d", ft_list_size(list));
+	first = ft_new_node("One");
+	second = ft_new_node("Two");
+	third = ft_new_node("Three");
+	fourth = ft_new_node("Four");
+	first->next = second;
+	second->next = third;
+	third->next = fourth;
+	printf("%d", ft_list_size(first));
 	return (0);
 }
-*/
-/*
-int	ft_list_size(t_list *begin_list)
-{
-	if (begin_list == 0)
-		return (0);
-	else
-		return (1 + ft_list_size(begin_list->next));
-}
-*/

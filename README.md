@@ -12,6 +12,11 @@ The exam has 4 questions total. A random question is picked from each level belo
 
 There is no Norminette in the exam.
 
+All the fct of the repo are normed
+
+Take your time to read carefully the subject.en.txt file
+read it 3 time trust me read it 3 time
+
 Good luck in The exams
 
 # Asccii
@@ -55,3 +60,8 @@ https://grademe.fr/
 ## Not normed
 
 68 fct
+
+
+printf - > #include <stdio.h>
+malloc - > #include <stdlib.h>
+NULL && size_t -> #include <stddef.h>
