@@ -87,3 +87,11 @@ argument vector table
 
 argc -> argument cunt eauql
 argv -> argument vector
+
+
+https://github.com/Binary-Hackers/42_Subjects
+https://github.com/48d31kh413k/1337-Piscine-42
+https://github.com/luta-wolf
+https://github.com/barimehdi77/42-piscine-exam
+https://github.com/jraleman/42.Exam-C
+https://github.com/fwuensche/42-exam-miner
