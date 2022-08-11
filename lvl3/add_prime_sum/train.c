@@ -6,20 +6,20 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 22:09:12 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/11 13:57:37 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nbr)
+void	ft_small_putnbr(int nbr)
 {
 	char	digit_char;
 
 	if (nbr > 9)
 	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
+		ft_small_putnbr(nbr / 10);
+		ft_small_putnbr(nbr % 10);
 	}
 	else
 	{
@@ -82,7 +82,7 @@ int	ft_add_prime_sum(int nbr)
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
-		ft_putnbr(ft_add_prime_sum(ft_short_atoi(argv[1])));
+		ft_small_putnbr(ft_add_prime_sum(ft_short_atoi(argv[1])));
 	else
 		write(1, "0", 1);
 	write(1, "\n", 1);

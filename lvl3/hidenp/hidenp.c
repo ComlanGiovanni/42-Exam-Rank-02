@@ -6,67 +6,80 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 18:38:11 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/11 17:04:50 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(int ac, char **av)
+void	ft_putchar(char c)
 {
-	int i;
-	int i2;
-	int count;
+	write(1, &c, 1);
+}
 
-	i = 0;
-	i2 = 0;
-	count = 0;
-	if (ac == 3)
+int	ft_strlen(char *str)
+{
+	int	size;
+
+	size = 0;
+	while (str[size] != '\0')
+		size++;
+	return (size);
+}
+
+void	ft_hidenp(char *first, char *second)
+{
+	int	idx_first;
+	int	idx_second;
+
+	idx_first = 0;
+	idx_second = 0;
+	while (second[idx_second] != '\0')
 	{
-		while (av[1][i] != '\0')
-		{
-			while (av[2][i2] != '\0')
-			{
-				if (av[1][i] == av[2][i2])
-				{
-					count++;
-					break ;
-				}
-				i2++;
-			}
-			i++;
-		}
-		if (av[1][count] == '\0')
-			write(1, "1", 1);
-		else
-			write(1, "0", 1);
+		if (first[idx_first] == second[idx_second])
+			idx_first++;
+		idx_second++;
 	}
-	write(1, "\n", 1);
+	if (idx_first == ft_strlen(first))
+		ft_putchar('1');
+	else
+		ft_putchar('0');
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 3)
+		ft_hidenp(argv[1], argv[2]);
+	ft_putchar('\n');
 	return (0);
 }
 
 /*
-#include <unistd.h>
-
-int main(int argc, char **argv)
+void	ft_hidenp(char *str_1, char *str_2)
 {
-	int i = 0;
-	int j = 0;
+	int	check;
+	int	idx_str_1;
+	int	idx_str_2;
 
-	if (argc == 3)
+	check = 0;
+	idx_str_1 = 0;
+	idx_str_2 = 0;
+	while (str_1[idx_str_1] != '\0')
 	{
-		while (argv[2][j] && argv[1][i])
+		while (str_2[idx_str_2] != '\0')
 		{
-			if (argv[2][j] == argv[1][i])
-				i++;
-			j++;
+			if (str_1[idx_str_1] == str_2[idx_str_2])
+			{
+				check++;
+				break ;
+			}
+			idx_str_2++;
 		}
-		if (argv[1][i] == '\0')
-			write(1, "1", 1);
-		else
-			write(1, "0", 1);
+		idx_str_1++;
 	}
-	write(1, "\n", 1);
-	return (0);
+	if (check == ft_strlen(str_1))
+		ft_putchar('1');
+	else
+		ft_putchar('0');
 }
 */

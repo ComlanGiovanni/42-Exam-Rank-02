@@ -6,36 +6,37 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 18:44:19 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/11 16:20:59 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char const *argv[])
+void	ft_pgcd(int nbr_1, int nbr_2)
 {
-	int nbr1;
-	int nbr2;
+	int	div;
+	int	pgcd;
 
-	if (argc == 3)
+	div = 1;
+	if (nbr_1 <= 0 || nbr_2 <= 0)
+		return ;
+	while ((div <= nbr_1) || div <= nbr_2)
 	{
-		if ((nbr1 = atoi(argv[1])) > 0 && (nbr2 = atoi(argv[2])) > 0)
-		{
-			while (nbr1 != nbr2)
-			{
-				if (nbr1 > nbr2)
-					nbr1 -= nbr2;
-				else
-					nbr2 -= nbr1;
-			}
-			printf("%d", nbr1);
-		}
+		if (((nbr_1 % div) == 0) && ((nbr_2 % div) == 0))
+			pgcd = div;
+		div++;
 	}
+	printf("%d", pgcd);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 3)
+		ft_pgcd(atoi(argv[1]), atoi(argv[2]));
 	printf("\n");
 	return (0);
 }
-
 
 /*
 #include <stdio.h>

@@ -6,13 +6,13 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/10 20:10:37 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/11 13:56:13 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_abs(int nbr)
+int	ft_absolute_value(int nbr)
 {
 	if (nbr < 0)
 		return (-nbr);
@@ -26,7 +26,7 @@ int	*ft_range(int start, int end)
 	int	*tab;
 
 	idx = 0;
-	size = ft_abs(start - end);
+	size = ft_absolute_value(start - end);
 	tab = (int *)malloc(sizeof(int) * size + 1);
 	if (!tab)
 		return (0);

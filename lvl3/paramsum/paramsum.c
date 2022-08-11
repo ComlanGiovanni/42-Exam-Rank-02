@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/11 11:43:41 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/11 13:57:37 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,22 @@ int	main(int argc, char **argv)
 }
 
 /*
-void	ft_putnbr(int n)
+void	ft_small_putnbr(int n)
 {
 	(n < 0 ? ft_putchar('-') : 1);
 	n *= (n > 0 ? -1 : 1);
-	(n <= -10 ? ft_putnbr(-(n / 10)) : 1);
+	(n <= -10 ? ft_small_putnbr(-(n / 10)) : 1);
 	ft_putchar('0' - n % 10);
 }
 
-void	ft_putnbr(int nbr)
+void	ft_small_putnbr(int nbr)
 {
 	char	digit_char;
 
 	if (nbr > 9)
 	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
+		ft_small_putnbr(nbr / 10);
+		ft_small_putnbr(nbr % 10);
 	}
 	else
 	{
@@ -61,12 +61,12 @@ void	ft_putnbr(int nbr)
 	}
 }
 
-void	ft_putnbr(int n)
+void	ft_small_putnbr(int n)
 {
 	char	digit;
 
 	if (n >= 10)
-		ft_putnbr(n / 10);
+		ft_small_putnbr(n / 10);
 	digit = (n % 10) + '0';
 	write(1, &digit, 1);
 }
