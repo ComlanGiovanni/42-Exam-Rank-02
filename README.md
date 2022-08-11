@@ -61,7 +61,29 @@ https://grademe.fr/
 
 68 fct
 
-
 printf - > #include <stdio.h>
 malloc - > #include <stdlib.h>
 NULL && size_t -> #include <stddef.h>
+
+alway return the type of your fct
+alway nit your varible
+inc your idx directly when you enter a while loop
+alway secure your malloc just after initialized
+
+make tab of same logic
+
+sting manipulation
+linked list
+argument
+etc
+
+
+argument vector table
+
+0 program name
+1
+2
+4
+
+argc -> argument cunt eauql
+argv -> argument vector

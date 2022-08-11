@@ -6,11 +6,10 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 19:21:19 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/11 11:58:34 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -18,19 +17,21 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int n)
+void	ft_small_putnbr(int nbr)
 {
-	(n < 0 ? ft_putchar('-') : 1);
-	n *= (n > 0 ? -1 : 1);
-	(n <= -10 ? ft_putnbr(-(n / 10)) : 1);
-	ft_putchar('0' - n % 10);
+	if (nbr > 9)
+	{
+		ft_small_putnbr(nbr / 10);
+		ft_small_putnbr(nbr % 10);
+	}
+	else
+		ft_putchar(nbr + '0');
 }
 
-int	main(int ac, char **av)
+int	main(int argc, char **argv)
 {
-	(void)av;
-	ft_putnbr(ac - 1);
-	write(1, "\n", 1);
+	(void)argv;
+	ft_small_putnbr(argc - 1);
+	ft_putchar('\n');
 	return (0);
 }
-*/

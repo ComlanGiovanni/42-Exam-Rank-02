@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/10 19:51:20 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/10 20:10:37 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,32 @@ int	ft_abs(int nbr)
 int	*ft_range(int start, int end)
 {
 	int	idx;
-	int	*tab;
 	int	size;
+	int	*tab;
 
 	idx = 0;
 	size = ft_abs(start - end);
 	tab = (int *)malloc(sizeof(int) * size + 1);
 	if (!tab)
 		return (0);
-	while (start <= end)
+	while (start < end)
 	{
 		tab[idx] = start;
 		start++;
 		idx++;
 	}
-	while (start >= end)
+	tab[idx] = start;
+	while (start > end)
 	{
 		tab[idx] = start;
 		start--;
 		idx++;
 	}
+	tab[idx] = start;
 	return (tab);
 }
 
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -67,7 +70,7 @@ int	main(void)
 	}
 	printf("\n");
 }
-
+*/
 /*
 #include <stdlib.h>
 

@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 18:43:24 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/11 11:43:41 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,80 +17,57 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void	ft_small_putnbr(int nbr)
 {
-	if (nb > 9)
+	if (nbr > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_small_putnbr(nbr / 10);
+		ft_small_putnbr(nbr % 10);
 	}
 	else
-		ft_putchar(nb + '0');
-}
-
-int		main(int ac, char **av)
-{
-	(void)av;
-	ac--;
-	ft_putnbr(ac);
-	ft_putchar('\n');
-	return (0);
-}
-
-
-/*
-
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int n)
-{
-	if (n < 0)
-	{
-		n = -n;
-		ft_putchar('-');
-	}
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	ft_putchar((n % 10) + '0');
-}
-
-
-int		main(int argc, char **argv)
-{
-	ft_putnbr(argc - 1);
-	ft_putchar('\n');
-	return (0);
-}
-*/
-
-
-
-
-
-/*
-#include <unistd.h>
-
-void	ft_putnbr(int n)
-{
-	char digit;
-
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	digit = (n % 10) + '0';
-	write(1, &digit, 1);
+		ft_putchar(nbr + '0');
 }
 
 int	main(int argc, char **argv)
 {
 	(void)argv;
-
-	ft_putnbr(argc - 1);
-	write(1, "\n", 1);
+	ft_small_putnbr(argc - 1);
+	ft_putchar('\n');
 	return (0);
+}
+
+/*
+void	ft_putnbr(int n)
+{
+	(n < 0 ? ft_putchar('-') : 1);
+	n *= (n > 0 ? -1 : 1);
+	(n <= -10 ? ft_putnbr(-(n / 10)) : 1);
+	ft_putchar('0' - n % 10);
+}
+
+void	ft_putnbr(int nbr)
+{
+	char	digit_char;
+
+	if (nbr > 9)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else
+	{
+		digit_char = nbr + '0';
+		write(1, &digit_char, 1);
+	}
+}
+
+void	ft_putnbr(int n)
+{
+	char	digit;
+
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	digit = (n % 10) + '0';
+	write(1, &digit, 1);
 }
 */

@@ -6,9 +6,67 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 18:59:51 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/11 13:34:53 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+
+int	ft_abs(int nbr)
+{
+	if (nbr < 0)
+		return (-nbr);
+	return (nbr);
+}
+
+int	*ft_rrange(int start, int end)
+{
+	int	idx;
+	int	size;
+	int	*tab;
+
+	idx = 0;
+	if (start > end)
+		return (ft_rrange(end, start));
+	size = ft_abs(start - end);
+	tab = (int *)malloc(sizeof(int) * size + 1);
+	if (!tab)
+		return (0);
+	while (idx < start)
+	{
+		tab[idx] = start;
+		start++;
+		idx++;
+	}
+	return (tab);
+}
+
+/*
+you can also do the same logic as ft_range
+
+#include <stdio.h>
+
+int	main(void)
+{
+	int	*tab;
+	int	idx;
+	int	start;
+	int	end;
+	int	size;
+
+	idx = 0;
+	start = -5;
+	end = 5;
+	tab = ft_rrange(start, end);
+	size = ft_abs(end - start) + 1;
+	while (idx < size)
+	{
+		printf(" [%i] ", tab[idx]);
+		idx++;
+	}
+	printf("\n");
+}
+*/
 
 /*
 #include <stdlib.h>
@@ -49,62 +107,5 @@ int *ft_rrange(int start, int end)
 		}
 	}
 	return (range);
-}
-*/
-#include <stdlib.h>
-
-int *ft_rrange(int start, int end)
-{
-	int *range;
-	int i = 0;
-	int n = end - start + 1;
-
-	if (start > end)
-		return (ft_rrange(end, start));
-	range = (int *)malloc(sizeof(int) * n);
-	if (range)
-	{
-		while (i < n)
-		{
-			range[i] = start;
-			start++;
-			i++;
-		}
-	}
-	return (range);
-}
-
-/*
-#include <stdlib.h>
-
-int		ft_abs(int x)
-{
-	if (x < 0)
-		return (-x);
-	return (x);
-}
-
-int		*ft_rrange(int start, int end)
-{
-	int i;
-	int *tab;
-
-	i = 0;
-	tab = (int*)malloc(sizeof(int) * ft_abs(end - start) + 1);
-	while (end > start)
-	{
-		tab[i] = end;
-		end--;
-		i++;
-	}
-	tab[i] = end;
-	while (end < start)
-	{
-		tab[i] = end;
-		end++;
-		i++;
-	}
-	tab[i] = end;
-	return (tab);
 }
 */
