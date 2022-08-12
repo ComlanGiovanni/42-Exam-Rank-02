@@ -6,42 +6,49 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 18:48:42 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/12 13:57:56 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    rstr_capitalizer(char *str)
+void	ft_putchar(char c)
 {
-    int i = 0;
-
-    while (str[i])
-    {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] += 32;
-        if ((str[i] >= 'a' && str[i] <= 'z') && (str[i + 1] == ' ' \
-                    || str[i + 1] == '\t' || str[i + 1] == '\0'))
-            str[i] -= 32;
-        write(1, &str[i++], 1);
-    }
+	write(1, &c, 1);
 }
 
-int main(int argc, char **argv)
+void	ft_rstr_capitalizer(char *str)
 {
-    int i;
+	int	idx;
 
-    if (argc < 1)
-        write(1, "\n", 1);
-    else
-    {
-        i = 1;
-        while (i < argc)
-        {
-            rstr_capitalizer(argv[i]);
-            write(1, "\n", 1);
-            i += 1;
-        }
-    }
-    return (0);
+	idx = 0;
+	while (str[idx] != '\0')
+	{
+		if (str[idx] >= 'A' && 'Z' >= str[idx])
+			str[idx] += 32;
+		if ((str[idx] >= 'a' && 'z' >= str[idx]) && (str[idx + 1] == ' '
+				|| str[idx + 1] == '\t' || str[idx + 1] == '\0'))
+			str[idx] -= 32;
+		ft_putchar(str[idx]);
+		idx++;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	int	idx;
+
+	if (argc < 2)
+		ft_putchar('\n');
+	else
+	{
+		idx = 1;
+		while (idx < argc)
+		{
+			ft_rstr_capitalizer(argv[idx]);
+			ft_putchar('\n');
+			idx++;
+		}
+	}
+	return (0);
 }
