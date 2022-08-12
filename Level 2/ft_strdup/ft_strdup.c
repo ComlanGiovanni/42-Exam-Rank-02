@@ -6,11 +6,12 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 12:35:05 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 19:05:20 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/12 16:31:12 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stddef.h>
 
 int	ft_strlen(char *str)
 {

@@ -6,12 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/10 16:22:02 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/12 16:38:12 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
-
 #include <stddef.h>
 
 int	ft_list_size(t_list *begin_list)

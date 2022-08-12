@@ -6,11 +6,12 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 16:16:19 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 17:51:25 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/12 16:37:58 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stddef.h>
 
 void	ft_putchar(char c)
 {

@@ -69,6 +69,7 @@ alway return the type of your fct
 alway nit your varible
 inc your idx directly when you enter a while loop
 alway secure your malloc just after initialized
+comment main if ask a fonction
 
 make tab of same logic
 
