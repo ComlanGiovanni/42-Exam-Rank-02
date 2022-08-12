@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/12 13:53:19 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/12 15:07:29 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_str_capitalizer(char *str)
 				|| str[idx - 1] == '\t'))
 			str[idx] -= 32;
 		ft_putchar(str[idx]);
-		++idx;
+		idx++;
 	}
 }
 
