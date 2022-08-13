@@ -9,7 +9,8 @@
         "files.trimTrailingWhitespace": true,
         "files.insertFinalNewline": true,
         "cstdio": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "ios": "c"
     },
     "cSpell.words": [
         "doublon",

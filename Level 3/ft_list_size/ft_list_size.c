@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/12 16:38:12 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/13 15:03:18 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,11 @@ int	main(void)
 	printf("%d", ft_list_size(first));
 	return (0);
 }
+
+or
+first->next = new("One");
+first->next->next = new("Two");
+again && again
+
+or a fct loop
 */

@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   train.c                                            :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/13 13:52:50 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/13 15:56:06 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/13 15:57:41 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-
-#include <stdio.h>
-
-int	main(void)
+typedef struct s_list
 {
-	int		idx;
-	char	**tab;
+	struct s_list	*next;
+	void			*data;
+}	t_list;
 
-	idx = 0;
-	tab = ft_split("The prophecy is true");
-	while (idx < 4)
-	{
-		printf("String %d : %s\n", idx, tab[idx]);
-		idx++;
-	}
-	return (0);
-}
+#endif
