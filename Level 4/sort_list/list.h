@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_list.c                                        :+:      :+:    :+:   */
+/*   list.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/14 00:26:46 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/14 00:25:35 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/14 00:29:16 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "list.h"
+#ifndef LIST_H
+# define LIST_H
 
-t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
+typedef struct s_list
 {
-	int		swap;
-	t_list	*tmp;
+	int				data;
+	struct s_list	*next;
+}	t_list;
 
-	tmp = lst;
-	while (lst->next != NULL)
-	{
-		if (((*cmp)(lst->data, lst->next->data)) == 0)
-		{
-			swap = lst->data;
-			lst->data = lst->next->data;
-			lst->next->data = swap;
-			lst = tmp;
-		}
-		else
-			lst = lst->next;
-	}
-	lst = tmp;
-	return (lst);
-}
+#endif

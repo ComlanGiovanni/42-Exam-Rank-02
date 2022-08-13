@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_list.c                                        :+:      :+:    :+:   */
+/*   flood_fill.H                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/14 00:26:46 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/13 23:49:12 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/13 23:49:59 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "list.h"
 
-t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
+#ifndef FLOOD_FILL
+# define FLOOD_FILL
+
+typedef struct	s_point
 {
-	int		swap;
-	t_list	*tmp;
+	int			x;
+	int			y;
+}				t_point;
 
-	tmp = lst;
-	while (lst->next != NULL)
-	{
-		if (((*cmp)(lst->data, lst->next->data)) == 0)
-		{
-			swap = lst->data;
-			lst->data = lst->next->data;
-			lst->next->data = swap;
-			lst = tmp;
-		}
-		else
-			lst = lst->next;
-	}
-	lst = tmp;
-	return (lst);
-}
+#endif

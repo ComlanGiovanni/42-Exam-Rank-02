@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/13 15:03:18 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/14 00:32:32 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_list_size(t_list *begin_list)
 		return (1 + ft_list_size(begin_list->next));
 }
 
-t_list	*new(void *data)
+t_list	*ft_new_elem(void *data)
 {
 	t_list	*node;
 
@@ -54,10 +54,10 @@ int	main(void)
 	t_list	*third;
 	t_list	*fourth;
 
-	first = new("One");
-	second = new("Two");
-	third = new("Three");
-	fourth = new("Four");
+	first = ft_new_elem("One");
+	second = ft_new_elem("Two");
+	third = ft_new_elem("Three");
+	fourth = ft_new_elem("Four");
 	first->next = second;
 	second->next = third;
 	third->next = fourth;
@@ -66,8 +66,8 @@ int	main(void)
 }
 
 or
-first->next = new("One");
-first->next->next = new("Two");
+first->next = ft_new_elem("One");
+first->next->next = ft_new_elem("Two");
 again && again
 
 or a fct loop

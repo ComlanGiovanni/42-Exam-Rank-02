@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/13 17:14:56 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/14 00:32:32 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 	}
 }
 
-t_list	*new(void *data)
+t_list	*ft_new_elem(void *data)
 {
 	t_list	*node;
 
@@ -77,30 +77,10 @@ int	main(void)
 	t_list	**begin_list;
 
 	begin_list = &test_list;
-	/*
-	int		idx;
-	t_list	*test_list;
-	t_list	**begin_list;
-
-	idx = 0;
-	while (idx <= argc)
-	{
-		test_list = new("lol");
-		test_list = test_list->next;
-		argc--;
-		idx++;
-	}
-	begin_list = &test_list;
-	*/
-	test_list = new("Follow ");
-	test_list->next = new("the ");
-	test_list->next->next = new("white ");
-	test_list->next->next->next = new("rabbit");
-	test_list->next->next->next->next = new(".");
-	test_list->next->next->next->next->next = new(".");
-	test_list->next->next->next->next->next->next = new(".");
-	test_list->next->next->next->next->next->next->next = new("!");
-	test_list->next->next->next->next->next->next->next->next = new("!");
+	test_list = ft_new_elem("Follow the ");
+	test_list->next = ft_new_elem("White rabbit...");
+	test_list->next->next = ft_new_elem("!");
+	test_list->next->next->next = ft_new_elem("!");
 	ft_list_foreach(test_list, (void *)ft_putstr);
 	ft_putstr("\n");
 	ft_list_remove_if(begin_list, "!", ft_strcmp);

@@ -10,7 +10,8 @@
         "files.insertFinalNewline": true,
         "cstdio": "c",
         "stdlib.h": "c",
-        "ios": "c"
+        "ios": "c",
+        "flood_fill.H": "cpp"
     },
     "cSpell.words": [
         "doublon",

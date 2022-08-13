@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/13 15:50:53 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/14 00:32:32 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putstr(char *str)
 		write(1, str++, 1);
 }
 
-t_list	*new(void *data)
+t_list	*ft_new_elem(void *data)
 {
 	t_list	*node;
 
@@ -47,11 +47,11 @@ int	main(void)
 {
 	t_list	*test_list;
 
-	test_list = new("Follow ");
-	test_list->next = new("the ");
-	test_list->next->next = new("white ");
-	test_list->next->next->next = new("rabbit ");
-	test_list->next->next->next->next = new(".");
+	test_list = ft_new_elem("Follow ");
+	test_list->next = ft_new_elem("the ");
+	test_list->next->next = ft_new_elem("white ");
+	test_list->next->next->next = ft_new_elem("rabbit ");
+	test_list->next->next->next->next = ft_new_elem(".");
 	ft_list_foreach(test_list, (void *)ft_putstr);
 	ft_putstr("\n");
 	return (0);
