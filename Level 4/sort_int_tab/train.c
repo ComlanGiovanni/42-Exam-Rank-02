@@ -6,10 +6,9 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/12 15:15:00 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/14 01:45:35 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 void	sort_int_tab(int *tab, unsigned int size)
 {
@@ -29,6 +28,29 @@ void	sort_int_tab(int *tab, unsigned int size)
 		idx++;
 	}
 }
+/*
+void	ft_sort_int_tab(int *tab, int size)
+{
+	int	i;
+	int	swap;
+
+	while (size >= 0)
+	{
+		i = 0;
+		while (i < size - 1)
+		{
+			if (tab[i] > tab[i + 1])
+			{
+				swap = tab [i];
+				tab[i] = tab [i + 1];
+				tab [i + 1] = swap;
+			}
+			i++;
+		}
+		size--;
+	}
+}
+*/
 
 /*
 void    ft_swap(int *a, int *b)

@@ -11,7 +11,12 @@
         "cstdio": "c",
         "stdlib.h": "c",
         "ios": "c",
-        "flood_fill.H": "cpp"
+        "flood_fill.H": "cpp",
+        "__bit_reference": "c",
+        "algorithm": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "unordered_map": "c"
     },
     "cSpell.words": [
         "doublon",

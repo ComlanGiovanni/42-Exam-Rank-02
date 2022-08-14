@@ -6,11 +6,41 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/13 13:52:50 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/14 18:02:45 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <stddef.h>
 
+char	**ft_split(char *str)
+{
+	int		idx;
+	int		row;
+	int		colum;
+	char	**split;
+
+	idx = 0;
+	row = 0;
+	if (!(split = (char **)malloc(sizeof(char *) * 256)))
+		return (NULL);
+	while (str[idx] == ' ' || str[idx] == '\t' || str[idx] == '\n')
+		idx++;
+	while (str[idx])
+	{
+		colum = 0;
+		if (!(split[row] = (char *)malloc(sizeof(char) * 4092)))
+			return (NULL);
+		while (str[idx] != ' ' && str[idx] != '\t' && str[idx] != '\n')
+			split[row][colum++] = str[idx++];
+		while (str[idx] == ' ' || str[idx] == '\t' || str[idx] == '\n')
+			idx++;
+		split[row][colum] = '\0';
+		row++;
+	}
+	split[row] = NULL;
+	return (split);
+}
 
 #include <stdio.h>
 
@@ -20,8 +50,8 @@ int	main(void)
 	char	**tab;
 
 	idx = 0;
-	tab = ft_split("The prophecy is true");
-	while (idx < 4)
+	tab = ft_split("    The prophecy i s 	true lol 		   ici");
+	while (idx < 7)
 	{
 		printf("String %d : %s\n", idx, tab[idx]);
 		idx++;
