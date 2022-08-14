@@ -6,28 +6,24 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/14 00:40:57 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/14 20:57:39 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "list.h"
 
-/*
-void	ft_swap(int *num1, int *num2)
+void	ft_swap(int *a, int *b)
 {
-	int	temp;
+	int	tmp;
 
-	temp = *num1;
-	*num1 = *num2;
-	*num2 = temp;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
-ft_swap(&lst->data, &lst->next->data);
-*/
 
 t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 {
-	int		swap;
 	t_list	*tmp;
 
 	tmp = lst;
@@ -35,9 +31,7 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 	{
 		if (((*cmp)(lst->data, lst->next->data)) == 0)
 		{
-			swap = lst->data;
-			lst->data = lst->next->data;
-			lst->next->data = swap;
+			ft_swap(&lst->data, &lst->next->data);
 			lst = tmp;
 		}
 		else
@@ -96,14 +90,14 @@ void	ft_list_foreach_space(t_list *begin_list, void (*f)(int))
 
 int	main(void)
 {
-	t_list *test_list;
+	t_list	*test_list;
 
 	test_list = ft_new_elem(42);
 	test_list->next = ft_new_elem(666);
 	test_list->next->next = ft_new_elem(69);
 	test_list->next->next->next = ft_new_elem(420);
 	test_list->next->next->next->next = ft_new_elem(669);
-	test_list->next->next->next->next->next = ft_new_elem(24);
+	test_list->next->next->next->next->next = ft_new_elem(42);
 	test_list->next->next->next->next->next->next = ft_new_elem(0);
 	ft_list_foreach_space(test_list, (void *)ft_putnbr);
 	sort_list(test_list, ascending);
