@@ -21,15 +21,6 @@
 	68 Assigment in total. All main in train.c of each one.
 
 						Good Luck 🍀
-
-	If
-		bugs
-			error
-				infinite loop
-					bad fct
-						better way to do things
-							norme error
-								just make a pull request ❤️
 ```
 
 <details>
