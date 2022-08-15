@@ -33,22 +33,8 @@
 ```
 
 <details>
-<summary>Usefull link</summary>
-https://github.com/JCluzet/42_GradeMe
-
-https://github.com/Binary-Hackers/42_Subjects
-
-https://github.com/48d31kh413k/1337-Piscine-42
-
-https://github.com/luta-wolf/42-examrank
-
-https://github.com/barimehdi77/42-piscine-exam
-
-https://github.com/jraleman/42.Exam-C
-
-https://github.com/fwuensche/42-exam-miner
-
-https://github.com/pasqualerossi/42-School-Exam-Rank-02
+<summary>If bugs error infinite loop bad fct better way to do things norme error</summary>
+Just make a pull request ❤️
 </details>
 
 
