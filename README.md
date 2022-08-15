@@ -14,17 +14,18 @@
 /* ************************************************************************** */
 ```
 
+//	The exam has 4 random question picked from each level.
+//	You need to validate the 4 question to get 100.
+//	Eache time to fail the exam you restart at level 1.
+//	There is no Norminette in the exam.
+// 	All the solution of the repo are normed.
+// 	There are some short version not norm in comment.
+//	Take your time to read carefully the subject.en.txt
+
 ----
-- The exam has 4 random question picked from each level.
-- You need to validate the 4 question to get 100.
-- Eache time to fail the exam you restart at level 1.
-- There is no Norminette in the exam.
-- All the solution of the repo are normed.
-- There are some short version not norm in comment.
-- Take your time to read carefully the subject.en.txt
 
 <details>
-<summary>Ascii (Soon)</summary>
+<summary>Ascii && other</summary>
 ## DIGIT
 0 (48) 1 (49) 2 (50) 3 (51) 4 (52) 5 (53) 6 (54) 7 (55) 8 (56) 9 (57)
 
@@ -50,10 +51,6 @@ Carriage return '\r' (13)
 str[idx] += 32; put in lowecase
 str[idx] -= 32; put in upercase
 
-</details>
-
-<details>
-<summary>Other (Soon)</summary>
 printf - > #include <stdio.h>
 malloc - > #include <stdlib.h>
 NULL && size_t -> #include <stddef.h>
@@ -81,6 +78,7 @@ argument vector table
 
 argc -> argument cunt eauql
 argv -> argument vector
+
 </details>
 
 https://github.com/JCluzet/42_GradeMe
