@@ -54,4 +54,4 @@ https://github.com/pasqualerossi/42-School-Exam-Rank-02
 
 <h1 align="center"> Acknowledgments </h1>
 
-* [Grademe](https://github.com/JCluzet/42_GradeMe) - [42 Binary Hackers](https://github.com/Binary-Hackers/42_Subjects) - [1337 Piscine Exam](https://github.com/48d31kh413k/1337-Piscine-42) - [Luta Wolf Exam](https://github.com/luta-wolf/42-examrank) - [barimehdi77 Piscine Exam](https://github.com/barimehdi77/42-piscine-exam) - [jraleman Exam](https://github.com/jraleman/42.Exam-C) - [Exam Miner](https://github.com/fwuensche/42-exam-miner) - [prossi Exam](https://github.com/pasqualerossi/42-School-Exam-Rank-02)
+* [Grademe](https://github.com/JCluzet/42_GradeMe) - [42 Binary Hackers](https://github.com/Binary-Hackers/42_Subjects) - [1337 Piscine Exam](https://github.com/48d31kh413k/1337-Piscine-42) - [Luta Wolf Exam](https://github.com/luta-wolf/42-examrank) - [barimehdi77 Exam](https://github.com/barimehdi77/42-piscine-exam) - [jraleman Exam](https://github.com/jraleman/42.Exam-C) - [Exam Miner](https://github.com/fwuensche/42-exam-miner) - [prossi Exam](https://github.com/pasqualerossi/42-School-Exam-Rank-02)
