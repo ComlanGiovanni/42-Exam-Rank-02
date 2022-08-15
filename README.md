@@ -12,7 +12,6 @@
 /*   Updated: 1900/01/01 00:00:01 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-```
 
 //	The exam has 4 random question picked from each level.
 //	You need to validate the 4 question to get 100.
@@ -21,6 +20,7 @@
 // 	All the solution of the repo are normed.
 // 	There are some short version not norm in comment.
 //	Take your time to read carefully the subject.en.txt
+```
 
 ----
 
