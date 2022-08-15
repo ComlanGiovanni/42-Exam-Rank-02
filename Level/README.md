@@ -1,28 +1,34 @@
 
+</details>
 
-| no | Level 1                | Level 2            | Level 3           | Level 4           |
+<details>
+<summary>Summary</summary>
+| *  | Level 1                | Level 2            | Level 3           | Level 4           |
 |----|------------------------|--------------------|-------------------|-------------------|
-| 1  | **first_word**         | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 2  | **ft_countdown**       | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 3  | **ft_print_numbers**   | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 4  | **ft_putstr**          | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 5  | **ft_strcpy**          | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 6  | **ft_strlen**          | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 7  | **ft_swap**            | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 8  | **hello**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 9  | **repeat_alpha**       | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 10 | **rev_print**          | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 11 | **rot_13**             | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 12 | **rotone**             | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 13 | **search_and_replace** | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 14 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 15 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 16 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 17 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 18 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 19 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-| 20 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
-
+| 0  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 1  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 2  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 3  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 4  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 5  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 6  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 7  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 8  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 9  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 10 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 11 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 12 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 13 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 14 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 15 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 16 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 17 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 18 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 19 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 20 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 21 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 22 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+</details>
 
 <details>
 <summary>Ascii && other</summary>
