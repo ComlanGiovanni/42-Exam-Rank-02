@@ -5,7 +5,7 @@
 		- Each time to fail the exam you restart at level 1.
 		- There is no Norminette in the exam.
 		- All the solution of the repo are normed(v3).
-		- 68 Assigment in total. All main in train.c of each one.
+		- 56 Assigment in total. All main in train.c of each one.
 ```
 	/* ************************************************************************** */
 	/*                                                                            */

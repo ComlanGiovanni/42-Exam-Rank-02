@@ -1,5 +1,5 @@
 ----
-## Table of Assignment
+## Table of 12 Assignment
 - [Level 1](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%201/)
 	+ [first_word](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%201/first_word)
 	+ [fizzbuzz](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%201/fizzbuzz)
