@@ -15,12 +15,22 @@
 	You need to validate the 4 question to get 100.
 	Eache time to fail the exam you restart at level 1.
 	There is no Norminette in the exam.
-	All the solution of the repo are normed.
+	All the solution of the repo are normed(v3).
 	There are some short version not norm in comment.
 	Take your time to read carefully the subject.en.txt.
 	68 Assigment in total. All main in train.c of each one.
 
 	Good Luck 🍀
+
+
+	If you found
+		bugs
+			error
+				infinite loop
+					bad fct
+						better way to do things
+							norme error
+								just make a pull request ❤️
 ```
 
 <details>
