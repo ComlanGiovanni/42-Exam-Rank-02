@@ -81,6 +81,8 @@ argv -> argument vector
 
 </details>
 
+<details>
+<summary>Usefull link</summary>
 https://github.com/JCluzet/42_GradeMe
 
 https://github.com/Binary-Hackers/42_Subjects
@@ -96,5 +98,5 @@ https://github.com/jraleman/42.Exam-C
 https://github.com/fwuensche/42-exam-miner
 
 https://github.com/pasqualerossi/42-School-Exam-Rank-02
-
+</details>
 ----
