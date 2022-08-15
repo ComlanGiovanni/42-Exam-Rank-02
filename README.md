@@ -1,6 +1,6 @@
 <img align="left" width="100" height="169" src="42_logo.png">
 
-- The exam has 4 random question picked from each level.
+* The exam has 4 random question picked from each level.
 - You need to validate the 4 question to get 100.
 - Each time to fail the exam you restart at level 1.
 - There is no Norminette in the exam.
