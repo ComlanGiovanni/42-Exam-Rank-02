@@ -1,6 +1,6 @@
 
 
-| n  | Level 1                | Level 2            | Level 3           | Level 4           |
+| no | Level 1                | Level 2            | Level 3           | Level 4           |
 |----|------------------------|--------------------|-------------------|-------------------|
 | 1  | **first_word**         | :white_check_mark: |:white_check_mark: |:white_check_mark: |
 | 2  | **ft_countdown**       | :white_check_mark: |:white_check_mark: |:white_check_mark: |
@@ -16,6 +16,12 @@
 | 12 | **rotone**             | :white_check_mark: |:white_check_mark: |:white_check_mark: |
 | 13 | **search_and_replace** | :white_check_mark: |:white_check_mark: |:white_check_mark: |
 | 14 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 15 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 16 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 17 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 18 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 19 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 20 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
 
 
 <details>
