@@ -13,13 +13,15 @@
 	/*                                                                            */
 	/* ************************************************************************** */
 
-	/*	The exam has 4 random question picked from each level.				*/
-	/*	You need to validate the 4 question to get 100.	*/
-	/*	Eache time to fail the exam you restart at level 1.	*/
-	/*	There is no Norminette in the exam.	*/
-	/* 	All the solution of the repo are normed.	 */
-	/* 	There are some short version not norm in comment.	*/
-	/*	Take your time to read carefully the subject.en.txt	 */
+	The exam has 4 random question picked from each level.
+	You need to validate the 4 question to get 100.
+	Eache time to fail the exam you restart at level 1.
+	There is no Norminette in the exam.
+	All the solution of the repo are normed.
+	There are some short version not norm in comment.
+	Take your time to read carefully the subject.en.txt.
+
+	Good Luck 🍀
 ```
 
 ----
