@@ -16,13 +16,3 @@ Your function must be declared as follows:
 
 char    **ft_split(char *str);
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

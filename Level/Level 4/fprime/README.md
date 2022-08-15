@@ -36,13 +36,3 @@ $> ./fprime 42 21 | cat -e
 $
 
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

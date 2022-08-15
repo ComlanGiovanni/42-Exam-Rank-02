@@ -28,13 +28,3 @@ $>./hidenp | cat -e
 $
 $>
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

@@ -15,13 +15,3 @@ Your function must be declared as follows:
 
 void	ft_putstr(char *str);
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

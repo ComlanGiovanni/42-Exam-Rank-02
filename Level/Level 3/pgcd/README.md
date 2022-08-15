@@ -27,13 +27,3 @@ $> ./pgcd 17 3 | cat -e
 $> ./pgcd | cat -e
 $
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

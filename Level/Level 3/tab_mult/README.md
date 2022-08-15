@@ -40,13 +40,3 @@ $>./tab_mult | cat -e
 $
 $>
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

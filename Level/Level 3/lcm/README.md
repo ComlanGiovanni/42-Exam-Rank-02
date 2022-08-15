@@ -30,13 +30,3 @@ Your function must be prototyped as follows:
 
   unsigned int    lcm(unsigned int a, unsigned int b);
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

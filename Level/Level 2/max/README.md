@@ -17,13 +17,3 @@ The function returns the largest number found in the array.
 
 If the array is empty, the function returns 0.
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

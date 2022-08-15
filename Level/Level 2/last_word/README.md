@@ -27,13 +27,3 @@ $> ./last_word "  lorem,ipsum  " | cat -e
 lorem,ipsum$
 $>
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

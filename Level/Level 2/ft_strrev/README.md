@@ -15,13 +15,3 @@ Your function must be declared as follows:
 char    *ft_strrev(char *str);
 
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

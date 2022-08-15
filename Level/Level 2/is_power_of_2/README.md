@@ -14,13 +14,3 @@ Your function must be declared as follows:
 
 int	    is_power_of_2(unsigned int n);
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

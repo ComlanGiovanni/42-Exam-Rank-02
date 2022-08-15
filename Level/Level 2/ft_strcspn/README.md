@@ -13,13 +13,3 @@ The function should be prototyped as follows:
 
 size_t	ft_strcspn(const char *s, const char *reject);
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

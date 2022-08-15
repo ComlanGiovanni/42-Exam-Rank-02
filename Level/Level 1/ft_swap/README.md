@@ -13,13 +13,3 @@ Your function must be declared as follows:
 
 void	ft_swap(int *a, int *b);
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

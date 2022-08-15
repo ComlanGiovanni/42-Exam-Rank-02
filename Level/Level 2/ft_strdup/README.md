@@ -12,13 +12,3 @@ Your function must be declared as follows:
 
 char    *ft_strdup(char *src);
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

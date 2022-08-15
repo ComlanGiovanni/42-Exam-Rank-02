@@ -14,11 +14,3 @@ int	ft_strlen(char *str);
 ```
 
 ### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

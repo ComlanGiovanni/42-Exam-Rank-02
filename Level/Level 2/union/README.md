@@ -29,13 +29,3 @@ $>./union "rien" | cat -e
 $
 $>
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

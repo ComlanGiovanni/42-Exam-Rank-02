@@ -15,13 +15,3 @@ Your function must be declared as follows:
 
 int	ft_atoi(const char *str);
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

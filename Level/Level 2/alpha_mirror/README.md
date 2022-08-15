@@ -29,13 +29,3 @@ $>./alpha_mirror | cat -e
 $
 $>
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

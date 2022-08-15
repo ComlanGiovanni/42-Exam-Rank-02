@@ -22,13 +22,3 @@ _____________
      / \
  0001 | 0100
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

@@ -34,13 +34,3 @@ int ascending(int a, int b)
 	return (a <= b);
 }
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

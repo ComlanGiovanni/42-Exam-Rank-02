@@ -30,13 +30,3 @@ $> ./do_op "1" "+" "-43" | cat -e
 $> ./do_op | cat -e
 $
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

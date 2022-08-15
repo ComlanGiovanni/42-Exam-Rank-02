@@ -29,13 +29,3 @@ seconD tesT A littlE biT   moaR compleX$
      okay, thiS iS thE lasT 1239809147801 buT noT    thE leasT    T$
 $>
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

@@ -30,13 +30,3 @@ $>./rot_13 "" | cat -e
 $
 $>
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

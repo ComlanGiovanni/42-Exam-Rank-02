@@ -24,13 +24,3 @@ $>./camel_to_snake | cat -e
 $
 
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

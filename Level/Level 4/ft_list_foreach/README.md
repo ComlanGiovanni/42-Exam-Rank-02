@@ -26,13 +26,3 @@ typedef struct    s_list
     void          *data;
 }                 t_list;
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

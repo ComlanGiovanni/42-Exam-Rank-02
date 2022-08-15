@@ -17,13 +17,3 @@ Doubles must be preserved.
 
 Input is always coherent.
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

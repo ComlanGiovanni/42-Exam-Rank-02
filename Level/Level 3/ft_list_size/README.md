@@ -23,13 +23,3 @@ typedef struct    s_list
 }                 t_list;
 
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

@@ -21,13 +21,3 @@ $>./paramsum | cat -e
 0$
 $>
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

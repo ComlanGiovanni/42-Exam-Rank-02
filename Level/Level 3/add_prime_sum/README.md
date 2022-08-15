@@ -24,13 +24,3 @@ $>./add_prime_sum | cat -e
 0$
 $>
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

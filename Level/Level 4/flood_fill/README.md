@@ -85,15 +85,5 @@ F000F00F
 F00F000F
 F0FF000F
 FFF0000F
-$> 
+$>
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

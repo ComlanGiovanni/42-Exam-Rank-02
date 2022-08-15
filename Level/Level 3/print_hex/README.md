@@ -22,13 +22,3 @@ $> ./print_hex "5156454" | cat -e
 $> ./print_hex | cat -e
 $
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--

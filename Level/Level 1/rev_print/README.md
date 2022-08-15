@@ -21,13 +21,3 @@ $> ./rev_print | cat -e
 $
 
 ```
-
-### Algorithm
-
-- Soon
-- Soon
-	- Soon
-	- Soon
-		- Soon
-	- Soon
--
