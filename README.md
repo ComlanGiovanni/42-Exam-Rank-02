@@ -23,7 +23,7 @@
 	Good Luck 🍀
 
 
-	If you found
+	If
 		bugs
 			error
 				infinite loop
