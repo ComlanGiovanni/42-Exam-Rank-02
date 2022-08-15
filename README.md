@@ -13,7 +13,7 @@
 	/*                                                                            */
 	/* ************************************************************************** */
 
-	/*	The exam has 4 random question picked from each level.					*/
+	/*	The exam has 4 random question picked from each level.				*/
 	/*	You need to validate the 4 question to get 100.	*/
 	/*	Eache time to fail the exam you restart at level 1.	*/
 	/*	There is no Norminette in the exam.	*/
