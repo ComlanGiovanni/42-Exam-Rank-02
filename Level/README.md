@@ -2,7 +2,7 @@
 
 | n  | Level 1                | Level 2            | Level 3           | Level 4           |
 |----|------------------------|--------------------|-------------------|-------------------|
-| 1  | **first_word**         | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 1  | [first_word](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%201/first_word)         | :white_check_mark: |:white_check_mark: |:white_check_mark: |
 | 2  | **ft_countdown**       | :white_check_mark: |:white_check_mark: |:white_check_mark: |
 | 3  | **ft_print_numbers**   | :white_check_mark: |:white_check_mark: |:white_check_mark: |
 | 4  | **ft_putstr**          | :white_check_mark: |:white_check_mark: |:white_check_mark: |
