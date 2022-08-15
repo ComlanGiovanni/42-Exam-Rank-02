@@ -28,6 +28,7 @@
 Just make a pull request ❤️
 </details>
 
+![42](img/42_logo.png)
 
 <h1 align="center"> Acknowledgments </h1>
 
