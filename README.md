@@ -24,7 +24,7 @@
 ```
 
 <details>
-<summary>If bugs error infinite loop bad fct better way to do things norme error</summary>
+<summary>If bugs, error, infinite loop, bad fct, better way to do things,, norme error,</summary>
 Just make a pull request ❤️
 </details>
 
