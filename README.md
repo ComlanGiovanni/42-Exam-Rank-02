@@ -21,9 +21,11 @@
 ```
 Good Luck 🍀
 <details>
-<summary>If bugs, error, infinite loop, bad fct, better way to do things,, norme error,</summary>
-			Don't Panic. Just make a pull request ❤️
+<summary></summary>
+Good Luck 🍀
 </details>
+
+If bugs, error, infinite loop, bad fct, better way to do things,, norme error, Don't Panic. Just make a pull request ❤️
 
 <h1 align="center"> Acknowledgments </h1>
 
