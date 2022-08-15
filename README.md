@@ -1,26 +1,36 @@
-# Seishin_to_toki_no_heya
-Spirit and Time Chamber
+# 42 Exam Rank 02
 
+```
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   42_Exam_Rank_02.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 1999/01/01 23:59:59 by gcomlan           #+#    #+#             */
+/*   Updated: 1900/01/01 00:00:01 by gcomlan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+```
 
-The solutions to 42's exam exercises
+----
+### Suject && solutions to 42 Exam Rank 02 (68 fct)
+	- 2022 Version
 
-# Exam Details
+# The exam has 4 random question picked from each level.
+# You need to validate the 4 question to get 100.
+# Eache time to fail the exam you restart at level 1.
+# There is no Norminette in the exam.
 
-The exam has 4 questions total. A random question is picked from each level below. If you fail the exam, you will restart at Level 1 again, when you retake the exam next time.
+# All the solution of the repo are normed.
+# There are some short version not norm in comment.
+----
 
-# Norminette
+# Take your time to read carefully the subject.en.txt
 
-There is no Norminette in the exam.
-
-All the fct of the repo are normed
-
-Take your time to read carefully the subject.en.txt file
-read it 3 time trust me read it 3 time
-
-Good luck in The exams
-
-# Asccii
-
+<details>
+<summary>Ascii</summary>
 ## DIGIT
 0 (48) 1 (49) 2 (50) 3 (51) 4 (52) 5 (53) 6 (54) 7 (55) 8 (56) 9 (57)
 
@@ -46,29 +56,10 @@ Carriage return '\r' (13)
 str[idx] += 32; put in lowecase
 str[idx] -= 32; put in upercase
 
-https://github.com/JCluzet/42_GradeMe
-https://grademe.fr/
+</details>
 
-## Functions
-
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-|		|		|		|		|		|		|		|
-
-
-## Not normed
-
-68 fct
-
+<details>
+<summary>Soon</summary>
 printf - > #include <stdio.h>
 malloc - > #include <stdlib.h>
 NULL && size_t -> #include <stddef.h>
@@ -96,8 +87,9 @@ argument vector table
 
 argc -> argument cunt eauql
 argv -> argument vector
+</details>
 
-
+https://github.com/JCluzet/42_GradeMe
 https://github.com/Binary-Hackers/42_Subjects
 https://github.com/48d31kh413k/1337-Piscine-42
 https://github.com/luta-wolf/42-examrank
@@ -106,4 +98,3 @@ https://github.com/jraleman/42.Exam-C
 https://github.com/fwuensche/42-exam-miner
 https://github.com/pasqualerossi/42-School-Exam-Rank-02
 
-42-Exam-Rank-02
