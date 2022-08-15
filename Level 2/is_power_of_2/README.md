@@ -1,33 +1,18 @@
 ## Subject
 
 ```
-Assignment name  : first_word
-Expected files   : first_word.c
-Allowed functions: write
+Assignment name  : is_power_of_2
+Expected files   : is_power_of_2.c
+Allowed functions: None
 --------------------------------------------------------------------------------
 
-Write a program that takes a string and displays its first word, followed by a
-newline.
+Write a function that determines if a given number is a power of 2.
 
-A word is a section of string delimited by spaces/tabs or by the start/end of
-the string.
+This function returns 1 if the given number is a power of 2, otherwise it returns 0.
 
-If the number of parameters is not 1, or if there are no words, simply display
-a newline.
+Your function must be declared as follows:
 
-Examples:
-
-$> ./first_word "FOR PONY" | cat -e
-FOR$
-$> ./first_word "this        ...    is sparta, then again, maybe    not" | cat -e
-this$
-$> ./first_word "   " | cat -e
-$
-$> ./first_word "a" "b" | cat -e
-$
-$> ./first_word "  lorem,ipsum  " | cat -e
-lorem,ipsum$
-$>
+int	    is_power_of_2(unsigned int n);
 ```
 
 ### Algorithm

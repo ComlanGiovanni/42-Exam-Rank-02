@@ -1,33 +1,16 @@
 ## Subject
 
 ```
-Assignment name  : first_word
-Expected files   : first_word.c
-Allowed functions: write
+Assignment name  : ft_strcmp
+Expected files   : ft_strcmp.c
+Allowed functions:
 --------------------------------------------------------------------------------
 
-Write a program that takes a string and displays its first word, followed by a
-newline.
+Reproduce the behavior of the function strcmp (man strcmp).
 
-A word is a section of string delimited by spaces/tabs or by the start/end of
-the string.
+Your function must be declared as follows:
 
-If the number of parameters is not 1, or if there are no words, simply display
-a newline.
-
-Examples:
-
-$> ./first_word "FOR PONY" | cat -e
-FOR$
-$> ./first_word "this        ...    is sparta, then again, maybe    not" | cat -e
-this$
-$> ./first_word "   " | cat -e
-$
-$> ./first_word "a" "b" | cat -e
-$
-$> ./first_word "  lorem,ipsum  " | cat -e
-lorem,ipsum$
-$>
+int    ft_strcmp(char *s1, char *s2);
 ```
 
 ### Algorithm

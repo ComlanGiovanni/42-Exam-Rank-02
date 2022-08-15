@@ -1,33 +1,32 @@
 ## Subject
 
 ```
-Assignment name  : first_word
-Expected files   : first_word.c
+Assignment name  : wdmatch
+Expected files   : wdmatch.c
 Allowed functions: write
 --------------------------------------------------------------------------------
 
-Write a program that takes a string and displays its first word, followed by a
-newline.
+Write a program that takes two strings and checks whether it's possible to
+write the first string with characters from the second string, while respecting
+the order in which these characters appear in the second string.
 
-A word is a section of string delimited by spaces/tabs or by the start/end of
-the string.
+If it's possible, the program displays the string, followed by a \n, otherwise
+it simply displays a \n.
 
-If the number of parameters is not 1, or if there are no words, simply display
-a newline.
+If the number of arguments is not 2, the program displays a \n.
 
 Examples:
 
-$> ./first_word "FOR PONY" | cat -e
-FOR$
-$> ./first_word "this        ...    is sparta, then again, maybe    not" | cat -e
-this$
-$> ./first_word "   " | cat -e
+$>./wdmatch "faya" "fgvvfdxcacpolhyghbreda" | cat -e
+faya$
+$>./wdmatch "faya" "fgvvfdxcacpolhyghbred" | cat -e
 $
-$> ./first_word "a" "b" | cat -e
+$>./wdmatch "quarante deux" "qfqfsudf arzgsayns tsregfdgs sjytdekuoixq " | cat -e
+quarante deux$
+$>./wdmatch "error" rrerrrfiiljdfxjyuifrrvcoojh | cat -e
 $
-$> ./first_word "  lorem,ipsum  " | cat -e
-lorem,ipsum$
-$>
+$>./wdmatch | cat -e
+$
 ```
 
 ### Algorithm

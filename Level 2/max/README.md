@@ -1,33 +1,21 @@
 ## Subject
 
 ```
-Assignment name  : first_word
-Expected files   : first_word.c
-Allowed functions: write
+Assignment name  : max
+Expected files   : max.c
+Allowed functions:
 --------------------------------------------------------------------------------
 
-Write a program that takes a string and displays its first word, followed by a
-newline.
+Write the following function:
 
-A word is a section of string delimited by spaces/tabs or by the start/end of
-the string.
+int		max(int* tab, unsigned int len);
 
-If the number of parameters is not 1, or if there are no words, simply display
-a newline.
+The first parameter is an array of int, the second is the number of elements in
+the array.
 
-Examples:
+The function returns the largest number found in the array.
 
-$> ./first_word "FOR PONY" | cat -e
-FOR$
-$> ./first_word "this        ...    is sparta, then again, maybe    not" | cat -e
-this$
-$> ./first_word "   " | cat -e
-$
-$> ./first_word "a" "b" | cat -e
-$
-$> ./first_word "  lorem,ipsum  " | cat -e
-lorem,ipsum$
-$>
+If the array is empty, the function returns 0.
 ```
 
 ### Algorithm

@@ -18,7 +18,7 @@
 	All the solution of the repo are normed.
 	There are some short version not norm in comment.
 	Take your time to read carefully the subject.en.txt.
-	68 Assigment in total.
+	68 Assigment in total. All main in train.c of each one.
 
 	Good Luck 🍀
 ```

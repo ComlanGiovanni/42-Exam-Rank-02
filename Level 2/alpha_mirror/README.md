@@ -1,32 +1,32 @@
 ## Subject
 
 ```
-Assignment name  : first_word
-Expected files   : first_word.c
+Assignment name  : alpha_mirror
+Expected files   : alpha_mirror.c
 Allowed functions: write
 --------------------------------------------------------------------------------
 
-Write a program that takes a string and displays its first word, followed by a
-newline.
+Write a program called alpha_mirror that takes a string and displays this string
+after replacing each alphabetical character by the opposite alphabetical
+character, followed by a newline.
 
-A word is a section of string delimited by spaces/tabs or by the start/end of
-the string.
+'a' becomes 'z', 'Z' becomes 'A'
+'d' becomes 'w', 'M' becomes 'N'
 
-If the number of parameters is not 1, or if there are no words, simply display
-a newline.
+and so on.
+
+Case is not changed.
+
+If the number of arguments is not 1, display only a newline.
 
 Examples:
 
-$> ./first_word "FOR PONY" | cat -e
-FOR$
-$> ./first_word "this        ...    is sparta, then again, maybe    not" | cat -e
-this$
-$> ./first_word "   " | cat -e
+$>./alpha_mirror "abc"
+zyx
+$>./alpha_mirror "My horse is Amazing." | cat -e
+Nb slihv rh Znzarmt.$
+$>./alpha_mirror | cat -e
 $
-$> ./first_word "a" "b" | cat -e
-$
-$> ./first_word "  lorem,ipsum  " | cat -e
-lorem,ipsum$
 $>
 ```
 

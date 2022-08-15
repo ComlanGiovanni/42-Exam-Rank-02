@@ -1,33 +1,28 @@
 ## Subject
 
 ```
-Assignment name  : first_word
-Expected files   : first_word.c
-Allowed functions: write
+Assignment name  : snake_to_camel
+Expected files   : snake_to_camel.c
+Allowed functions: malloc, free, realloc, write
 --------------------------------------------------------------------------------
 
-Write a program that takes a string and displays its first word, followed by a
-newline.
+Write a program that takes a single string in snake_case format
+and converts it into a string in lowerCamelCase format.
 
-A word is a section of string delimited by spaces/tabs or by the start/end of
-the string.
+A snake_case string is a string where each word is in lower case, separated by
+an underscore "_".
 
-If the number of parameters is not 1, or if there are no words, simply display
-a newline.
+A lowerCamelCase string is a string where each word begins with a capital letter
+except for the first one.
 
 Examples:
+$>./camel_to_snake "here_is_a_snake_case_word"
+hereIsASnakeCaseWord
+$>./camel_to_snake "hello_world" | cat -e
+helloWorld$
+$>./camel_to_snake | cat -e
+$
 
-$> ./first_word "FOR PONY" | cat -e
-FOR$
-$> ./first_word "this        ...    is sparta, then again, maybe    not" | cat -e
-this$
-$> ./first_word "   " | cat -e
-$
-$> ./first_word "a" "b" | cat -e
-$
-$> ./first_word "  lorem,ipsum  " | cat -e
-lorem,ipsum$
-$>
 ```
 
 ### Algorithm

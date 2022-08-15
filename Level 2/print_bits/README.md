@@ -1,33 +1,19 @@
 ## Subject
 
 ```
-Assignment name  : first_word
-Expected files   : first_word.c
+Assignment name  : print_bits
+Expected files   : print_bits.c
 Allowed functions: write
 --------------------------------------------------------------------------------
 
-Write a program that takes a string and displays its first word, followed by a
-newline.
+Write a function that takes a byte, and prints it in binary WITHOUT A NEWLINE
+AT THE END.
 
-A word is a section of string delimited by spaces/tabs or by the start/end of
-the string.
+Your function must be declared as follows:
 
-If the number of parameters is not 1, or if there are no words, simply display
-a newline.
+void	print_bits(unsigned char octet);
 
-Examples:
-
-$> ./first_word "FOR PONY" | cat -e
-FOR$
-$> ./first_word "this        ...    is sparta, then again, maybe    not" | cat -e
-this$
-$> ./first_word "   " | cat -e
-$
-$> ./first_word "a" "b" | cat -e
-$
-$> ./first_word "  lorem,ipsum  " | cat -e
-lorem,ipsum$
-$>
+Example, if you pass 2 to print_bits, it will print "00000010"
 ```
 
 ### Algorithm

@@ -1,33 +1,19 @@
 ## Subject
 
 ```
-Assignment name  : first_word
-Expected files   : first_word.c
-Allowed functions: write
+Assignment name  : ft_atoi
+Expected files   : ft_atoi.c
+Allowed functions: None
 --------------------------------------------------------------------------------
 
-Write a program that takes a string and displays its first word, followed by a
-newline.
+Write a function that converts the string argument str to an integer (type int)
+and returns it.
 
-A word is a section of string delimited by spaces/tabs or by the start/end of
-the string.
+It works much like the standard atoi(const char *str) function, see the man.
 
-If the number of parameters is not 1, or if there are no words, simply display
-a newline.
+Your function must be declared as follows:
 
-Examples:
-
-$> ./first_word "FOR PONY" | cat -e
-FOR$
-$> ./first_word "this        ...    is sparta, then again, maybe    not" | cat -e
-this$
-$> ./first_word "   " | cat -e
-$
-$> ./first_word "a" "b" | cat -e
-$
-$> ./first_word "  lorem,ipsum  " | cat -e
-lorem,ipsum$
-$>
+int	ft_atoi(const char *str);
 ```
 
 ### Algorithm

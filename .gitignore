@@ -51,6 +51,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# Personal
+
 .DS_Store
 a.out
 .vscode
