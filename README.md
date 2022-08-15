@@ -1,4 +1,4 @@
-# 42 Exam Rank 02
+# Suject && solutions to 42 Exam Rank 02 (68 fct) -2022-
 
 ```
 /* ************************************************************************** */
@@ -15,22 +15,16 @@
 ```
 
 ----
-### Suject && solutions to 42 Exam Rank 02 (68 fct)
-	- 2022 Version
-
-# The exam has 4 random question picked from each level.
-# You need to validate the 4 question to get 100.
-# Eache time to fail the exam you restart at level 1.
-# There is no Norminette in the exam.
-
-# All the solution of the repo are normed.
-# There are some short version not norm in comment.
-----
-
-# Take your time to read carefully the subject.en.txt
+- The exam has 4 random question picked from each level.
+- You need to validate the 4 question to get 100.
+- Eache time to fail the exam you restart at level 1.
+- There is no Norminette in the exam.
+- All the solution of the repo are normed.
+- There are some short version not norm in comment.
+- Take your time to read carefully the subject.en.txt
 
 <details>
-<summary>Ascii</summary>
+<summary>Ascii (Soon)</summary>
 ## DIGIT
 0 (48) 1 (49) 2 (50) 3 (51) 4 (52) 5 (53) 6 (54) 7 (55) 8 (56) 9 (57)
 
@@ -59,7 +53,7 @@ str[idx] -= 32; put in upercase
 </details>
 
 <details>
-<summary>Soon</summary>
+<summary>Other (Soon)</summary>
 printf - > #include <stdio.h>
 malloc - > #include <stdlib.h>
 NULL && size_t -> #include <stddef.h>
@@ -98,3 +92,4 @@ https://github.com/jraleman/42.Exam-C
 https://github.com/fwuensche/42-exam-miner
 https://github.com/pasqualerossi/42-School-Exam-Rank-02
 
+----
