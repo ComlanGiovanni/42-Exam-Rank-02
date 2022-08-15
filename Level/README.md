@@ -1,3 +1,23 @@
+
+
+| n  | Level 1                | Level 2            | Level 3           | Level 4           |
+|----|------------------------|--------------------|-------------------|-------------------|
+| 1  | **first_word**         | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 2  | **ft_countdown**       | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 3  | **ft_print_numbers**   | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 4  | **ft_putstr**          | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 5  | **ft_strcpy**          | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 6  | **ft_strlen**          | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 7  | **ft_swap**            | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 8  | **hello**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 9  | **repeat_alpha**       | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 10 | **rev_print**          | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 11 | **rot_13**             | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 12 | **rotone**             | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 13 | **search_and_replace** | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+| 14 | **ulstr**              | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+
+
 <details>
 <summary>Ascii && other</summary>
 
