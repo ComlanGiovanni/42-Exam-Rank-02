@@ -13,13 +13,13 @@
 	/*                                                                            */
 	/* ************************************************************************** */
 
-//	The exam has 4 random question picked from each level.
-//	You need to validate the 4 question to get 100.
-//	Eache time to fail the exam you restart at level 1.
-//	There is no Norminette in the exam.
-// 	All the solution of the repo are normed.
-// 	There are some short version not norm in comment.
-//	Take your time to read carefully the subject.en.txt
+	//	The exam has 4 random question picked from each level.
+	//	You need to validate the 4 question to get 100.
+	//	Eache time to fail the exam you restart at level 1.
+	//	There is no Norminette in the exam.
+	// 	All the solution of the repo are normed.
+	// 	There are some short version not norm in comment.
+	//	Take your time to read carefully the subject.en.txt
 ```
 
 ----
@@ -82,12 +82,19 @@ argv -> argument vector
 </details>
 
 https://github.com/JCluzet/42_GradeMe
+
 https://github.com/Binary-Hackers/42_Subjects
+
 https://github.com/48d31kh413k/1337-Piscine-42
+
 https://github.com/luta-wolf/42-examrank
+
 https://github.com/barimehdi77/42-piscine-exam
+
 https://github.com/jraleman/42.Exam-C
+
 https://github.com/fwuensche/42-exam-miner
+
 https://github.com/pasqualerossi/42-School-Exam-Rank-02
 
 ----
