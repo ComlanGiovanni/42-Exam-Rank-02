@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/13 14:18:10 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 01:17:28 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,41 @@ char	*ft_itoa(int n)
 	}
 	return (res);
 }
+
+/*
+
+git hub copilot idea
+char	*ft_itoa(int nbr)
+{
+	int		idx;
+	int		nbr_size;
+	char	*str;
+	int		sign;
+
+	idx = 0;
+	nbr_size = 0;
+	sign = 1;
+	if (nbr < 0)
+	{
+		sign = -1;
+		nbr_size++;
+	}
+	while (nbr / (sign * 10) > 0)
+	{
+		nbr_size++;
+		nbr = nbr / (sign * 10);
+	}
+	if (!(str = (char *)malloc(sizeof(char) * (nbr_size + 1))))
+		return (NULL);
+	str[nbr_size] = '\0';
+	while (nbr_size > 0)
+	{
+		str[nbr_size - 1] = (nbr * sign) + 48;
+		nbr = nbr / 10;
+		nbr_size--;
+	}
+	if (sign == -1)
+		str[0] = '-';
+	return (str);
+}
+*/
