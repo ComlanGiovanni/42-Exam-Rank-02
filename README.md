@@ -1,10 +1,10 @@
-# Suject && solutions to 42 Exam Rank 02 (68 fct) -2022-
+# Suject && Solution (68 fct)
 
 ```
 	/* ************************************************************************** */
 	/*                                                                            */
 	/*                                                        :::      ::::::::   */
-	/*   42_Exam_Rank_02.c                                  :+:      :+:    :+:   */
+	/*   42_Exam_Rank_02.c  (Version -> 2022)               :+:      :+:    :+:   */
 	/*                                                    +:+ +:+         +:+     */
 	/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 	/*                                                +#+#+#+#+#+   +#+           */
@@ -13,13 +13,13 @@
 	/*                                                                            */
 	/* ************************************************************************** */
 
-	//	The exam has 4 random question picked from each level.
-	//	You need to validate the 4 question to get 100.
-	//	Eache time to fail the exam you restart at level 1.
-	//	There is no Norminette in the exam.
-	// 	All the solution of the repo are normed.
-	// 	There are some short version not norm in comment.
-	//	Take your time to read carefully the subject.en.txt
+	/*	The exam has 4 random question picked from each level.					  */
+	/*	You need to validate the 4 question to get 100.					 		  */
+	/*	Eache time to fail the exam you restart at level 1.						  */
+	/*	There is no Norminette in the exam.										  */
+	/* 	All the solution of the repo are normed.								  */
+	/* 	There are some short version not norm in comment.						  */
+	/*	Take your time to read carefully the subject.en.txt						  */
 ```
 
 ----
