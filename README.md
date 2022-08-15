@@ -1,4 +1,4 @@
-![42](42_logo.png)
+![42](42_logo.png) 					Don't Panic.
 ```
 /* ************************************************************************** */
 /*                                                                            */
@@ -26,7 +26,7 @@
 
 <details>
 <summary>If bugs, error, infinite loop, bad fct, better way to do things,, norme error,</summary>
-Just make a pull request ❤️
+			Just make a pull request ❤️
 </details>
 
 <h1 align="center"> Acknowledgments </h1>
