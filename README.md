@@ -1,3 +1,4 @@
+![42](42_logo.png)
 ```
 /* ************************************************************************** */
 /*                                                                            */
@@ -27,8 +28,6 @@
 <summary>If bugs, error, infinite loop, bad fct, better way to do things,, norme error,</summary>
 Just make a pull request ❤️
 </details>
-
-![42](42_logo.png)
 
 <h1 align="center"> Acknowledgments </h1>
 
