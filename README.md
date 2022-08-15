@@ -23,8 +23,6 @@
 	Good Luck 🍀
 ```
 
-----
-
 <details>
 <summary>Ascii && other</summary>
 ## DIGIT
@@ -100,5 +98,3 @@ https://github.com/fwuensche/42-exam-miner
 
 https://github.com/pasqualerossi/42-School-Exam-Rank-02
 </details>
-
-----
