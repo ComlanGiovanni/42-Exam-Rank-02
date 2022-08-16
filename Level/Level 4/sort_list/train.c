@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 15:27:18 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 00:57:52 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 	tmp = lst;
 	while (lst->next != NULL)
 	{
-		if (((*cmp)(lst->data, lst->next->data)) == 0)
+		if ((*cmp)(lst->data, lst->next->data) == 0)
 		{
 			ft_swap(&lst->data, &lst->next->data);
 			lst = tmp;
@@ -40,6 +40,7 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 	lst = tmp;
 	return (lst);
 }
+
 /*
 #include <unistd.h>
 

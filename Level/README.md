@@ -35,6 +35,8 @@
 <details>
 <summary>Ascii && other</summary>
 
+<img align="left" width="1048" height="792" src="ascii.png">
+
 Make a table with same logic assignment
 
 ## DIGIT

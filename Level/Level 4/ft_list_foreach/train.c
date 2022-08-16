@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 15:28:09 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 00:51:04 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
 	while (begin_list != NULL)
 	{
-		if (begin_list->data != NULL)
+		if (begin_list->data)
 			(*f)(begin_list->data);
 		begin_list = begin_list->next;
 	}
 }
+
 /*
 #include <unistd.h>
 #include <stdlib.h>
