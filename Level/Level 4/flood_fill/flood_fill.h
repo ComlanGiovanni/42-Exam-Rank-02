@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flood_fill.H                                       :+:      :+:    :+:   */
+/*   flood_fill.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 23:49:12 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/15 20:03:16 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:31:49 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FLOOD_FILL
-# define FLOOD_FILL
+#ifndef FLOOD_FILL_H
+# define FLOOD_FILL_H
 
-typedef struct	s_point
+typedef struct s_point
 {
-	int			x;
-	int			y;
+	int	x;
+	int	y;
 }				t_point;
 
 #endif

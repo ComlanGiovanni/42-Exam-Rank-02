@@ -6,10 +6,9 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/11 19:23:25 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:40:36 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 /*
 #include <unistd.h>
@@ -68,6 +67,7 @@ void	print_memory(const void *addr, size_t size)
 	}
 }
 */
+
 /*
 #include <unistd.h>
 
@@ -160,13 +160,6 @@ void	print_memory(const void *addr, size_t size)
 }
 */
 
-
-
-
-
-
-
-
 /*
 #include <unistd.h>
 
@@ -181,7 +174,6 @@ int		main(void)
 	print_memory(tab, sizeof(tab));
 	return (0);
 }
-
 
 #include <unistd.h>
 

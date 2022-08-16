@@ -6,11 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/14 18:03:32 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:30:21 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+/*
 #include <stdlib.h>
 
 char	**ft_split(char *str)
@@ -41,7 +41,7 @@ char	**ft_split(char *str)
 	split[row] = NULL;
 	return (split);
 }
-
+*/
 #include <stdlib.h>
 
 int	ft_is_delimiter(char c)
@@ -115,6 +115,7 @@ char	**ft_split(char *str)
 	return (split);
 }
 
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -131,4 +132,5 @@ int	main(void)
 	}
 	return (0);
 }
-	//free if you want
+//free later
+*/

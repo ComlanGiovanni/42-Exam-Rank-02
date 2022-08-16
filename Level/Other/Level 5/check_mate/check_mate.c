@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 19:28:05 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/11 19:29:09 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:43:16 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,25 @@ int		check_mate(int ac, char **av)
 		return (0);
 	while (i < len)
 	{
-		if (m[b][i] == 'Q' || m[i][a] == 'Q' || m[b][i] == 'R' || m[i][a] == 'R')
+		if (m[b][i] == 'Q' || m[i][a] == 'Q'
+			|| m[b][i] == 'R' || m[i][a] == 'R')
 			return (0);
 		if (i < b)
 		{
-			if (i < a && (m[b - i - 1][a - i - 1] == 'B' || m[b - i - 1][a - i - 1] == 'Q') )
+			if (i < a && (m[b - i - 1][a - i - 1] == 'B'
+				|| m[b - i - 1][a - i - 1] == 'Q') )
 				return (0);
-			if (a + i < len && (m[b - i - 1][a + i + 1] == 'B' || m[b - i - 1][a + i + 1] == 'Q'))
+			if (a + i < len && (m[b - i - 1][a + i + 1] == 'B'
+				|| m[b - i - 1][a + i + 1] == 'Q'))
 				return (0);
 		}
 		if (b + i < len)
 		{
-			if (i < a && (m[b + i + 1] [a - i - 1] == 'B' || m[b + i + 1] [a - i - 1] == 'Q'))
+			if (i < a && (m[b + i + 1] [a - i - 1] == 'B'
+				|| m[b + i + 1] [a - i - 1] == 'Q'))
 				return (0);
-			if (a + i < len && (m[b + i + 1] [a + i + 1] == 'B' || m[b + i + 1] [a + i + 1] == 'Q' ))
+			if (a + i < len && (m[b + i + 1] [a + i + 1] == 'B'
+				|| m[b + i + 1] [a + i + 1] == 'Q' ))
 				return (0);
 		}
 		i++;

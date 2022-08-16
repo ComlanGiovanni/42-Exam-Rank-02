@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/11 13:56:47 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:33:03 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	*ft_range(int start, int end)
 	tab[idx] = start;
 	return (tab);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -69,3 +69,4 @@ int	main(void)
 	}
 	printf("\n");
 }
+*/

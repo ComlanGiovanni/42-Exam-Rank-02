@@ -6,10 +6,9 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 19:22:28 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/11 19:26:08 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:40:56 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 /*
 #include <unistd.h>
@@ -141,7 +140,6 @@ int 	main(int ac, char **argv)
 }
 */
 
-
 /*
 #include <unistd.h>
 
@@ -197,7 +195,6 @@ void	ft_options(int ac, char **av)
 	}
 	ft_putchar('\n');
 }
-
 
 int 	main(int ac, char **argv)
 {

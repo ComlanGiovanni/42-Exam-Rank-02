@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/11 19:11:13 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:33:58 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	*ft_rrange(int start, int end)
 	tab[idx] = start;
 	return (tab);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -69,9 +69,8 @@ int	main(void)
 	}
 	printf("\n");
 }
-
+*/
 /*
-
 #include <stdlib.h>
 
 int     absolute_value(int n)
@@ -105,13 +104,7 @@ int     *ft_rrange(int start, int end)
     }
     return (array);
 }
-
 */
-
-
-
-
-
 
 /*
 #include <stdlib.h>

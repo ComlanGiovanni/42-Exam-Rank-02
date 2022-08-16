@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/11 19:23:58 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:39:10 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int			main(int argc, char *argv[])
 	return (0);
 }
 */
-
 
 /*
 #include <unistd.h>
@@ -129,14 +128,6 @@ int		main(int ac, char **av)
 }
 
 */
-
-
-
-
-
-
-
-
 
 /*
 #include <unistd.h>

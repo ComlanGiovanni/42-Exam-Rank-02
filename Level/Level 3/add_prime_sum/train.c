@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/11 13:57:37 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:33:23 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	ft_small_putnbr(int nbr)
 		write(1, &digit_char, 1);
 	}
 }
-
 
 int	ft_is_prime(int nbr)
 {

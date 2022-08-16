@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/10 14:39:55 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:35:00 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	epur_str(char *str)
 	int	idx;
 
 	idx = 0;
-
 	while (str[idx] == ' ' || str[idx] == '\t')
 		idx++;
 	while (str[idx] != '\0')

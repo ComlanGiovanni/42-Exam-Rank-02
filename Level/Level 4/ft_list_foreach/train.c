@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/14 00:32:32 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:28:09 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 		begin_list = begin_list->next;
 	}
 }
-
+/*
 #include <unistd.h>
 #include <stdlib.h>
 
@@ -56,3 +56,4 @@ int	main(void)
 	ft_putstr("\n");
 	return (0);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/10 15:33:17 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:36:31 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	return (result * sign);
 }
 
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -50,3 +51,4 @@ int	main(void)
 	printf("%d\n", ft_atoi_base("E", 16));
 	return (0);
 }
+*/

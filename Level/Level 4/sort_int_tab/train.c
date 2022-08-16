@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/14 20:09:14 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:30:46 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	sort_int_tab(int *tab, unsigned int size)
 	}
 }
 
+/*
 #include <stdio.h>
 
 void	ft_print_tab_int(int *tab, unsigned int size)
@@ -80,3 +81,4 @@ int	main(void)
 }
 
 //bubble_sort
+*/

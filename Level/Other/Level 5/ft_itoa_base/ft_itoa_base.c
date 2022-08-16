@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:55:19 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/11 19:31:47 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 15:41:20 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int		main(int ac, char **av)//
 	return (1);//
 }
 */
-
 
 /*
 #include <stdlib.h>
@@ -86,7 +85,6 @@ char		*ft_itoa_base(int value, int base)
 	return (pointer);
 }
 */
-
 
 /*
 #include <stdlib.h>
@@ -167,7 +165,6 @@ char	*ft_itoa_base(int value, int base)
 	return (result);
 }
 */
-
 
 /*
 char	*ft_itoa_base(int value, int base)
