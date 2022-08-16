@@ -1,0 +1,18 @@
+Assignment name  : foobar
+Expected files   : foobar.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac justo ex.
+Pellentesque sodales magna et lorem lacinia feugiat. Donec sed interdum eros.
+Proin ac mattis metus, ut imperdiet purus. Quisque ut lectus non turpis lobortis
+suscipit et at dolor. Ut dignissim nibh ex, ut aliquam nulla faucibus mattis.
+Nulla leo tortor, aliquet sed nisi vitae, gravida bibendum orci. Morbi feugiat mi
+hendrerit nisi fringilla, eu bibendum elit ornare. followed by a \n.
+
+Example:
+
+$> ./foobar | cat -e
+$
+$> ./foobar "foobar 2" | cat -e
+A First Little Test$
