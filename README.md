@@ -9,7 +9,7 @@
 
 
  ![norminette](https://badgen.net/badge/Norminette/42-Norminette-v3-Passed/green?icon=github&label)
- [![Github all releases](https://img.shields.io/github/downloads/Naereen/StrapDown.js/total.svg)](https://github.com/ComlanGiovanni/42-Exam-Rank-02)
+[![Github All Releases](https://img.shields.io/github/downloads/ComlanGiovanni/https://github.com/ComlanGiovanni/42-Exam-Rank-02/total.svg)]()
 
 ```
 	/* ************************************************************************** */
