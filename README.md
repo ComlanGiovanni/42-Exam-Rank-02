@@ -7,7 +7,7 @@
 		- All the solution of the repo are normed(v3).
 		- 56 Assigment in total, all main in train.c of each one.
 
-![norminette](https://badgen.net/badge/icon/passed/green?icon=github&label)
+	![norminette](https://badgen.net/badge/icon/passed/green?icon=github&label)
 
 ```
 	/* ************************************************************************** */
