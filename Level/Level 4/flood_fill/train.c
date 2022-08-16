@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/14 00:13:16 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 14:51:30 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ void	flood_fill(char **tab, t_point size, t_point begin)
 	fill(tab, size, begin, tab[begin.y][begin.x]);
 }
 
+/*
 #include <stdlib.h>
 #include <stdio.h>
 
-char	**make_area(char** zone, t_point size)
+char	**make_area(char **zone, t_point size)
 {
 	char	**new;
 
@@ -76,4 +77,4 @@ int	main(void)
 	for (int i = 0; i < size.y; ++i)
 		printf("%s\n", area[i]);
 	return (0);
-}
+}*/
