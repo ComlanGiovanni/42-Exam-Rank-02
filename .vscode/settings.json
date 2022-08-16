@@ -16,7 +16,11 @@
         "algorithm": "c",
         "bitset": "c",
         "chrono": "c",
-        "unordered_map": "c"
+        "unordered_map": "c",
+        "__locale": "c",
+        "__string": "c",
+        "string": "c",
+        "string_view": "c"
     },
     "cSpell.words": [
         "doublon",
@@ -26,6 +30,7 @@
         "pgcd",
         "putnbr",
         "putstr",
+        "rostring",
         "ulstr"
     ]
 }
