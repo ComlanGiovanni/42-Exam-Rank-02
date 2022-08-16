@@ -8,7 +8,7 @@
 		- 56 Assigment in total, all main in train.c of each one.
 
 
- ![norminette](https://badgen.net/badge/Norminette/Norminette-V3-Passed/green?icon=github&label)
+ ![norminette](https://badgen.net/badge/Norminette/42-Norminette-v3-Passed/green?icon=github&label)
 
 ```
 	/* ************************************************************************** */
