@@ -7,7 +7,7 @@
 		- All the solution of the repo are normed(v3).
 		- 56 Assigment in total, all main in train.c of each one.
 
-![norminette](https://github.com/ComlanGiovanni/42-Exam-Rank-02/workflows/norminette.yml/badge.svg)
+![norminette](https://badgen.net/badge/hello/world/red?icon=twitter)
 
 ```
 	/* ************************************************************************** */
