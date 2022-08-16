@@ -3,6 +3,7 @@
 
 <details>
 <summary>Summary</summary>
+
 | *  | Level 1                | Level 2            | Level 3           | Level 4           |
 |----|------------------------|--------------------|-------------------|-------------------|
 | 0  | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
@@ -28,6 +29,7 @@
 | 20 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
 | 21 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
 | 22 | :white_check_mark:     | :white_check_mark: |:white_check_mark: |:white_check_mark: |
+
 </details>
 
 <details>
