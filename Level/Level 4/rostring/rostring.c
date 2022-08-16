@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 13:26:57 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/16 14:05:59 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,38 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	ft_blank(char c)
+int	is_space(char c)
 {
-	return (c == ' ' || c == '\t');
+	if ((c == ' ') || (c == '\t'))
+		return (1);
+	return (0);
 }
 
-void	ft_print_first_word(char *str, int space)
+void	ft_print_first_word(char *str, int begin_space)
 {
-	while (str[space] != '\0' && !ft_blank(str[space]))
-		ft_putchar(str[space++]);
+	while (str[begin_space] != '\0' && !is_space(str[begin_space]))
+	{
+		ft_putchar(str[begin_space]);
+		begin_space++;
+	}
 }
 
 void	rostring(char *str)
 {
-	int		idx;
-	int		space;
+	int	idx;
+	int	begin_space;
 
-	idx = 0;
-	while (str[idx] != '\0' && ft_blank(str[idx]))
-		idx++;
-	space = idx;
-	while (str[idx] != '\0' && !ft_blank(str[idx]))
+	begin_space = 0;
+	while (str[begin_space] != '\0' && is_space(str[begin_space]))
+		begin_space++;
+	idx = begin_space;
+	while (str[idx] != '\0' && !is_space(str[idx]))
 		idx++;
 	while (str[idx] != '\0')
 	{
-		if (str[idx] != '\0' && !ft_blank(str[idx]) && ft_blank(str[idx - 1]))
+		if (str[idx] != '\0' && !is_space(str[idx]) && is_space(str[idx - 1]))
 		{
-			while (str[idx] && !ft_blank(str[idx]))
+			while (str[idx] != '\0' && !is_space(str[idx]))
 			{
 				ft_putchar(str[idx]);
 				idx++;
@@ -52,7 +57,7 @@ void	rostring(char *str)
 		}
 		idx++;
 	}
-	ft_print_first_word(str, space);
+	ft_print_first_word(str, begin_space);
 }
 
 int	main(int argc, char **argv)
