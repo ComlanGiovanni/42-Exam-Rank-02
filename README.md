@@ -10,7 +10,7 @@
 
  ![main test](https://badgen.net/badge/main/Main-Test/red?icon=github&label)
  ![norminette](https://badgen.net/badge/Norminette/42-Norminette-v3-Passed/green?icon=github&label)
- ![clean code](https://badgen.net/badge/cleancode/Clean-code/blue?icon=github&label)
+ ![clean code](https://badgen.net/badge/clean-Code/Clean-Code/blue?icon=github&label)
 
 ```
 	/* ************************************************************************** */

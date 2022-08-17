@@ -124,10 +124,10 @@ void	ft_putchar(char c)
 	write (1, &c, 1);
 }
 
-
 Level 1 -> ft_strlen
 		-> ft_putstr
 		-> ft_swap
+		-> ft_strcmp
 
 probability exercice
 

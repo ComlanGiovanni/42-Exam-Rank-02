@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 20:05:45 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	check_doublon(int *ascii_tab, char c_str_2)
+void	check_ascii_tab(int *ascii_tab, char c_str_2)
 {
 	if (ascii_tab[(int)c_str_2] == 0)
 	{
@@ -40,13 +40,13 @@ void	ft_union(char *str_1, char *str_2)
 	idx = 0;
 	while (str_1[idx] != '\0')
 	{
-		check_doublon(ascii_tab, str_1[idx]);
+		check_ascii_tab(ascii_tab, str_1[idx]);
 		idx++;
 	}
 	idx = 0;
 	while (str_2[idx] != '\0')
 	{
-		check_doublon(ascii_tab, str_2[idx]);
+		check_ascii_tab(ascii_tab, str_2[idx]);
 		idx++;
 	}
 }
@@ -59,25 +59,8 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-/*
-void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t			idx;
-	unsigned char	*s;
+/*			Other short or long way to do
 
-	if (!b)
-		return (NULL);
-	idx = 0;
-	s = (unsigned char *)b;
-	while (idx < len)
-	{
-		s[idx] = c;
-		idx++;
-	}
-	return (s);
-}*/
-
-/*
 #include <unistd.h> // For write
 
 int		check_doubles2(char *str, char c)
@@ -136,6 +119,7 @@ int		main(int ac, char **av)
 	return (0);
 }
 
+// ||
 
 #include <unistd.h> // For write
 
@@ -175,4 +159,64 @@ int		main(int argc, char **argv)
 	write(1, "\n", 1);
 	return (0);
 }
+
+// ||
+
+#include <unistd.h> // For write
+
+int not_seen_before(char *s, int max_pos, char c)
+{
+	int	i;
+
+	i = -1;
+	while (++i < max_pos)
+		if (s[i] == c)
+			return (0);
+	return (1);
+}
+
+void ft_union(char *s1, char *s2)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (s1[++i])
+		if (not_seen_before(s1, i, s1[i]))
+			write(1, &s1[i], 1);
+	j = -1;
+	while (s2[++j])
+		if (not_seen_before(s1, i, s2[j]) & not_seen_before(s2, j, s2[j]))
+			write(1, &s2[j], 1);
+}
+
+int main(int ac, char **av)
+{
+	if (ac == 3)
+		ft_union(av[1], av[2]);
+	write(1, "\n", 1);
+	return (0);
+}
+
+// ||
+
+instead of looping in tab to pu 0 we can also ?
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			idx;
+	unsigned char	*s;
+
+	if (!b)
+		return (NULL);
+	idx = 0;
+	s = (unsigned char *)b;
+	while (idx < len)
+	{
+		s[idx] = c;
+		idx++;
+	}
+	return (s);
+}
+
 */
