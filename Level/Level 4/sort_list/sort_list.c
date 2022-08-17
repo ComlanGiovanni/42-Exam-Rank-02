@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/14 20:31:29 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 15:25:44 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 	return (lst);
 }
 
-/*
-#include <stdlib.h>
+/*	Other short or long way to do
+
 #include "list.h"
 
 t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
@@ -66,4 +66,5 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 	lst = tmp;
 	return (lst);
 }
+
 */

@@ -54,7 +54,6 @@ dkms.conf
 # Personal
 
 .DS_Store
-a.out
 .vscode
 .DS_Store
 .editorconfig

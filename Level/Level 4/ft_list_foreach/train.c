@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 00:51:04 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 15:25:17 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 	}
 }
 
-/*
-#include <unistd.h>
-#include <stdlib.h>
+/*		Main Test
+
+#include <unistd.h> // For write
+#include <stdlib.h> // For malloc
 
 void	ft_putstr(char *str)
 {
@@ -57,4 +58,6 @@ int	main(void)
 	ft_putstr("\n");
 	return (0);
 }
+//loop or tab iteration or as you want
+
 */

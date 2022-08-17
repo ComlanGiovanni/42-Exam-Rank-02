@@ -112,3 +112,26 @@ https://github.com/fwuensche/42-exam-miner
 
 https://github.com/pasqualerossi/42-School-Exam-Rank-02
 </details>
+
+
+<details>
+<summary>Same Exercice type</summary>
+
+linked list exercice
+
+Level 3 ->	ft_list_size
+
+Level 4 -> ft_list_foreach
+		->	ft_list_removoe_if
+		->	sort_list
+
+
+bit shift exerise
+
+Level 2 -> prints_bits
+		-> swap_bits
+		-> revere_bits
+
+
+
+</details>

@@ -6,14 +6,14 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 14:38:44 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/13 14:45:40 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 15:09:20 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIST_H
 # define FT_LIST_H
 
-# include <stddef.h>
+# include <stddef.h> // NULL || (void *)0
 
 typedef struct s_list
 {

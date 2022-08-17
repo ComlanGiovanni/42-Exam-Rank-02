@@ -6,11 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 18:07:28 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 15:27:42 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <unistd.h> // For printf
 
 void	ft_putchar(char c)
 {
@@ -27,65 +27,162 @@ void	print_bits(unsigned char octet)
 	mask = 1;
 	while (idx >= 0)
 	{
-		bit = ((octet >> idx) & mask) + '0';
+		bit = (((octet >> idx) & mask) + '0');
 		ft_putchar(bit);
 		idx--;
 	}
 }
 
-int	main(void)
-{
-	print_bits(2);
-	ft_putchar('\n');
-	return (0);
-}
+/*			Other short or long way to do
 
-/*
-#include <unistd.h>
+// ||
 
 void	print_bits(unsigned char octet)
 {
-	int shift = 7;
-	unsigned char mask = 1;
-	char out;
+	int				idx;
+	unsigned char	bit;
 
-	while (shift >= 0)
+	idx = 8;
+	while (idx--)
 	{
-		out = ((octet >> shift) & mask) + '0';
-		write(1, &out, 1);
-		--shift;
+		bit = ((octet >> idx & 1) + '0');
+		write(1, &bit, 1);
 	}
 }
 
-#if 0
-int	main(void)
-{
-	print_bits(2);
-	write(1, "\n", 1);
-}
-#endif
-
-
 #include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	print_bits(unsigned char octet)
 {
-	int i;
+	int	bit;
 
-	i = 128;
-	while (i > 0)
+	bit = 128;
+	while (bit > 0)
 	{
-		if (octet >= i)
+		if (octet >= bit)
 		{
-			write(1, "1", 1);
-			octet %= i;
-			i /= 2;
+			ft_putchar('1');
+			octet %= bit;
+			bit /= 2;
 		}
 		else
 		{
-			write(1, "0", 1);
-			i /= 2;
+			ft_putchar('0');
+			bit /= 2;
 		}
 	}
 }
+
+// ||
+
+#include <unistd.h>
+
+void	print_bits(unsigned char octet)
+{
+	int	bit;
+	int	oct;
+
+	bit = 128;
+	oct = octet;
+	while (bit > 0)
+	{
+		if (bit & oct)
+			write(1, "1", 1);
+		else
+			write(1, "0", 1);
+		bit >>= 1;
+	}
+}
+
+// ||
+
+#include <unistd.h>
+
+void	print_bits(unsigned char octet)
+{
+	int				idx;
+	unsigned char	mask;
+	unsigned char	bit;
+
+	idx = 7;
+	mask = 1;
+	while (idx >= 0)
+	{
+		bit = (((octet >> idx) & mask) + '0');
+		write(1, &bit, 1);
+		idx--;
+	}
+}
+
+// ||
+
+void	print_bits(unsigned char octet)
+{
+	int	bit;
+
+	bit = 128;
+	while (bit)
+	{
+		(octet & bit) ? write(1, "1", 1) : write(1, "0", 1);
+		bit = bit / 2;
+	}
+}
+
+// ||
+
+#include <unistd.h>
+
+void print_bits(unsigned char octet)
+{
+	int		bit;
+	char	c;
+
+	bit = 128;
+	while (bit > 0)
+	{
+		if (octet < bit)
+		{
+			c = '0';
+			bit = bit / 2;
+			write(1, &c, 1);
+		}
+		else
+		{
+			c = '1';
+			write(1, &c, 1);
+			octet = octet - bit;
+			bit = bit / 2;
+		}
+	}
+}
+
+// ||
+
+#include <unistd.h>
+
+void print_bits(unsigned char octet)
+{
+	int	bit;
+	int	oct;
+
+	bit = 128;
+	oct = octet;
+	while (bit != 0)
+	{
+		if (bit <= oct)
+		{
+			write(1, "1", 1);
+			oct = oct % bit;
+		}
+		else
+			write(1, "0", 1);
+		bit = bit / 2;
+	}
+}
+
 */

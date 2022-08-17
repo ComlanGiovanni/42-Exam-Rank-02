@@ -6,12 +6,12 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 01:13:42 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 15:25:26 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
-#include <stdlib.h>
+#include <stdlib.h> //For Free
 
 void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
@@ -30,8 +30,9 @@ void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 	ft_list_remove_if(&current->next, data_ref, cmp);
 }
 
-/*
-#include <unistd.h>
+/*		Other short or long way to do
+
+#include <unistd.h> //For Write
 
 void	ft_putstr(char *str)
 {
@@ -88,4 +89,5 @@ int	main(void)
 	ft_list_foreach(test_list, (void *)ft_putstr);
 	ft_putstr("\n");
 }
+
 */

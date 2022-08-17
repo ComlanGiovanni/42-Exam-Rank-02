@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 00:57:52 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 15:25:39 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,9 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 	return (lst);
 }
 
-/*
-#include <unistd.h>
+/*		Main Test
+
+#include <unistd.h> // For write
 
 void	ft_putchar(char c)
 {
@@ -107,4 +108,5 @@ int	main(void)
 	ft_putchar('\n');
 	return (0);
 }
+
 */
