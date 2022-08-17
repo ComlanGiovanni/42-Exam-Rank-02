@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 15:25:26 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 17:09:16 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 	ft_list_remove_if(&current->next, data_ref, cmp);
 }
 
-/*		Other short or long way to do
+/*		Main Test
 
-#include <unistd.h> //For Write
+#include <unistd.h> // For write //For Write
 
 void	ft_putstr(char *str)
 {

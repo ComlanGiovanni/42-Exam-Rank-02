@@ -6,11 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:11:35 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/08 16:36:19 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	ft_putstr(char *str)
 {

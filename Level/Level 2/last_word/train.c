@@ -6,11 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 16:34:37 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	ft_putchar(char c)
 {
@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 }
 
 /*
-#include <unistd.h>
+#include <unistd.h> // For write
 
 int		main(int ac, char **av)
 {

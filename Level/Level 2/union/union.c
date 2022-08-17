@@ -6,11 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 12:45:20 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	ft_putchar(char c)
 {
@@ -78,7 +78,7 @@ void	*ft_memset(void *b, int c, size_t len)
 }*/
 
 /*
-#include <unistd.h>
+#include <unistd.h> // For write
 
 int		check_doubles2(char *str, char c)
 {
@@ -137,7 +137,7 @@ int		main(int ac, char **av)
 }
 
 
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	print_union(char *a, char *b)
 {

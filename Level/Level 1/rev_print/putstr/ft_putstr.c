@@ -6,11 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 23:14:06 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 13:42:04 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 16:56:25 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	ft_putstr(char *str)
 {
@@ -24,14 +24,14 @@ void	ft_putstr(char *str)
 	}
 }
 
-/*
+/*		Other short or long way to do
 void	ft_putstr(char *str)
 {
 	while (*str)
 		write(1, str++, 1);
 }
 
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	ft_putstr(char *str)
 {
@@ -41,7 +41,7 @@ void	ft_putstr(char *str)
 		write(1, &str[i], 1);
 }
 
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	ft_putstr(char *str)
 {
@@ -52,7 +52,7 @@ void	ft_putstr(char *str)
 	}
 }
 
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	ft_putstr(char *str)
 {

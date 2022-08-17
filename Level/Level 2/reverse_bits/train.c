@@ -6,11 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:33:35 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:06:48 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For Write
+#include <unistd.h> // For write // For Write
 
 void	ft_putchar(char c)
 {
@@ -48,7 +48,7 @@ unsigned char	reverse_bits(unsigned char octet)
 	return (bit);
 }
 
-/*	Main Test */
+/*	Main Test
 
 int	main(void)
 {
@@ -57,3 +57,5 @@ int	main(void)
 	print_bits(reverse_bits(2));
 	ft_putchar('\n');
 }
+
+*/

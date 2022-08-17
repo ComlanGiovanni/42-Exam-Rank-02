@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 15:46:38 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 17:09:34 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 		list_ptr = list_ptr->next;
 	}
 }
-
 
 // ||
 

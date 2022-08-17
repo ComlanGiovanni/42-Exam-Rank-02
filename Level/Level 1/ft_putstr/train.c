@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_wstr.c                                         :+:      :+:    :+:   */
+/*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/08/17 13:40:07 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/17 17:20:21 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,42 +17,35 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	is_space(char c)
-{
-	if ((c == ' ') || (c == '\t'))
-		return (1);
-	return (0);
-}
-
-void	rev_wstr(char *str)
+void	ft_putstr(char *str)
 {
 	int	idx;
-	int	j;
-	int	first_word;
 
+	if (str == ((void *) 0))
+		return ;
 	idx = 0;
-	first_word = 1;
 	while (str[idx] != '\0')
-		idx++;
-	while (idx >= 0)
 	{
-		while (idx >= 0 && (str[idx] == '\0' || is_space(str[idx])))
-			idx--;
-		j = idx;
-		while (j >= 0 && !is_space(str[j]))
-			j--;
-		if (first_word == 0)
-			ft_putchar(' ');
-		write(1, str + j + 1, idx - j);
-		first_word = 0;
-		idx = j;
+		ft_putchar(str[idx]);
+		idx++;
 	}
 }
 
+/*		MAIN Test
+
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
-		rev_wstr(argv[1]);
-	ft_putchar('\n');
+	if (argc > 1)
+	{
+		while (argc > 0)
+		{
+			ft_putstr(argv[argc - 1]);
+			ft_putchar(10);
+			argc--;
+		}
+	}
+	ft_putstr(NULL);
 	return (0);
 }
+
+*/

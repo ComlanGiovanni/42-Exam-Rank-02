@@ -6,16 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:07:18 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-(octet >> 0) = 11101010
-    & 1      = 00000001
-*/
-
-#include <unistd.h>
+#include <unistd.h> // For write // For write
 
 void	ft_putchar(char c)
 {

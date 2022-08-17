@@ -6,12 +6,12 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 00:27:38 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/09 19:04:16 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	ft_putchar(char c)
 {
@@ -42,7 +42,7 @@ int		main(int ac, char **av)
 }
 */
 
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	ft_putchar(char c)
 {
@@ -80,7 +80,7 @@ int	main(int argc, char **argv)
 }
 
 /*
-#include <unistd.h>
+#include <unistd.h> // For write
 
 void	ft_putchar(char c)
 {

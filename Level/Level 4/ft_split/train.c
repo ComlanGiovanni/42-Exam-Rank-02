@@ -6,13 +6,13 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 15:29:32 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 16:47:40 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 #include <stdlib.h>
-#include <stddef.h>
+#include <stddef.h> // For NULL || (void *)0 || 0
 
 char	**ft_split(char *str)
 {

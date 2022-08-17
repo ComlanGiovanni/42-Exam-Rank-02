@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   train.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 00:13:42 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2022/07/22 23:14:06 by gcomlan           #+#    #+#             */
+/*   Updated: 2022/08/17 17:13:35 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,41 +24,62 @@ void	ft_putstr(char *str)
 	idx = 0;
 	while (str[idx] != '\0')
 	{
+		ft_putchar(str[idx]);
+		idx++;
+	}
+}
+
+/*		Other short or long way to do
+
+void	ft_putstr(char *str)
+{
+	int	idx;
+
+	idx = 0;
+	while (str[idx] != '\0')
+	{
 		write(1, &str[idx], 1);
 		idx++;
 	}
 }
 
-char	*ft_strcpy(char *s1, char *s2)
+void	ft_putstr(char *str)
+{
+	while (*str)
+		write(1, str++, 1);
+}
+
+#include <unistd.h> // For write
+
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
+	{
+		write(1, str, 1);
+		str++;
+	}
+}
+
+#include <unistd.h> // For write
+
+void	ft_putstr(char *str)
 {
 	int	idx;
 
 	idx = 0;
-	while (s2[idx] != '\0')
-	{
-		s1[idx] = s2[idx];
-		idx++;
-	}
-	return (s1);
+	while (str[idx])
+		write(1, &str[idx++], 1);
 }
 
-int	main(void)
+#include <unistd.h> // For write
+
+void	ft_putstr(char *str)
 {
-	char	dest[5];
-	char	src[5];
+	int	idx;
 
-	dest[0] = '1';
-	dest[1] = '2';
-	dest[2] = '3';
-	dest[3] = '\n';
-	src[4] = '\n';
-	src[0] = 'A';
-	src[1] = 'B';
-	src[2] = 'C';
-	src[3] = '\n';
-	src[4] = '\0';
-	ft_putstr(dest);
-	ft_strcpy(dest, src);
-	ft_putstr(dest);
-	return (0);
+	idx = -1;
+	while (str[idx++])
+		write(1, &str[idx], 1);
 }
+
+*/

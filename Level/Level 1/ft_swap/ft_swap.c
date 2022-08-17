@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 23:03:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/12 14:58:15 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 17:26:30 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,16 @@ void	ft_swap(int *a, int *b)
 	*b = *a;
 	*a = tmp;
 }
+
+/*
+void	ft_swap(int *a, int *b)
+{
+	int	tmp;
+
+	if (a == ((void *)0) || b == ((void *)0))
+		return ;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+*/

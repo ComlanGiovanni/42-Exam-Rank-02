@@ -117,6 +117,24 @@ https://github.com/pasqualerossi/42-School-Exam-Rank-02
 <details>
 <summary>Same Exercice type</summary>
 
+Basic string manipulation
+
+void	ft_putchar(char c)
+{
+	write (1, &c, 1);
+}
+
+
+Level 1 -> ft_strlen
+		-> ft_putstr
+		-> ft_swap
+
+probability exercice
+
+
+	(exercice idea) ft_exclud.c
+
+
 linked list exercice
 
 Level 3 ->	ft_list_size
@@ -124,7 +142,6 @@ Level 3 ->	ft_list_size
 Level 4 -> ft_list_foreach
 		->	ft_list_removoe_if
 		->	sort_list
-
 
 bit shift exerise
 
