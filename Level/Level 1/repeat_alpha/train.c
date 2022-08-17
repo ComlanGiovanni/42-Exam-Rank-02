@@ -6,46 +6,36 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 21:50:56 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 22:51:36 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	repeat(char c, int pos)
-{
-	while (pos >= 0)
-	{
-		ft_putchar(c);
-		pos--;
-	}
-}
+#include <unistd.h>
 
 void	repeat_alpha(char *str)
 {
-	int	idx;
-	int	pos;
+	int	index;
+	int	alpha_index;
 
-	idx = 0;
-	pos = 0;
-	while (str[idx] != '\0')
+	index = 0;
+	alpha_index = 0;
+	while (str[index] != '\0')
 	{
-		if ((str[idx] >= 'A') && (str[idx] <= 'Z'))
+		if (str[index] >= 'A' && str[index] <= 'Z')
 		{
-			pos = (str[idx] - 'A');
-			repeat(str[idx], pos);
+			alpha_index = str[index] - 'A';
+			while (alpha_index-- >= 0)
+				write(1, &str[index], 1);
 		}
-		else if ((str[idx] >= 'a') && (str[idx] <= 'z'))
+		else if (str[index] >= 'a' && str[index] <= 'z')
 		{
-			pos = (str[idx] - 'a');
-			repeat(str[idx], pos);
+			alpha_index = str[index] - 'a';
+			while (alpha_index-- >= 0)
+				write(1, &str[index], 1);
 		}
-		idx++;
+		else
+			write(1, &str[index], 1);
+		index++;
 	}
 }
 
@@ -53,6 +43,6 @@ int	main(int argc, char **argv)
 {
 	if (argc == 2)
 		repeat_alpha(argv[1]);
-	ft_putchar('\n');
+	write(1, &"\n", 1);
 	return (0);
 }

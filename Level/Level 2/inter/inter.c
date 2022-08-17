@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:36:37 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 19:48:28 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/17 20:11:22 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,8 @@ int	check_doublon(char *str, char c, int pos)
 	return (1);
 }
 
+// ||
+
 void	inter(char *first, char *second)
 {
 	int	first_idx;
@@ -159,4 +161,85 @@ int	main(int argc, char **argv)
 	ft_putchar('\n');
 	return (0);
 }
+
+// ||
+
+#include <unistd.h>
+
+int	iter(char *str, char c, int len)
+{
+	int	idx;
+
+	idx = 0;
+	while (str[idx] && (idx < len || len == -1))
+		if (str[idx++] == c)
+			return (1);
+	return (0);
+}
+
+int	main(int argc, char *argv[])
+{
+	int	idx;
+
+	if (argc == 3)
+	{
+		idx = 0;
+		while (argv[1][idx])
+		{
+			if (!iter(argv[1], argv[1][idx], idx)
+				&& iter(argv[2], argv[1][idx], -1))
+				write(1, &argv[1][idx], 1);
+			idx += 1;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+// ||
+
+#include <unistd.h>
+
+int	scan(char *str, char c, int nb)
+{
+	while (nb >= 0)
+	{
+		if (str[nb] == c)
+			return (0);
+		nb--;
+	}
+	return (1);
+}
+
+void	inter(char *str1, char *str2)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (str1[i])
+	{
+		j = 0;
+		while (str2[j])
+		{
+			if (str1[i] == str2[j])
+			{
+				if (scan(str1, str1[i], i - 1))
+					write(1, &str1[i], 1);
+				break ;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+int main(int argc, char **argv)
+{
+	if (argc == 3)
+		inter(argv[1], argv[2]);
+	write(1, "\n", 1);
+	return (0);
+}
+
 */
