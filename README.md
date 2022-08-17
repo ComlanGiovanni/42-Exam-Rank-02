@@ -8,6 +8,7 @@
 		- 56 Assigment in total, all main in train.c of each one.
 
 
+ ![main test](https://badgen.net/badge/main/Main-Test/red?icon=github&label)
  ![norminette](https://badgen.net/badge/Norminette/42-Norminette-v3-Passed/green?icon=github&label)
  ![clean code](https://badgen.net/badge/cleancode/Clean-code/blue?icon=github&label)
 
