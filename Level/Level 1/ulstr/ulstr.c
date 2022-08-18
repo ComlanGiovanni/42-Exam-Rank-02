@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 14:49:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/18 12:40:05 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/18 14:22:34 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	ulstr(char *str)
 	while (str[idx] != '\0')
 	{
 		if ((str[idx] >= 'A') && (str[idx] <= 'Z'))
-			str[idx] += 32;
+			str[idx] += ' ';
 		else if ((str[idx] >= 'a') && (str[idx] <= 'z'))
-			str[idx] -= 32;
+			str[idx] -= ' ';
 		ft_putchar(str[idx]);
 		idx++;
 	}

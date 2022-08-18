@@ -6,58 +6,65 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 14:49:21 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/18 15:23:58 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <stdlib.h>	//For malloc
+#include <stdio.h>	//For printf
 
-int	len_nb(long nbr)
+int	length(long number)
 {
-	int	len;
+	int	length;
 
-	len = 0;
-	if (nbr == 0)
+	length = 0;
+	if (number == 0)
 		return (1);
-	if (nbr < 0)
-		len++;
-	while (nbr != 0)
+	if (number < 0)
 	{
-		nbr = nbr / 10;
-		len++;
+		number *= -1;
+		length++;
 	}
-	return (len);
+	while (number > 0)
+	{
+		number /= 10;
+		length++;
+	}
+	return (length);
 }
 
 char	*ft_itoa(int nbr)
 {
-	long	len;
-	long	tmp_len;
-	char	*res;
+	int		index;
+	long	number;
+	char	*string;
 
-	len = len_nb(nbr);
-	tmp_len = nbr;
-	if (nbr < 0)
-		tmp_len *= -1;
-	res = malloc(sizeof(char) * (len + 1));
-	if (!res)
+	number = nbr;
+	index = length(number);
+	string = ((char *)malloc(index + 1));
+	if (!string)
 		return (NULL);
-	res[len] = 0;
-	if (tmp_len == 0)
-		res[0] = '0';
+	string[index--] = '\0';
+	if (number == 0)
+		string[0] = '0';
 	else
 	{
-		while (len--, tmp_len != 0)
+		if (number < 0)
 		{
-			res[len] = (tmp_len % 10) + '0';
-			tmp_len = (tmp_len - (tmp_len % 10)) / 10;
+			string[0] = '-';
+			number *= -1;
 		}
-		if (nbr < 0)
-			res[len] = '-';
+		while (number > 0)
+		{
+			string[index] = (number % 10) + '0';
+			number /= 10;
+			index--;
+		}
 	}
-	return (res);
+	return (string);
 }
+
+
 
 int	main(void)
 {

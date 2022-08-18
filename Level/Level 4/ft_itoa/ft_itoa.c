@@ -6,12 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 14:48:19 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/18 14:23:53 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <stdlib.h>	//For malloc
 
 int	len_nb(long nbr)
 {
