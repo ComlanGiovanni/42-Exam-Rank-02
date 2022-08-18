@@ -28,5 +28,5 @@
 
 <details>
 <summary></summary>
-“First, solve the problem, write the code and then read it !”  – gcomlan
+“First, solve the problem, write the code and then read it. ”  – gcomlan	Good luck 💚
 </details>
