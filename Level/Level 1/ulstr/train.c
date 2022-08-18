@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 19:50:23 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/18 12:39:02 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/18 14:16:50 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,16 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	ft_tolower(int c)
+void	ft_tolower(int c)
 {
 	if ((c >= 'A') && (c <= 'Z'))
 		c += ' ';
-	return (c);
 }
 
-int	ft_toupper(int c)
+void	ft_toupper(int c)
 {
 	if ((c >= 'a') && (c <= 'z'))
 		c -= ' ';
-	return (c);
 }
 
 void	ft_ulstr(char *str)
@@ -38,10 +36,8 @@ void	ft_ulstr(char *str)
 	idx = 0;
 	while (str[idx] != '\0')
 	{
-		if ((str[idx] >= 'A') && (str[idx] <= 'Z'))
-			ft_tolower(str[idx]);
-		else if ((str[idx] >= 'a') && (str[idx] <= 'z'))
-			ft_toupper(str[idx]);
+		ft_tolower(str[idx]);
+		ft_toupper(str[idx]);
 		ft_putchar(str[idx]);
 		idx++;
 	}
