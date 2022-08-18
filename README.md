@@ -28,10 +28,12 @@
 
 <details>
 <summary>Good luck 💚</summary>
+
 ```
 Any fool can write code that a computer can understand.
 Good programmers write code that humans can understand,
 so if you want to go fast, if you want to get done quickly,
 if you want your code to be easy to write, make it easy to read.
 ```
+
 </details>
