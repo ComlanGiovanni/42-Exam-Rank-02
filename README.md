@@ -27,6 +27,6 @@
 ```
 
 <details>
-<summary></summary>
-“First, solve the problem, write the code and then read it. ”  – Comlan Giovanni	Good luck 💚
+<summary>Good luck 💚</summary>
+“First, solve the problem, write the code and then read it. ”  – Comlan Giovanni
 </details>
