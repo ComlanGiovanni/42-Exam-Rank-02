@@ -28,5 +28,5 @@
 
 <details>
 <summary>Good luck 💚</summary>
-“First, solve the problem, write the code and then read it. ”  – Comlan Giovanni
+Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.” — John Woods
 </details>
