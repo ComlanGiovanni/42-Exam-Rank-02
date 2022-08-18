@@ -12,6 +12,7 @@
  ![norminette](https://badgen.net/badge/Norminette/42-Norminette-v3-Passed/green?icon=github&label)
  ![clean code](https://badgen.net/badge/clean-Code/Clean-Code/blue?icon=github&label)
  ![Readable code](https://badgen.net/badge/Readable-code/Readable-code/white?icon=github&label)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter&count_bg=%237F827C&title_bg=%23555555&icon=datacamp.svg&icon_color=%23C8BCBC&title=views&edge_flat=false)](https://hits.seeyoufarm.com)
 
 ```
 	/* ************************************************************************** */
@@ -27,9 +28,9 @@
 	/* ************************************************************************** */
 ```
 
-If bugs, error, infinite loop, bad fct, better way to do things,, norme error, Don't Panic. Just make a pull request 💚
+If bugs, error, infinite loop, bad fct, better way to do things,, norme error, Don't Panic. Just make a pull request ! Good Luck 🍀💚
 
 <details>
 <summary></summary>
-Good Luck 🍀
+“Code is like humor. When you have to explain it, it’s bad.” – Cory House
 </details>
