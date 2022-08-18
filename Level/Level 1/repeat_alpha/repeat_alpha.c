@@ -6,7 +6,7 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 21:53:37 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 22:51:44 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/18 12:40:01 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-/*	Other short or long way to do
+/*		Other short or long way to do
 
 #include <unistd.h>
 

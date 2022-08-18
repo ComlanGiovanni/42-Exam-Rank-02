@@ -11,6 +11,7 @@
  ![main test](https://badgen.net/badge/main/Main-Test/red?icon=github&label)
  ![norminette](https://badgen.net/badge/Norminette/42-Norminette-v3-Passed/green?icon=github&label)
  ![clean code](https://badgen.net/badge/clean-Code/Clean-Code/blue?icon=github&label)
+ ![Readable code](https://badgen.net/badge/Readable-code/Readable-code/white?icon=github&label)
 
 ```
 	/* ************************************************************************** */
@@ -27,10 +28,6 @@
 ```
 
 If bugs, error, infinite loop, bad fct, better way to do things,, norme error, Don't Panic. Just make a pull request 💚
-
-<h1 align="center"> Acknowledgments </h1>
-
-* [Grademe](https://github.com/JCluzet/42_GradeMe) - [42 Binary Hackers](https://github.com/Binary-Hackers/42_Subjects) - [1337](https://github.com/48d31kh413k/1337-Piscine-42) - [Luta Wolf](https://github.com/luta-wolf/42-examrank) - [barimehdi77](https://github.com/barimehdi77/42-piscine-exam) - [jraleman](https://github.com/jraleman/42.Exam-C) - [Exam Miner](https://github.com/fwuensche/42-exam-miner) - [prossi Exam](https://github.com/pasqualerossi/42-School-Exam-Rank-02)
 
 <details>
 <summary></summary>
