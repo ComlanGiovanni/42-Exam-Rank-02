@@ -7,7 +7,6 @@
 		- All the solution of the repo are normed(v3).
 		- 56 Assigment in total, all main in train.c of each one.
 
-
  ![main test](https://badgen.net/badge/main/Main-Test/red?icon=github&label)
  ![norminette](https://badgen.net/badge/Norminette/42-Norminette-v3-Passed/green?icon=github&label)
  ![clean code](https://badgen.net/badge/clean-Code/Clean-Code/blue?icon=github&label)
@@ -27,8 +26,6 @@
 	/*                                                                            */
 	/* ************************************************************************** */
 ```
-
-If bugs, error, infinite loop, bad fct, better way to do things,, norme error, Don't Panic. Just make a pull request ! Good Luck 🍀💚
 
 <details>
 <summary></summary>
