@@ -6,11 +6,11 @@
 /*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:47:40 by gcomlan          ###   ########.fr       */
+/*   Updated: 2022/08/19 14:11:33 by gcomlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
+
 #include <stdlib.h>
 #include <stddef.h> // For NULL || (void *)0 || 0
 
@@ -59,4 +59,4 @@ int	main(void)
 	}
 	return (0);
 }
-*/
+
