@@ -43,8 +43,8 @@ Martin Fowler && Robert C. Martin
 
 <div align='right'>
 
-[@gcomlan](https://profile.intra.42.fr/users/gcomlan)
-
 [![gcomlan's 42 Exam Rank 02 Score](https://badge42.vercel.app/api/v2/cl4d7ypa5004009l93h57346v/project/2726502)](https://github.com/JaeSeoKim/badge42)
+
+[@gcomlan](https://profile.intra.42.fr/users/gcomlan)
 
 </div>
