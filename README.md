@@ -39,3 +39,5 @@ Martin Fowler && Robert C. Martin
 ```
 
 </details>
+
+[![gcomlan's 42 Exam Rank 02 Score](https://badge42.vercel.app/api/v2/cl4d7ypa5004009l93h57346v/project/2726502)](https://github.com/JaeSeoKim/badge42)
