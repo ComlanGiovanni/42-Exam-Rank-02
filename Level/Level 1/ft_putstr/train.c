@@ -3,49 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 13:40:07 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 17:20:21 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 16:49:19 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
+#include <unistd.h> // For write && STDOUT_FILENO
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write(STDOUT_FILENO, &c, 1);
 }
 
 void	ft_putstr(char *str)
 {
-	int	idx;
-
-	if (str == ((void *) 0))
+	if (str == ((void *)0))
 		return ;
-	idx = 0;
-	while (str[idx] != '\0')
-	{
-		ft_putchar(str[idx]);
-		idx++;
-	}
+	while (*str)
+		write(STDOUT_FILENO, str++, 1);
 }
-
-/*		MAIN Test
 
 int	main(int argc, char **argv)
 {
+	int	index;
+
+	index = 0;
 	if (argc > 1)
 	{
 		while (argc > 0)
 		{
-			ft_putstr(argv[argc - 1]);
-			ft_putchar(10);
+			ft_putstr(argv[index]);
+			ft_putchar('\n');
 			argc--;
+			index++;
 		}
 	}
 	ft_putstr(NULL);
 	return (0);
 }
-
-*/

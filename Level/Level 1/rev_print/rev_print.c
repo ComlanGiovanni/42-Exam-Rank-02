@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:07:47 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 16:50:32 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
+#include <unistd.h> // For write && STDOUT_FILENO
 
 void	ft_putchar(char c)
 {
-	write (1, &c, 1);
+	write (STDOUT_FILENO, &c, 1);
 }
 
 int	ft_strlen(char *str)

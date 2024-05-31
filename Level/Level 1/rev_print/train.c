@@ -3,71 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 00:27:38 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 16:45:51 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <unistd.h> // For write
+#include <unistd.h> // For write && STDOUT_FILENO
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
-}
-
-int		ft_strlen(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-int		main(int ac, char **av)
-{
-	int	len;
-
-	if (ac == 2)
-	{
-		len = ft_strlen(av[1]);
-		while (len--)
-			write(1, &av[1][len], 1);
-	}
-	ft_putchar('\n');
-}
-*/
-
-#include <unistd.h> // For write
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
+	write(STDOUT_FILENO, &c, 1);
 }
 
 int	ft_strlen(char *str)
 {
-	int	size;
+	char	*end_str_ptr;
 
-	size = 0;
-	while (str[size] != '\0')
-		size++;
-	return (size);
+	if (!str)
+		return (0);
+	end_str_ptr = str;
+	while (*end_str_ptr)
+		end_str_ptr++;
+	return (end_str_ptr - str);
 }
 
 void	rev_print(char *str)
 {
-	int	len;
+	int	idx;
 
-	len = ft_strlen(str) - 1;
-	while (len >= 0)
+	idx = ft_strlen(str);
+	while (idx >= 0)
 	{
-		ft_putchar(str[len]);
-		len--;
+		ft_putchar(str[idx]);
+		idx--;
 	}
 }
 
@@ -136,6 +106,39 @@ int	main(int argc, char **argv)
 {
 	if (argc == 2)
 		rev_print(argv[1]);
+	ft_putchar('\n');
+}
+
+//	||
+
+
+#include <unistd.h> // For write
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int	ft_strlen(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+int	main(int ac, char **av)
+{
+	int	len;
+
+	if (ac == 2)
+	{
+		len = ft_strlen(av[1]);
+		while (len--)
+			write(1, &av[1][len], 1);
+	}
 	ft_putchar('\n');
 }
 */

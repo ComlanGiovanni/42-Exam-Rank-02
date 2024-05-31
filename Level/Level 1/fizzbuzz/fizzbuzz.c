@@ -3,60 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   fizzbuzz.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:07:12 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 21:59:28 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 16:48:37 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <unistd.h> // For write && STDOUT_FILENO
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write(STDOUT_FILENO, &c, 1);
 }
 
 void	ft_putstr(char *str)
 {
 	while (*str)
-		write(1, str++, 1);
+		write(STDOUT_FILENO, str++, 1);
 }
 
-void	ft_small_put_nbr(int nbr)
+void	ft_small_put_nbr(int number)
 {
-	if (nbr > 9)
+	if (number > 9)
 	{
-		ft_small_put_nbr(nbr / 10);
-		ft_small_put_nbr(nbr % 10);
+		ft_small_put_nbr(number / 10);
+		ft_small_put_nbr(number % 10);
 	}
 	else
-		ft_putchar(nbr + '0');
+		ft_putchar(number + '0');
 }
 
-void	fizz_buzz(void)
+void	fizzbuzz(int start, int end)
 {
-	int	number;
-
-	number = 1;
-	while (number <= 100)
+	while (start <= end)
 	{
-		if (((number % 3) == 0) && ((number % 5) == 0))
+		if (((start % 3) == 0) && ((start % 5) == 0))
 			ft_putstr("fizzbuzz");
-		else if ((number % 3) == 0)
+		else if ((start % 3) == 0)
 			ft_putstr("fizz");
-		else if ((number % 5) == 0)
+		else if ((start % 5) == 0)
 			ft_putstr("buzz");
 		else
-			ft_small_put_nbr(number);
+			ft_small_put_nbr(start);
 		ft_putchar('\n');
-		number++;
+		start++;
 	}
 }
 
 int	main(void)
 {
-	fizz_buzz();
+	fizzbuzz(1, 100);
 	return (0);
 }
 
@@ -113,20 +110,22 @@ int	main(void)
 
 void	ft_write_number(int number)
 {
-	char	str[10] = "0123456789";
+	char	str[10];
 
+	str[10] = "0123456789";
 	if (number > 9)
 		ft_write_number(number / 10);
 	write (1, &str[number % 10], 1);
 }
 
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
 void	ft_write_number(int number)
 {
-	char	str[10] = "0123456789";
+	char	str[10];
 
+	str[10] = "0123456789";
 	if (number > 9)
 		ft_write_number(number / 10);
 	write (1, &str[number % 10], 1);
@@ -188,5 +187,62 @@ int	main(void)
 	}
 }
 
-*/
 
+
+// ||
+
+#include <unistd.h>
+
+#define FIZZ_BUZZ "fizzbuzz"
+#define FIZZ "fizz"
+#define BUZZ "buzz"
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+		write(1, str++, 1);
+}
+
+void	ft_small_put_nbr(int number)
+{
+	if (number > 9)
+	{
+		ft_small_put_nbr(number / 10);
+		ft_small_put_nbr(number % 10);
+	}
+	else
+		ft_putchar(number + '0');
+}
+
+void	fizz_buzz(int number)
+{
+	if (((number % 3) == 0) && (((number % 5) == 0)))
+		ft_putstr(FIZZ_BUZZ);
+	else if (((number % 3) == 0))
+		ft_putstr(FIZZ);
+	else if (((number % 5) == 0))
+		ft_putstr(BUZZ);
+	else
+		ft_small_put_nbr(number);
+	ft_putchar('\n');
+}
+
+void	fizz_buzz_recursive(int number, int limit)
+{
+	if (number > limit)
+		return ;
+	fizz_buzz(number);
+	fizz_buzz_recursive(number + 1, limit);
+}
+
+int	main(void)
+{
+	fizz_buzz_recursive(1, 100);
+	return (0);
+}
+*/

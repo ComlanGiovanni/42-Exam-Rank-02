@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 22:49:06 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 18:22:19 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 16:44:08 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,17 @@ int	ft_strlen(char	*str)
 	while (str[length])
 		length++;
 	return (length);
+}
+int	ft_strlen(char *str)
+{
+	int	index;
+
+	index = 0;
+	if (str == NULL)
+		return (0);
+	while (str[index] != '\0')
+		index++;
+	return (index);
 }
 
 int	ft_strlen(char	*str)
@@ -74,6 +85,18 @@ int	ft_strlen(char	*str)
 int ft_strlen(char *str)
 {
 	return(str && *str ? ft_strlen(str + 1) + 1 : 0);
+}
+
+int	ft_strlen(char *str)
+{
+	char	*end_str_ptr;
+
+	if (!str)
+		return (0);
+	end_str_ptr = str;
+	while (*end_str_ptr)
+		end_str_ptr++;
+	return (end_str_ptr - str);
 }
 
 int	ft_strlen(char *str)

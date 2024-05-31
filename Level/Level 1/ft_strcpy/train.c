@@ -3,43 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 00:13:42 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 22:28:43 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 16:50:05 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include <unistd.h> // For write && STDOUT_FILENO
 
 void	ft_putstr(char *str)
 {
-	int	idx;
-
-	idx = 0;
-	while (str[idx] != '\0')
-	{
-		write(1, &str[idx], 1);
-		idx++;
-	}
+	while (*str)
+		write(STDOUT_FILENO, str++, 1);
 }
 
 char	*ft_strcpy(char *s1, char *s2)
 {
-	int	idx;
-
-	idx = 0;
-	while (s2[idx] != '\0')
-	{
-		s1[idx] = s2[idx];
-		idx++;
-	}
-	s1[idx] = '\0';
+	while (*s2)
+		*s1++ = *s2++;
+	*s1 = '\0';
 	return (s1);
 }
 

@@ -3,12 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   repeat_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 21:53:37 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/18 12:40:01 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 16:20:42 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h> // For write
+
+int	ft_isupper(int c)
+{
+	return ((c >= 'A') && (c <= 'Z'));
+}
+
+int	ft_isalpha(int c)
+{
+	return (ft_isupper(c) || ((c >= 'a') && (c <= 'z')));
+}
+
+void	repeat(char letter, int repeat_count)
+{
+	while (repeat_count-- >= 0)
+		write(STDOUT_FILENO, &letter, 1);
+}
+
+void	repeat_alpha(char *str)
+{
+	int	index;
+	int	position;
+
+	index = 0;
+	position = 0;
+	while (str[index] != '\0')
+	{
+		if (ft_isalpha(str[index]))
+		{
+			if (ft_isupper(str[index]))
+				position = str[index] - 'A';
+			else
+				position = str[index] - 'a';
+			repeat(str[index], position);
+		}
+		else
+			write(STDOUT_FILENO, &str[index], 1);
+		index++;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+		repeat_alpha(argv[1]);
+	write(STDOUT_FILENO, "\n", 1);
+	return (0);
+}
+
+/*		Other short or long way to do
 
 #include <unistd.h> // For write
 
@@ -59,7 +110,7 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-/*		Other short or long way to do
+// ||
 
 #include <unistd.h>
 
@@ -104,7 +155,7 @@ int	main(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (argc == 2)
@@ -169,8 +220,8 @@ int	main(int ac, char **av)
 
 int	main(int argc, char *argv[])
 {
-	int		i;
-	int		letter;
+	int	i;
+	int	letter;
 
 	i = 0;
 	if (argc == 2)

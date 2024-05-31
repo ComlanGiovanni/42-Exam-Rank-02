@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   first_word.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 21:31:41 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 20:35:19 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 16:48:04 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
+#include <unistd.h> // For write && STDOUT_FILENO
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write(STDOUT_FILENO, &c, 1);
 }
 
 void	first_word(char *str)

@@ -3,59 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 23:48:01 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 21:48:13 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 16:49:01 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <unistd.h> // For write && STDOUT_FILENO
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write(STDOUT_FILENO, &c, 1);
 }
 
 void	ft_putstr(char *str)
 {
 	while (*str)
-		write(1, str++, 1);
+		write(STDOUT_FILENO, str++, 1);
 }
 
-void	ft_small_put_nbr(int nbr)
+void	ft_small_put_nbr(int number)
 {
-	if (nbr > 9)
+	if (number > 9)
 	{
-		ft_small_put_nbr(nbr / 10);
-		ft_small_put_nbr(nbr % 10);
+		ft_small_put_nbr(number / 10);
+		ft_small_put_nbr(number % 10);
 	}
 	else
-		ft_putchar(nbr + '0');
+		ft_putchar(number + '0');
 }
 
-void	fizz_buzz(void)
+void	fizzbuzz(int start, int end)
 {
-	int	number;
-
-	number = 1;
-	while (number <= 100)
+	while (start <= end)
 	{
-		if (((number % 3) == 0) && ((number % 5) == 0))
+		if (((start % 3) == 0) && ((start % 5) == 0))
 			ft_putstr("fizzbuzz");
-		else if ((number % 3) == 0)
+		else if ((start % 3) == 0)
 			ft_putstr("fizz");
-		else if ((number % 5) == 0)
+		else if ((start % 5) == 0)
 			ft_putstr("buzz");
 		else
-			ft_small_put_nbr(number);
+			ft_small_put_nbr(start);
 		ft_putchar('\n');
-		number++;
+		start++;
 	}
 }
 
 int	main(void)
 {
-	fizz_buzz();
+	fizzbuzz(1, 100);
 	return (0);
 }

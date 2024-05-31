@@ -3,41 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 01:03:58 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/24 16:57:31 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
 
-void	ft_putchar(char c)
+int	ft_islower(int c)
 {
-	write(1, &c, 1);
+	return ((c >= 'a') && (c <= 'z'));
 }
 
-void	rot_one(char *str)
+int	ft_isupper(int c)
 {
-	int	idx;
+	return ((c >= 'A') && (c <= 'Z'));
+}
 
-	idx = 0;
-	while (str[idx] != '\0')
+void	rotation(char *str, int shift)
+{
+	while (*str)
 	{
-		if (((str[idx] >= 'A') && (str[idx] < 'Y'))
-			|| ((str[idx] >= 'a') && (str[idx] <= 'y')))
-			str[idx] += 1;
-		else if ((str[idx] == 'Z') || (str[idx] == 'z'))
-			str[idx] -= 25;
-		ft_putchar(str[idx]);
-		idx++;
+		if (ft_islower(*str))
+			*str = ((((*str - 'a') + shift) % 26) + 'a');
+		else if (ft_isupper(*str))
+			*str = ((((*str - 'A') + shift) % 26) + 'A');
+		write(1, str, 1);
+		str++;
 	}
 }
 
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
-		rot_one(argv[1]);
-	ft_putchar('\n');
+		rotation(argv[1], 1);
+	write(1, "\n", 1);
 	return (0);
 }

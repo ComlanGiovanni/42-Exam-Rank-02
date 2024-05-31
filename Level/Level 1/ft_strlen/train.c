@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 13:44:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:32 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 15:09:47 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
-#include <stddef.h> // For NULL || (void *)0 || 0
+#include <stddef.h>
 
 int	ft_strlen(char *str)
 {
@@ -57,7 +56,7 @@ int	main(void)
 
 /*
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	return(write(1, argv[1], ft_strlen(argv[1])));
 }

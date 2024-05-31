@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 00:26:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 17:26:37 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/04/17 15:11:44 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	int	tmp;
+	int	temp;
 
 	if (a == ((void *)0) || b == ((void *)0))
 		return ;
-	tmp = *a;
+	temp = *a;
 	*a = *b;
-	*b = tmp;
+	*b = temp;
 }
 
 /*
