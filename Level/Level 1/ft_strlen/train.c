@@ -24,7 +24,7 @@ int	ft_strlen(char *str)
 	return (index);
 }
 
-/*		Main test
+/*	Main test
 
 void	ft_small_put_nbr(int nbr)
 {
