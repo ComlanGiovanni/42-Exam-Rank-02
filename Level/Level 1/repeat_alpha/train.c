@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 21:50:56 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/13 01:30:05 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/15 09:34:52 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	repeat_alpha(char *str)
 {
-	int	index;WDddddddddddddS AaaWwWW
+	int	index;
 	int	position;
 
 	index = 0;
