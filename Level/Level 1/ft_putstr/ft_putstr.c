@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 23:14:06 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/04/17 16:49:49 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/11 20:51:10 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar(char c)
 {
-	write(STDOUT_FILENO, &c, 1);
+	write(STDOUT_FILENO, &c, sizeof(char));
 }
 
 void	ft_putstr(char *str)
@@ -80,6 +80,19 @@ void	ft_putstr(char *str)
 	idx = -1;
 	while (str[idx++])
 		write(1, &str[idx], 1);
+}
+
+void	ft_putchar(char c)
+{
+	write(STDOUT_FILENO, &c, sizeof(char));
+}
+
+void	ft_putstr(char *str)
+{
+	if (str == ((void *)0))
+		return ;
+	while (*str)
+		write(STDOUT_FILENO, str++, sizeof(char));
 }
 
 */

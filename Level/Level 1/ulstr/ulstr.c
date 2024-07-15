@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ulstr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 14:49:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/18 14:22:34 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/07/12 13:10:22 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	main(int argc, char **argv)
 }
 
 /*		Other short or long way to do
+you can define a macro if you want
+//# define TO_LOWER(c) (((c) >= 'A' && (c) <= 'Z') ? ((c) + 'a' - 'A') : (c))
 
 #include <unistd.h> // For write
 
@@ -63,6 +65,8 @@ int	ft_toupper(int c)
 		c -= ' ';
 	return (c);
 }
+
+//return (c >= 'A' && c <= 'Z') ? (c + 'a' - 'A') : c;
 
 void	ft_ulstr(char *str)
 {
@@ -88,4 +92,13 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
+int	ft_isupper(int c)
+{
+	return ((c >= 'A') && (c <= 'Z'));
+}
+
+int	ft_islower(int c)
+{
+	return ((c >= 'a') && (c <= 'z'));
+}
 */

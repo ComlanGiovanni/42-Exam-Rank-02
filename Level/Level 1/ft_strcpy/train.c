@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 00:13:42 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/04/17 16:50:05 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/11 21:02:49 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 void	ft_putstr(char *str)
 {
 	while (*str)
-		write(STDOUT_FILENO, str++, 1);
+		write(STDOUT_FILENO, str++, sizeof(char));
 }
 
 char	*ft_strcpy(char *s1, char *s2)
 {
-	while (*s2)
-		*s1++ = *s2++;
-	*s1 = '\0';
+	while ((*s1++ = *s2++))
+		;
 	return (s1);
 }
 

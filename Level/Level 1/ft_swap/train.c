@@ -6,19 +6,13 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 00:26:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/04/17 15:11:44 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/12 12:00:57 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	int	temp;
-
-	if (a == ((void *)0) || b == ((void *)0))
-		return ;
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	(*a ^= *b), (*b ^= *a), (*a ^= *b);
 }
 
 /*
@@ -37,6 +31,6 @@ int	main(void)
 	printf("NULL SWAP\n");
 	ft_swap(NULL, &y);
 	printf("%d, %d", x, y);
-	return (0);
+	return (0x0);
 }
 */

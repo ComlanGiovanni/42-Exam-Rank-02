@@ -6,23 +6,16 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 13:40:07 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/04/17 16:49:19 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/12 12:01:35 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write && STDOUT_FILENO
 
-void	ft_putchar(char c)
-{
-	write(STDOUT_FILENO, &c, 1);
-}
-
 void	ft_putstr(char *str)
 {
-	if (str == ((void *)0))
-		return ;
 	while (*str)
-		write(STDOUT_FILENO, str++, 1);
+		write(STDOUT_FILENO, str++, sizeof(char));
 }
 
 int	main(int argc, char **argv)
@@ -41,5 +34,5 @@ int	main(int argc, char **argv)
 		}
 	}
 	ft_putstr(NULL);
-	return (0);
+	return (0x0);
 }

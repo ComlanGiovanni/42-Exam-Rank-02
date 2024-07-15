@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 13:44:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/04/17 15:09:47 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/12 12:01:10 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(void)
 	ft_small_put_nbr(ft_strlen(NULL));
 	write(1, &"\n", 1);
 	ft_small_put_nbr(ft_strlen("World"));
-	return (0);
+	return (0x0);
 }
 
 */

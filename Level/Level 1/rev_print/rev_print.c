@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:07:47 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/04/17 16:50:32 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/12 12:00:44 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		rev_print(argv[1]);
 	ft_putchar('\n');
-	return (0);
+	return (0x0);
 }
 
 /*

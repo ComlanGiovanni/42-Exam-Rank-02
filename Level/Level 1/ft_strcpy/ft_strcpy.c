@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:32:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/04/17 14:44:40 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/11 20:59:21 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ char	*ft_strcpy(char *s1, char *s2)
 {
 	while ((*s1++ = *s2++))
 		;
+	return (s1);
+}
+
+char	*ft_strcpy(char *s1, char *s2)
+{
+	while (*s2)
+		*s1++ = *s2++;
+	*s1 = '\0';
 	return (s1);
 }
 
