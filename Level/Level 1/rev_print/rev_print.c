@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:07:47 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/12 12:00:44 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/15 20:24:41 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,41 @@ int	main(int argc, char **argv)
 }
 
 /*
+
+
+#include <unistd.h> // For write && STDOUT_FILENO
+
+void	ft_put_character(char character)
+{
+	write(STDOUT_FILENO, &character, sizeof(char));
+}
+
+int	ft_string_length(char *string)
+{
+	return(string && *string ? ft_string_length(string + 1) + 1 : 0);
+}
+
+void	reverse_print(char *string)
+{
+	int		length;
+
+	length = ft_string_length(string);
+	while (length >= 0)
+	{
+		ft_put_character(string[length]);
+		length--;
+	}
+}
+
+int	main(int argument_count, char **argument_vector)
+{
+	if (argument_count == 2)
+		reverse_print(argument_vector[1]);
+	ft_put_character('\n');
+	return (0x0);
+}
+
+//|
 #include <unistd.h> // For write
 
 int	main(int ac, char *av[])

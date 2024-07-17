@@ -3,31 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/07/16 00:07:15 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write // For Write
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include <unistd.h>
 
 void	print_bits(unsigned char octet)
 {
 	int				idx;
-	unsigned char	mask;
 	unsigned char	bit;
+	unsigned char 	mask;
 
-	idx = 7;
+	idx = 8;
 	mask = 1;
 	while (idx >= 0)
 	{
-		bit = (((octet >> idx) & mask) + '0');
+		bit = ((octet >> idx) & mask) + '0';
 		ft_putchar(bit);
 		idx--;
 	}

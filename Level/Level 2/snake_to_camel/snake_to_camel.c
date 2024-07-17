@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   snake_to_camel.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 16:16:19 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/07/16 09:55:32 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	snake_to_camel(char *str)
 		if (str[idx] == '_')
 		{
 			idx++;
-			str[idx] -= ' ';
+			str[idx] -= ('a' - 'A');
 		}
 		ft_putchar(str[idx]);
 		idx++;

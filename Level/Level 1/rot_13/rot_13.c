@@ -6,11 +6,17 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:13:38 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/04/24 16:47:59 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/15 23:53:04 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
+#include <stdlib.h>
+
+void	ft_putchar(char c)
+{
+	write (STDOUT_FILENO, &c, sizeof(char));
+}
 
 int	ft_islower(int c)
 {
@@ -22,7 +28,7 @@ int	ft_isupper(int c)
 	return ((c >= 'A') && (c <= 'Z'));
 }
 
-void	rot_13(char *str, int shift)
+void	rotation(char *str, int shift)
 {
 	while (*str)
 	{
@@ -30,7 +36,7 @@ void	rot_13(char *str, int shift)
 			*str = ((((*str - 'a') + shift) % 26) + 'a');
 		else if (ft_isupper(*str))
 			*str = ((((*str - 'A') + shift) % 26) + 'A');
-		write(1, str, 1);
+		ft_putchar(*str);
 		str++;
 	}
 }
@@ -38,9 +44,9 @@ void	rot_13(char *str, int shift)
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
-		rot_13(argv[1], 13);
-	write(1, "\n", 1);
-	return (0);
+		rotation(argv[1], 13);
+	ft_putchar('\n');
+	return (EXIT_SUCCESS);
 }
 
 /*		Other short or long way to do
