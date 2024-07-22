@@ -6,45 +6,54 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:07:47 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/15 20:24:41 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/22 12:26:24 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write && STDOUT_FILENO
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
-{
-	write (STDOUT_FILENO, &c, 1);
-}
-
-int	ft_strlen(char *str)
-{
-	int	size;
-
-	size = 0;
-	while (str[size] != '\0')
-		size++;
-	return (size);
-}
-
-void	rev_print(char *str)
-{
-	int	len;
-
-	len = ft_strlen(str);
-	while (len >= 0)
-	{
-		ft_putchar(str[len]);
-		len--;
-	}
-}
+static void		ft_rev_print(char *str);
+static size_t	ft_strlen(char *string);
+static void		ft_putchar_fd(char character, int file_descriptor);
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
-		rev_print(argv[1]);
-	ft_putchar('\n');
-	return (0x0);
+	if (argc == 0x2)
+		ft_rev_print(argv[1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
+}
+
+static void	ft_rev_print(char *str)
+{
+	size_t	index;
+
+	index = ft_strlen(str);
+	while (index > 0x0)
+	{
+		ft_putchar_fd(str[index - 0x1], STDOUT_FILENO);
+		index--;
+	}
+}
+
+static	size_t	ft_strlen(char *string)
+{
+	const char	*last_char_string_pointer;
+
+	last_char_string_pointer = string;
+	if (!string)
+		return (0x0);
+	while (*last_char_string_pointer != '\0')
+		last_char_string_pointer++;
+	return (last_char_string_pointer - string);
+}
+
+static void	ft_putchar_fd(char character, int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		write (file_descriptor, &character, sizeof(char));
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:32:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/11 20:59:21 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/22 02:11:07 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ char	*ft_strcpy(char *s1, char *s2)
 {
 	int	idx;
 
-	idx = 0;
+	idx = 0x0;
 	while (s2[idx] != '\0')
 	{
 		s1[idx] = s2[idx];

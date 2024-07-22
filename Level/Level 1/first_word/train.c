@@ -5,25 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 22:22:25 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/15 20:41:28 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/22 00:46:01 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/22 01:10:18 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
-void	first_word(char *str)
-{
-	while ((*str == ' ') || (*str == '\t'))
-		str++;
-	while (*str && !(*str == ' ') || (*str == '\t'))
-		ft_putchar(str++);
-}
+static void	ft_first_word(char *str);
+static int	ft_isspace(int c);
+static void	ft_putchar_fd(char c, int fd);
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
-		first_word(argv[1]);
-	write(1, "\n", 1);
-	return (0x0);
+	if (argc == 0x2)
+		ft_first_word(argv[0x1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
+}
+
+static void	ft_first_word(char *str)
+{
+	while (ft_isspace(*str))
+		str++;
+	while (*str && !ft_isspace(*str))
+		ft_putchar_fd(*str, STDOUT_FILENO);
+}
+
+static int	ft_isspace(int c)
+{
+	return ((c == ' ') || ((c >= '\t') && (c <= '\r')));
+}
+
+static void	ft_putchar_fd(char c, int fd)
+{
+	if (fd >= 0x0)
+		write(fd, &c, sizeof(char));
 }

@@ -5,50 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 19:50:23 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/15 20:21:52 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/22 14:33:16 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/22 14:33:18 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-void	ft_putchar(char c)
+static void	ft_ulstr(char *str);
+static int	ft_islower(char c);
+static int	ft_isupper(int c);
+static void	ft_putchar_fd(char c, int fd);
+
+int	main(int argc, char **argv)
 {
-	write(STDOUT_FILENO, &c, sizeof(char));
+	if (argc == 0x2)
+		ft_ulstr(argv[0x1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
 
-int	ft_islower(char c)
+static void	ft_ulstr(char *str)
+{
+	while (*str != '\0')
+	{
+		if (ft_islower(*str))
+			*str -= ('a' - 'A');
+		else if (ft_isupper(*str))
+			*str += ('a' - 'A');
+		ft_putchar(*str, STDOUT_FILENO);
+		str++;
+	}
+}
+
+static int	ft_islower(char c)
 {
 	return ((c >= 'a') && (c <= 'z'));
 }
 
-int	ft_isupper(char c)
+static int	ft_isupper(int c)
 {
 	return ((c >= 'A') && (c <= 'Z'));
 }
 
-
-void	ulstr(char *str)
+static void	ft_putchar_fd(char c, int fd)
 {
-	int	index;
-
-	index = 0;
-	while (str[index] != '\0')
-	{
-		if (ft_islower(str[index]))
-			str[index] -= ('a' - 'A');
-		else if (ft_isupper(str[index]))
-			str[index] += ('a' - 'A');
-		ft_putchar(str[index]);
-		index++;
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-		ulstr(argv[1]);
-	ft_putchar('\n');
-	return (EXIT_SUCCESS);
+	if (fd >= 0x0)
+		write (fd, &c, sizeof(char));
 }

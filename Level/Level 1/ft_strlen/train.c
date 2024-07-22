@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 13:44:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/12 12:01:10 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/22 02:20:47 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,18 @@ int	ft_strlen(char *str)
 {
 	int	index;
 
-	index = 0;
+	index = 0x0;
 	if (str == NULL)
-		return (0);
+		return (0x0);
 	while (str[index] != '\0')
 		index++;
 	return (index);
 }
+
+// int ft_strlen(char *str)
+// {
+// 	return(str && *str ? ft_strlen(str + 0x1) + 0x1 : 0x0);
+// }
 
 /*	Main test
 

@@ -6,40 +6,54 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 00:27:38 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/15 20:29:55 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/22 12:26:42 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+static void		ft_rev_print(char *str);
+static size_t	ft_strlen(char *string);
+static void		ft_putchar_fd(char character, int file_descriptor);
+
+int	main(int argc, char **argv)
 {
-	write(STDOUT_FILENO, &c, sizeof(char));
-}
-int	ft_strlen(char *str)
-{
-	return(str && *str ? ft_strlen(str + 1) + 1 : 0);
+	if (argc == 0x2)
+		ft_rev_print(argv[1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
 
-void	rev_print(char *str)
+static void	ft_rev_print(char *str)
 {
-	int	index;
+	size_t	index;
 
 	index = ft_strlen(str);
-	while (index >= 0)
+	while (index > 0x0)
 	{
-		ft_putchar(str[index]);
+		ft_putchar_fd(str[index - 0x1], STDOUT_FILENO);
 		index--;
 	}
 }
 
-int	main(int argc, char **argv)
+static	size_t	ft_strlen(char *string)
 {
-	if (argc == 2)
-		rev_print(argv[1]);
-	ft_putchar('\n');
-	return (EXIT_SUCCESS); //0x0
+	const char	*last_char_string_pointer;
+
+	last_char_string_pointer = string;
+	if (!string)
+		return (0x0);
+	while (*last_char_string_pointer != '\0')
+		last_char_string_pointer++;
+	return (last_char_string_pointer - string);
+}
+
+static void	ft_putchar_fd(char character, int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		write (file_descriptor, &character, sizeof(char));
 }
 
 /*

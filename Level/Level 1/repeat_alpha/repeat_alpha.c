@@ -6,57 +6,57 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 21:53:37 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/15 09:34:55 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:22:58 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
+#include <unistd.h>
+#include <stdlib.h>
 
-int	ft_isupper(int c)
+static void	ft_repeat_alpha(char *str);
+static int	ft_isalpha(int c);
+static int	ft_isupper(int c);
+static void	ft_repeat(char alphabet, int repeat_count);
+
+int	main(int argc, char **argv)
 {
-	return ((c >= 'A') && (c <= 'Z'));
+	if (argc == 0x2)
+		ft_repeat_alpha(argv[1]);
+	write(STDOUT_FILENO, "\n", sizeof(char));
+	return (EXIT_SUCCESS);
 }
 
-int	ft_isalpha(int c)
+static void	ft_repeat_alpha(char *str)
+{
+	while (*str)
+	{
+		if (ft_isalpha(*str))
+		{
+			if (ft_isupper(*str))
+				ft_repeat(*str, (*str - 'A'));
+			else
+				ft_repeat(*str, (*str - 'a'));
+		}
+		else
+			write (STDOUT_FILENO, str, sizeof(char));
+		str++;
+	}
+}
+
+static int	ft_isalpha(int c)
 {
 	return (ft_isupper(c) || ((c >= 'a') && (c <= 'z')));
 }
 
-void	repeat(char letter, int repeat_count)
+static int	ft_isupper(int c)
 {
-	while (repeat_count-- >= 0)
-		write(STDOUT_FILENO, &letter, 1);
+	return ((c >= 'A') && (c <= 'Z'));
 }
 
-void	repeat_alpha(char *str)
+static void	ft_repeat(char alphabet, int repeat_count)
 {
-	int	index;
-	int	position;
-
-	index = 0;
-	position = 0;
-	while (str[index] != '\0')
-	{
-		if (ft_isalpha(str[index]))
-		{
-			if (ft_isupper(str[index]))
-				position = str[index] - 'A';
-			else
-				position = str[index] - 'a';
-			repeat(str[index], position);
-		}
-		else
-			write(STDOUT_FILENO, &str[index], 1);
-		index++;
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-		repeat_alpha(argv[1]);
-	write(STDOUT_FILENO, "\n", sizeof(char));
-	return (0x0);
+	while (repeat_count-- >= 0x0)
+		write (STDOUT_FILENO, &alphabet, sizeof(char));
 }
 
 /*		Other short or long way to do

@@ -5,41 +5,86 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 14:49:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/12 13:10:22 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/22 14:33:10 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/22 14:33:20 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
+#include <stdlib.h>
+#include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ulstr(char *str)
-{
-	int	idx;
-
-	idx = 0;
-	while (str[idx] != '\0')
-	{
-		if ((str[idx] >= 'A') && (str[idx] <= 'Z'))
-			str[idx] += ' ';
-		else if ((str[idx] >= 'a') && (str[idx] <= 'z'))
-			str[idx] -= ' ';
-		ft_putchar(str[idx]);
-		idx++;
-	}
-}
+static void	ft_ulstr(char *str);
+static int	ft_islower(char c);
+static int	ft_isupper(int c);
+static void	ft_putchar_fd(char c, int fd);
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
-		ulstr(argv[1]);
-	ft_putchar('\n');
-	return (0);
+	if (argc == 0x2)
+		ft_ulstr(argv[0x1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
+
+static void	ft_ulstr(char *str)
+{
+	while (*str != '\0')
+	{
+		if (ft_islower(*str))
+			*str -= ('a' - 'A');
+		else if (ft_isupper(*str))
+			*str += ('a' - 'A');
+		ft_putchar(*str, STDOUT_FILENO);
+		str++;
+	}
+}
+
+static int	ft_islower(char c)
+{
+	return ((c >= 'a') && (c <= 'z'));
+}
+
+static int	ft_isupper(int c)
+{
+	return ((c >= 'A') && (c <= 'Z'));
+}
+
+static void	ft_putchar_fd(char c, int fd)
+{
+	if (fd >= 0x0)
+		write (fd, &c, sizeof(char));
+}
+
+// #include <unistd.h> // For write
+
+// void	ft_putchar(char c)
+// {
+// 	write(1, &c, 1);
+// }
+
+// void	ulstr(char *str)
+// {
+// 	int	idx;
+
+// 	idx = 0;
+// 	while (str[idx] != '\0')
+// 	{
+// 		if ((str[idx] >= 'A') && (str[idx] <= 'Z'))
+// 			str[idx] += ' ';
+// 		else if ((str[idx] >= 'a') && (str[idx] <= 'z'))
+// 			str[idx] -= ' ';
+// 		ft_putchar(str[idx]);
+// 		idx++;
+// 	}
+// }
+
+// int	main(int argc, char **argv)
+// {
+// 	if (argc == 2)
+// 		ulstr(argv[1]);
+// 	ft_putchar('\n');
+// 	return (0);
+// }
 
 /*		Other short or long way to do
 you can define a macro if you want

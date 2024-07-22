@@ -5,41 +5,96 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 21:31:41 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/04/17 16:48:04 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/22 00:45:54 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/22 01:08:58 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write && STDOUT_FILENO
+#include <unistd.h> // write
+#include <stdlib.h> // EXIT_SUCCESS STDOUT_FILENO
 
-void	ft_putchar(char c)
+static void	ft_first_word(char *str);
+static int	ft_isspace(char c);
+static void	ft_putchar_fd(char character,	int file_descriptor);
+
+int	main(int argc, char **argv)
 {
-	write(STDOUT_FILENO, &c, 1);
+	if (argc == 0x2)
+		ft_first_word(argv[0x1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
+
+static void	ft_first_word(char *string)
+{
+	while (ft_isspace(*string))
+		string++;
+	while (*string && !ft_isspace(*string))
+		ft_putchar_fd(string++, STDOUT_FILENO);
+}
+
+static int	ft_isspace(char c)
+{
+	return (c == ' ' || ((c >= '\t') && (c <= '\r')));
+}
+
+static void	ft_putchar_fd(char character,	int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
+}
+
+// #include <unistd.h> // For write && STDOUT_FILENO
+
+// void	ft_putchar(char c)
+// {
+// 	write(STDOUT_FILENO, &c, 1);
+// }
+
+// void	first_word(char *str)
+// {
+// 	int	idx;
+
+// 	idx = 0;
+// 	while (str[idx] == ' ' || str[idx] == '\t')
+// 		idx++;
+// 	while (str[idx] != '\0' && (str[idx] != ' ' && str[idx] != '\t'))
+// 	{
+// 		ft_putchar(str[idx]);
+// 		idx++;
+// 	}
+// }
+
+// int	main(int argc, char **argv)
+// {
+// 	if (argc == 2)
+// 		first_word(argv[1]);
+// 	ft_putchar('\n');
+// 	return (0);
+// }
+
+/*		Other short or long way to do
+
+// ||
+
+#include <unistd.h>
 
 void	first_word(char *str)
 {
-	int	idx;
-
-	idx = 0;
-	while (str[idx] == ' ' || str[idx] == '\t')
-		idx++;
-	while (str[idx] != '\0' && (str[idx] != ' ' && str[idx] != '\t'))
-	{
-		ft_putchar(str[idx]);
-		idx++;
-	}
+	while ((*str == ' ') || (*str == '\t'))
+		str++;
+	while (*str && !(*str == ' ') || (*str == '\t'))
+		ft_putchar(str++);
 }
 
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
 		first_word(argv[1]);
-	ft_putchar('\n');
-	return (0);
+	write(1, "\n", 1);
+	return (0x0);
 }
-
-/*		Other short or long way to do
+//  ||
 
 #include <unistd.h> // For write
 

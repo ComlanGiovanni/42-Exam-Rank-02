@@ -6,28 +6,48 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 23:14:06 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/11 20:51:10 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/22 02:07:47 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write && STDOUT_FILENO
 
-void	ft_putchar(char c)
+static void	ft_putstr_fd(char *string, int file_descriptor)
 {
-	write(STDOUT_FILENO, &c, sizeof(char));
+	if (file_descriptor >= 0x0)
+		while (*string)
+			ft_putchar_fd(*string++, STDOUT_FILENO);
 }
 
 void	ft_putstr(char *str)
 {
-	int	idx;
-
-	idx = 0;
-	while (str[idx] != '\0')
-	{
-		ft_putchar(str[idx]);
-		idx++;
-	}
+	ft_putstr_fd(str, STDOUT_FILENO);
 }
+
+// #include <unistd.h> // For write && STDOUT_FILENO
+//
+// void	ft_putchar(char c)
+// {
+// 	write(STDOUT_FILENO, &c, sizeof(char));
+// }
+//
+// void	ft_putstr(char *str)
+// {
+// 	int	idx;
+//
+// 	idx = 0;
+// 	while (str[idx] != '\0')
+// 	{
+// 		ft_putchar(str[idx]);
+// 		idx++;
+// 	}
+// }
+//
+// void	ft_putstr(char *str)
+// {
+// 	while (*str)
+// 		write(STDOUT_FILENO, str++, sizeof(char));
+// }
 
 /*		Other short or long way to do
 
