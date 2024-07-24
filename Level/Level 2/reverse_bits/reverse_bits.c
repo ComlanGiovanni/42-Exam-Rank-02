@@ -3,51 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_bits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/24 10:00:04 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/24 10:09:13 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write // For write
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	print_bits(unsigned char octet)
-{
-	int				idx;
-	unsigned char	mask;
-	unsigned char	bit;
-
-	idx = 7;
-	mask = 1;
-	while (idx >= 0)
-	{
-		bit = (((octet >> idx) & mask) + '0');
-		ft_putchar(bit);
-		idx--;
-	}
-}
+#include <unistd.h>
 
 unsigned char	reverse_bits(unsigned char octet)
 {
 	int				idx;
 	unsigned char	bit;
 
-	idx = 7;
-	while (idx >= 0)
+	idx = 0x8;
+	while (idx--)
 	{
-		bit = ((bit * 2) + (octet % 2));
-		octet /= 2;
-		idx--;
+		bit = ((bit * 0x2) + (octet % 0x2));
+		octet /= 0x2;
 	}
 	return (bit);
 }
+// unsigned char	reverse_bits(unsigned char octet)
+// {
+// 	int				idx;
+// 	unsigned char	bit;
 
+// 	idx = 7;
+// 	while (idx >= 0)
+// 	{
+// 		bit = ((bit * 2) + (octet % 2));
+// 		octet /= 2;
+// 		idx--;
+// 	}
+// 	return (bit);
+// }
 /*		Other short or long way to do
 
 unsigned char	reverse_bits(unsigned char octet)

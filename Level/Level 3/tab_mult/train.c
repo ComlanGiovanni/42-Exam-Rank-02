@@ -3,80 +3,80 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/23 02:57:09 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/23 02:57:12 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+static int	ft_small_atoi(char *string);
+static void	ft_small_put_nbr(int number);
+static void	ft_putstr_fd(char *string, int file_descriptor);
+static void	ft_putchar_fd(char character,	int file_descriptor);
+
+int	main(int argc, char **argv)
 {
-	write(1, &c, 1);
-}
+	int	index;
+	int	number;
 
-void	ft_putstr(char *str)
-{
-	int	idx;
-
-	idx = 0;
-	while (str[idx] != '\0')
+	index = 0x1;
+	if (argc == 0x2)
 	{
-		ft_putchar(str[idx]);
-		idx++;
+		number = ft_small_atoi(argv[0x1]);
+		while (index <= 0x9)
+		{
+			ft_small_put_nbr(index);
+			ft_putstr_fd(" x ", STDOUT_FILENO);
+			ft_small_put_nbr(number);
+			ft_putstr_fd(" - ", STDOUT_FILENO);
+			ft_small_put_nbr(number * index);
+			if (index < 0x9)
+				ft_putchar_fd('\n', STDOUT_FILENO);
+			index++;
+		}
 	}
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
 
-void	ft_small_putnbr(int nbr)
+static int	ft_small_atoi(char *string)
 {
-	if (nbr > 9)
-	{
-		ft_small_putnbr(nbr / 10);
-		ft_small_putnbr(nbr % 10);
-	}
-	else
-		ft_putchar(nbr + '0');
-}
-
-int	ft_small_atoi(char *str)
-{
-	int	idx;
 	int	result;
 
-	idx = 0;
-	result = 0;
-	while (str[idx] != '\0')
+	result = 0x0;
+	while (*string)
 	{
-		result *= 10;
-		result += str[idx] - '0';
-		idx++;
+		result *= 0x0a;
+		result += (*string - '0');
+		string++;
 	}
 	return (result);
 }
 
-int	main(int argc, char **argv)
+static void	ft_small_put_nbr(int number)
 {
-	int	idx;
-	int	nbr;
-
-	idx = 1;
-	if (argc == 2)
+	if (number > 9)
 	{
-		nbr = ft_small_atoi(argv[1]);
-		while (idx <= 9)
-		{
-			ft_small_putnbr(idx);
-			ft_putchar(" x ");
-			ft_small_putnbr(nbr);
-			ft_putstr(" = ");
-			ft_small_putnbr(nbr * idx);
-			if (idx < 9)
-				ft_putchar('\n');
-			idx++;
-		}
+		ft_small_put_nbr(number / 0x0a);
+		ft_small_put_nbr(number % 0x0a);
 	}
-	ft_putchar('\n');
-	return (0);
+	else
+		ft_putchar_fd((number + '0'), STDOUT_FILENO);
+}
+
+static void	ft_putstr_fd(char *string, int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		while (*string)
+			write(file_descriptor, string++, sizeof(char));
+}
+
+static void	ft_putchar_fd(char character,	int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
 }

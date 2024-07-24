@@ -5,45 +5,49 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/16 10:05:43 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/24 10:09:37 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/24 10:18:24 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+static void	ft_snake_to_camel(char *str);
+static int	ft_toupper(int c);
+static void	ft_putchar_fd(char character,	int file_descriptor);
+
+int	main(int argc, char **argv)
 {
-	write (STDOUT_FILENO, &c, sizeof(char));
+	if (argc == 0x2)
+		ft_snake_to_camel(argv[1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
 
-int	ft_islower(char c)
+static void	ft_snake_to_camel(char *str)
 {
-	return((c >= 'a') && (c <= 'z'));
-}
-
-void	snake_to_camel(char *str)
-{
-	int	idx;
-
-	idx = 0;
-	while (str[idx] != '\0')
+	while (*str)
 	{
-		if (str[idx] == ' ')
+		if (*str == '_')
 		{
-			idx++;
-			str[idx] -= ('a' - 'A');
+			str++;
+			*str = ft_toupper(*str);
 		}
-		ft_putchar(str[idx]);
-		idx++;
+		ft_putchar_fd(*str, STDOUT_FILENO);
+		str++;
 	}
 }
 
-
-int main(int argc, char **argv)
+static int	ft_toupper(int c)
 {
-	if (argc == 2)
-		snake_to_camel(argv[1]);
-	ft_putchar('\n');
-	return (0x0);
+	if ((c >= 'a') && (c <= 'z'))
+		c -= ('a' - 'A');
+	return (c);
+}
+
+static void	ft_putchar_fd(char character,	int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
 }

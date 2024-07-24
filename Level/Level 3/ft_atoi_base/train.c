@@ -3,42 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 15:36:31 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/23 18:41:21 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/23 18:46:02 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+static int	ft_isdigit(int c)
+{
+	return (('0' <= c) && (c <= '9'));
+}
+
+static int	ft_isupper(int c)
+{
+	return ((c >= 'A') && (c <= 'Z'));
+}
+
+static int	ft_islower(char c)
+{
+	return ((c >= 'a') && (c <= 'z'));
+}
+
 int	ft_atoi_base(const char *str, int str_base)
 {
-	int	idx;
-	int	sign;
-	int	result;
+	int sign;
+	int result;
 
-	idx = 0;
-	sign = 1;
-	result = 0;
-	if (str[idx] == '-')
+	sign = 0x1;
+	result = 0x0;
+	if (*str == '-')
 	{
-		sign *= -1;
-		idx++;
+		sign = -1;
+		str++;
 	}
-	while (str[idx] != '\0')
+	while (*str)
 	{
 		result *= str_base;
-		if (str[idx] >= 'A' && str[idx] <= 'Z')
-			result += str[idx] - '7';
-		else if (str[idx] >= '0' && str[idx] <= '9')
-			result += str[idx] - '0';
-		else if (str[idx] >= 'a' && str[idx] <= 'z')
-			result += str[idx] - 'W';
-		idx++;
+		if (ft_isdigit(*str))
+			result += *str - '0';
+		else if (ft_isupper(*str))
+			result += *str - '7';
+		else if (ft_islower(*str))
+			result += *str - 'W';
+		str++;
 	}
 	return (result * sign);
 }
 
-/*
 #include <stdio.h>
 
 int	main(void)
@@ -51,4 +63,4 @@ int	main(void)
 	printf("%d\n", ft_atoi_base("E", 16));
 	return (0);
 }
-*/
+

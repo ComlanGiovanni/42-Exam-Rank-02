@@ -3,32 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/24 09:38:17 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/24 09:55:17 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
-#include <stddef.h> // For NULL || (void *)0 || 0
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include <stdlib.h> // EXIT_SUCCESS
 
 int	max(int *tab, unsigned int len)
 {
 	int	max;
 
-	if (len <= 0 || tab == NULL)
-		return (0);
+	if (len <= 0x0 || tab == NULL)
+		return (0x0);
 	max = tab[--len];
 	while (len--)
 		if (tab[len] > max)
 			max = tab[len];
 	return (max);
+}
+/*
+static void	ft_putchar_fd(char character,	int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
 }
 
 int	main(void)
@@ -39,11 +40,12 @@ int	main(void)
 	arr[1] = 2;
 	arr[2] = 4;
 	arr[3] = 9;
-	ft_putchar(max(arr, 4) + '0');
-	ft_putchar(10);
-	ft_putchar(max(NULL, 4) + '0');
-	ft_putchar('\n');
-	ft_putchar(max(arr, 0) + '0');
-	ft_putchar('\n');
-	return (0);
+	ft_putchar_fd((max(arr, 4) + '0'), STDOUT_FILENO);
+	ft_putchar_fd(10, STDOUT_FILENO);
+	ft_putchar_fd((max(NULL, 4) + '0'), STDOUT_FILENO);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	ft_putchar_fd((max(arr, 0) + '0'), STDOUT_FILENO);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
+*/

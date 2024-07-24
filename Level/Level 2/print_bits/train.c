@@ -5,46 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/16 00:07:15 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/23 13:59:54 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/24 09:58:33 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_bits(unsigned char octet)
+static void	ft_putchar_fd(char c, int fd)
 {
-	int				idx;
-	unsigned char	bit;
-	unsigned char 	mask;
-
-	idx = 8;
-	mask = 1;
-	while (idx >= 0)
-	{
-		bit = ((octet >> idx) & mask) + '0';
-		ft_putchar(bit);
-		idx--;
-	}
+	if (fd >= 0x0)
+		write(fd, &c, sizeof(char));
 }
 
-/*		Main Test
+void	print_bits(unsigned char octet)
+{
+	int				index;
+	unsigned char	bit;
+	unsigned char	mask;
+
+	index = 0x1 << 0x3;
+	mask = 0x1 << 0x0;
+	while (index--)
+	{
+		bit = (((octet >> index) & mask) + '0');
+		ft_putchar_fd(bit, STDOUT_FILENO);
+	}
+}
+/*
+#include <stdlib.h> // EXIT_SUCCESS
 
 int	main(void)
 {
-	print_bits(0);
-	ft_putchar('\n');
-	print_bits(1);
-	ft_putchar('\n');
-	print_bits(2);
-	ft_putchar('\n');
-	print_bits(3);
-	ft_putchar('\n');
+	print_bits(0x0);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(0x1);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(0x2);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(0x3);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(0x4);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(0x5);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(0x6);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(0x7);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(0x8);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(0x9);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(0xa);
+	ft_putchar_fd('\n', STDOUT_FILENO);
 	print_bits(42);
-	ft_putchar('\n');
+	ft_putchar_fd('\n', STDOUT_FILENO);
 	print_bits(69);
-	ft_putchar('\n');
-	return (0);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
-
 */

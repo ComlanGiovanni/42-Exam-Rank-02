@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 00:46:01 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/22 01:10:18 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/23 01:51:13 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ static void	ft_first_word(char *str)
 	while (ft_isspace(*str))
 		str++;
 	while (*str && !ft_isspace(*str))
+	{
 		ft_putchar_fd(*str, STDOUT_FILENO);
+		str++;
+	}
 }
 
 static int	ft_isspace(int c)

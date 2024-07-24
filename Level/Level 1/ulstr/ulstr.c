@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 14:33:10 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/22 14:33:20 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/22 22:06:20 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,20 @@ static void	ft_putchar_fd(char c, int fd)
 	if (fd >= 0x0)
 		write (fd, &c, sizeof(char));
 }
+
+// static int	ft_tolower(int c)
+// {
+// 	if ((c >= 'A') && (c <= 'Z'))
+// 		c += ' ';
+// 	return (c);
+// }
+
+// static int	ft_toupper(int c)
+// {
+// 	if ((c >= 'a') && (c <= 'z'))
+// 		c -= ' ';
+// 	return (c);
+// }
 
 // #include <unistd.h> // For write
 

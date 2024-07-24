@@ -3,35 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   print_bits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/24 09:49:33 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/24 09:58:55 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write // For printf
+#include <unistd.h>
 
-void	ft_putchar(char c)
+static void	ft_putchar_fd(char c, int fd)
 {
-	write(1, &c, 1);
+	if (fd >= 0x0)
+		write(fd, &c, sizeof(char));
 }
 
 void	print_bits(unsigned char octet)
 {
-	int				idx;
-	unsigned char	mask;
+	int				index;
 	unsigned char	bit;
+	unsigned char	mask;
 
-	idx = 7;
-	mask = 1;
-	while (idx >= 0)
+	index = 0x1 << 0x3;
+	mask = 0x1 << 0x0;
+	while (index--)
 	{
-		bit = (((octet >> idx) & mask) + '0');
-		ft_putchar(bit);
-		idx--;
+		bit = (((octet >> index) & mask) + '0');
+		ft_putchar_fd(bit, STDOUT_FILENO);
 	}
 }
+
+// #include <unistd.h> // For write // For printf
+
+// void	ft_putchar(char c)
+// {
+// 	write(1, &c, 1);
+// }
+
+// void	print_bits(unsigned char octet)
+// {
+// 	int				idx;
+// 	unsigned char	mask;
+// 	unsigned char	bit;
+
+// 	idx = 7;
+// 	mask = 1;
+// 	while (idx >= 0)
+// 	{
+// 		bit = (((octet >> idx) & mask) + '0');
+// 		ft_putchar(bit);
+// 		idx--;
+// 	}
+// }
 
 /*			Other short or long way to do
 

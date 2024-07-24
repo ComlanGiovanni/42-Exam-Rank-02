@@ -3,61 +3,121 @@
 /*                                                        :::      ::::::::   */
 /*   inter.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:36:37 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/22 00:12:41 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/07/24 08:45:27 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
+#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	check_ascii_tab(int *ascii_tab, char c_str_1)
-{
-	if (ascii_tab[(int)c_str_1] == 1)
-	{
-		ascii_tab[(int)c_str_1] = 0;
-		ft_putchar(c_str_1);
-	}
-}
-
-void	inter(char *str_1, char *str_2)
-{
-	int	idx;
-	int	ascii_tab[256];
-
-	idx = 0;
-	while (idx <= 256)
-	{
-		ascii_tab[idx] = 0;
-		idx++;
-	}
-	idx = 0;
-	while (str_2[idx] != '\0')
-	{
-		ascii_tab[(int)str_2[idx]] = 1;
-		idx++;
-	}
-	idx = 0;
-	while (str_1[idx] != '\0')
-	{
-		check_ascii_tab(ascii_tab, str_1[idx]);
-		idx++;
-	}
-}
+static void	ft_inter(char *str_1, char *str_2);
+static void	ft_mark_char_in_ascii_tab(int *ascii, char *str);
+static void	ft_print_common_characters(int *ascii, char *str);
+static void	ft_fill_ascii(int *ascii_tab, int length);
 
 int	main(int argc, char **argv)
 {
-	if (argc == 3)
-		inter(argv[1], argv[2]);
-	ft_putchar('\n');
-	return (0);
+	if (argc == 0x3)
+		ft_inter(argv[0x1], argv[0x2]);
+	write(STDOUT_FILENO, "\n", sizeof(char));
+	return (EXIT_SUCCESS);
 }
+
+static void	ft_inter(char *str_1, char *str_2)
+{
+	int		ascii[256];
+
+	ft_fill_ascii(ascii, 256);
+	ft_mark_char_in_ascii_tab(ascii, str_2);
+	ft_print_common_characters(ascii, str_1);
+}
+
+static void	ft_fill_ascii(int *ascii_tab, int length)
+{
+	int		index;
+
+	index = 0x0;
+	while (index <= length)
+	{
+		ascii_tab[index] = 0x0;
+		index++;
+	}
+}
+
+static void	ft_mark_char_in_ascii_tab(int *ascii, char *str)
+{
+	while (*str)
+	{
+		if (ascii[(int)*str] == 0x0)
+			ascii[(int)*str] = 0x1;
+		str++;
+	}
+}
+
+static void	ft_print_common_characters(int *ascii, char *str)
+{
+	while (*str)
+	{
+		if (ascii[(int)*str] == 0x1)
+		{
+			write(STDOUT_FILENO, str, sizeof(char));
+			ascii[(int)*str] = 0x0;
+		}
+		str++;
+	}
+}
+
+// #include <unistd.h> // For write
+
+// void	ft_putchar(char c)
+// {
+// 	write(1, &c, 1);
+// }
+
+// void	check_ascii_tab(int *ascii_tab, char c_str_1)
+// {
+// 	if (ascii_tab[(int)c_str_1] == 1)
+// 	{
+// 		ascii_tab[(int)c_str_1] = 0;
+// 		ft_putchar(c_str_1);
+// 	}
+// }
+
+// void	inter(char *str_1, char *str_2)
+// {
+// 	int	idx;
+// 	int	ascii_tab[256];
+
+// 	idx = 0;
+// 	while (idx <= 256)
+// 	{
+// 		ascii_tab[idx] = 0;
+// 		idx++;
+// 	}
+// 	idx = 0;
+// 	while (str_2[idx] != '\0')
+// 	{
+// 		ascii_tab[(int)str_2[idx]] = 1;
+// 		idx++;
+// 	}
+// 	idx = 0;
+// 	while (str_1[idx] != '\0')
+// 	{
+// 		check_ascii_tab(ascii_tab, str_1[idx]);
+// 		idx++;
+// 	}
+// }
+
+// int	main(int argc, char **argv)
+// {
+// 	if (argc == 3)
+// 		inter(argv[1], argv[2]);
+// 	ft_putchar('\n');
+// 	return (0);
+// }
 
 /*		Other short or long way to do
 

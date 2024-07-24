@@ -3,36 +3,74 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 13:31:01 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/07 23:44:33 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/07/23 21:31:22 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+static int	ft_isspace(char c);
+static int	ft_isdigit(int c);
+
+static int	ft_isspace(char c)
+{
+	return (c == ' ' || ((c >= '\t') && (c <= '\r')));
+}
+
+static int	ft_isdigit(int c)
+{
+	return (('0' <= c) && (c <= '9'));
+}
+
 int	ft_atoi(const char *str)
 {
-	int	idx;
-	int	sign;
-	int	result;
+	int				sign;
+	long long int	result;
 
-	idx = 0;
-	sign = 1;
-	result = 0;
-	while (str[idx] == ' ' || (str[idx] >= '\t' && str[idx] <= '\r'))
-		idx++;
-	if (str[idx] == '-')
+	sign = 0x1;
+	result = 0x0;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-')
 	{
-		sign = -1;
-		idx++;
+		sign *= -1;
+		str++;
 	}
-	else if (str[idx] == '+')
-		idx++;
-	while (str[idx] != '\0' && (str[idx] >= '0' && str[idx] <= '9'))
+	else if (*str == '+')
+		str++;
+	while (*str && ft_isdigit(*str))
 	{
-		result *= 10;
-		result += str[idx] - '0';
-		idx++;
+		result *= 0x0a;
+		result += (*str - '0');
+		str++;
 	}
-	return (result * sign);
+	return ((int)(result * sign));
 }
+
+// int	ft_atoi(const char *str)
+// {
+// 	int	idx;
+// 	int	sign;
+// 	int	result;
+
+// 	idx = 0;
+// 	sign = 1;
+// 	result = 0;
+// 	while (str[idx] == ' ' || (str[idx] >= '\t' && str[idx] <= '\r'))
+// 		idx++;
+// 	if (str[idx] == '-')
+// 	{
+// 		sign = -1;
+// 		idx++;
+// 	}
+// 	else if (str[idx] == '+')
+// 		idx++;
+// 	while (str[idx] != '\0' && (str[idx] >= '0' && str[idx] <= '9'))
+// 	{
+// 		result *= 10;
+// 		result += str[idx] - '0';
+// 		idx++;
+// 	}
+// 	return (result * sign);
+// }

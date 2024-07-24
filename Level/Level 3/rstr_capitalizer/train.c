@@ -3,52 +3,72 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/07/23 03:50:14 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
+#include <stdlib.h>
+#include <unistd.h>
 
-void	ft_putchar(char c)
+static void	ft_rstr_capitalizer(char *str);
+static int	ft_tolower(int c);
+static int	ft_toupper(int c);
+//static int	ft_isspace(int c);
+
+int	main(int argc, char *argv[])
 {
-	write(1, &c, 1);
-}
+	int	index;
 
-void	ft_rstr_capitalizer(char *str)
-{
-	int	idx;
-
-	idx = 0;
-	while (str[idx] != '\0')
-	{
-		if (str[idx] >= 'A' && 'Z' >= str[idx])
-			str[idx] += 32;
-		if ((str[idx] >= 'a' && 'z' >= str[idx]) && (str[idx + 1] == ' '
-				|| str[idx + 1] == '\t' || str[idx + 1] == '\0'))
-			str[idx] -= 32;
-		ft_putchar(str[idx]);
-		idx++;
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	int	idx;
-
-	if (argc < 2)
-		ft_putchar('\n');
+	if (argc < 0x2)
+		write(STDOUT_FILENO, "\n", sizeof(char));
 	else
 	{
-		idx = 1;
-		while (idx < argc)
+		index = 0x1;
+		while (index < argc)
 		{
-			ft_rstr_capitalizer(argv[idx]);
-			ft_putchar('\n');
-			idx++;
+			ft_rstr_capitalizer(argv[index]);
+			write(STDOUT_FILENO, "\n", sizeof(char));
+			index++;
 		}
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }
+
+static void	ft_rstr_capitalizer(char *str)
+{
+	int	capitalize_next;
+
+	capitalize_next = 0x1;
+	while (*str)
+	{
+		if (capitalize_next)
+			*str = ft_tolower(*str);
+		if ((*str >= 'a' && 'z' >= *str) && (*(str + 1) == ' '
+				|| *(str + 1) == '\t' || *(str + 1) == '\0'))
+			*str = ft_toupper(*str);
+		write(STDOUT_FILENO, str, sizeof(char));
+		str++;
+	}
+}
+
+static int	ft_tolower(int c)
+{
+	if ((c >= 'A') && (c <= 'Z'))
+		c += ('a' - 'A');
+	return (c);
+}
+
+static int	ft_toupper(int c)
+{
+	if ((c >= 'a') && (c <= 'z'))
+		c -= ('a' - 'A');
+	return (c);
+}
+
+// static int	ft_isspace(int c)
+// {
+// 	return ((c == ' ') || ((c >= '\t') && (c <= '\r')));
+// }

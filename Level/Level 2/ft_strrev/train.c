@@ -3,62 +3,69 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/23 22:46:15 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/23 23:15:20 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
+#include <stdlib.h> // EXIT_SUCCESS
 
-void	ft_putchar(char c)
+static void	ft_putstr_fd(char *string, int file_descriptor);
+static char	*ft_strrev(char *str);
+static	size_t	ft_strlen(char *string);
+static void	ft_swap_char(char *char_1, char *char_2);
+
+int	main(int argc, char **argv)
 {
-	write(1, &c, 1);
+	if (argc == 0x2)
+		ft_putstr_fd(ft_strrev(argv[0x1]), STDOUT_FILENO);
+	ft_putstr_fd("\n", STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
 
-void	ft_putstr(char *str)
+static void	ft_putstr_fd(char *string, int file_descriptor)
 {
-	while (*str)
+	if (file_descriptor >= 0x0)
+		while (*string)
+			write (file_descriptor, string++, sizeof(char));
+}
+
+static char	*ft_strrev(char *str)
+{
+	size_t	idx;
+	size_t	len;
+
+	idx = 0x0;
+	len = ft_strlen(str) - 0x1;
+	while (idx < len)
 	{
-		ft_putchar(*str);
-		str++;
-	}
-}
-
-int	ft_strlen(char *str)
-{
-	int	size;
-
-	size = 0;
-	while (str[size] != '\0')
-		size++;
-	return (size);
-}
-
-char	*ft_strrev(char *str)
-{
-	int		idx;
-	int		size;
-	char	tmp;
-
-	idx = 0;
-	size = ft_strlen(str) - 1;
-	while (size > idx)
-	{
-		tmp = str[idx];
-		str[idx] = str[size];
-		str[size] = tmp;
-		size--;
+		ft_swap_char(&str[idx], &str[len]);
 		idx++;
+		len--;
 	}
 	return (str);
 }
 
-int	main(int argc, char *argv[])
+static	size_t	ft_strlen(char *string)
 {
-	if (argc == 2)
-		ft_putstr(ft_strrev(argv[1]));
-	ft_putchar('\n');
-	return (0);
+	const char	*last_char_string_pointer;
+
+	last_char_string_pointer = string;
+	if (!string)
+		return (0x0);
+	while (*last_char_string_pointer != '\0')
+		last_char_string_pointer++;
+	return (last_char_string_pointer - string);
+}
+
+static void	ft_swap_char(char *char_1, char *char_2)
+{
+	char	tmp;
+
+	tmp = *char_1;
+	*char_1 = *char_2;
+	*char_2 = tmp;
 }

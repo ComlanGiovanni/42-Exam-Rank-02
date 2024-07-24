@@ -3,53 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/24 09:04:39 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/24 09:34:01 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
+#include <stdlib.h> // EXIT_SUCCESS
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-int	ft_strlen(char *str)
-{
-	int	size;
-
-	size = 0;
-	while (str[size] != '\0')
-		size++;
-	return (size);
-}
-
-void	last_word(char *str)
-{
-	int	idx;
-
-	idx = ft_strlen(str) - 1;
-	while (str[idx] == ' ' || str[idx] == '\t')
-		idx--;
-	while (str[idx] != '\0' && (str[idx] != ' ' && str[idx] != '\t'))
-		idx--;
-	idx++;
-	while (str[idx] != '\0' && str[idx] != ' ' && str[idx] != '\t')
-	{
-		ft_putchar(str[idx]);
-		idx++;
-	}
-}
+static void		ft_last_word(char *str);
+static int		ft_isspace(int c);
+static size_t	ft_get_idx_of_last_word_char(int index, char *str);
+static size_t	ft_get_idx_of_first_word_char(int index_last_char, char *str);
 
 int	main(int argc, char **argv)
 {
-	if (argc != 2)
-		return (0);
-	last_word(argv[1]);
-	return (0);
+	if (argc == 0x2)
+		ft_last_word(argv[0x1]);
+	write(STDOUT_FILENO, "\n", sizeof(char));
+	return (EXIT_FAILURE);
+}
+
+static void	ft_last_word(char *str)
+{
+	size_t	idx;
+	size_t	end_of_last_word;
+	size_t	start_of_last_word;
+
+	idx = 0x0;
+	end_of_last_word = 0x0;
+	start_of_last_word = 0x0;
+	while (str[idx] != '\0')
+		idx++;
+	idx -= 0x1;
+	end_of_last_word = ft_get_idx_of_last_word_char(idx, str);
+	start_of_last_word = ft_get_idx_of_first_word_char(end_of_last_word, str);
+	while (start_of_last_word <= end_of_last_word)
+		write(STDOUT_FILENO, &str[start_of_last_word++], sizeof(char));
+}
+
+static size_t	ft_get_idx_of_last_word_char(int index, char *str)
+{
+	while (ft_isspace(str[index]))
+		index--;
+	return (index);
+}
+
+static size_t	ft_get_idx_of_first_word_char(int index_last_char, char *str)
+{
+	while (str[index_last_char] != '\0' && !ft_isspace(str[index_last_char]))
+		index_last_char--;
+	return (++index_last_char);
+}
+
+static int	ft_isspace(int c)
+{
+	return ((c == ' ') || ((c >= '\t') && (c <= '\r')));
 }
 
 /*

@@ -3,31 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 12:35:05 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:47:05 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/23 21:50:42 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/23 21:59:46 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h> // For NULL || (void *)0 || 0
+#include <stdlib.h> // EXIT_SUCCESS
+#include <stddef.h> // NULL
 
-int	ft_strlen(char *str)
+static size_t	ft_strlen(char *string)
 {
-	int	size;
+	const char	*last_char_string_pointer;
 
-	size = 0;
-	while (str[size] != '\0')
-		size++;
-	return (size);
+	last_char_string_pointer = string;
+	if (!string)
+		return (0x0);
+	while (*last_char_string_pointer != '\0')
+		last_char_string_pointer++;
+	return (last_char_string_pointer - string);
 }
 
-char	*ft_strcpy(char *dest, const char *src)
+static char	*ft_strcpy(char *dest, const char *src)
 {
-	int	idx;
+	int		idx;
 
-	idx = 0;
+	idx = 0x0;
 	while (src[idx] != '\0')
 	{
 		dest[idx] = src[idx];
@@ -39,7 +41,7 @@ char	*ft_strcpy(char *dest, const char *src)
 
 char	*ft_strdup(char *src)
 {
-	int		size;
+	size_t	size;
 	char	*duplicate;
 
 	size = ft_strlen(src);
@@ -48,6 +50,55 @@ char	*ft_strdup(char *src)
 		return (NULL);
 	return (ft_strcpy(duplicate, src));
 }
+
+// static char *ft_strcpy(char *dest, const char *src)
+// {
+// 	while (*src)
+// 	{
+// 		*dest = *src;
+// 		src++;
+// 	}
+// 	*dest = '\0';
+// 	return (dest);
+// }
+// #include <stdlib.h>
+// #include <stddef.h> // For NULL || (void *)0 || 0
+
+// int	ft_strlen(char *str)
+// {
+// 	int	size;
+
+// 	size = 0;
+// 	while (str[size] != '\0')
+// 		size++;
+// 	return (size);
+// }
+
+// char	*ft_strcpy(char *dest, const char *src)
+// {
+// 	int	idx;
+
+// 	idx = 0;
+// 	while (src[idx] != '\0')
+// 	{
+// 		dest[idx] = src[idx];
+// 		idx++;
+// 	}
+// 	dest[idx] = '\0';
+// 	return (dest);
+// }
+
+// char	*ft_strdup(char *src)
+// {
+// 	int		size;
+// 	char	*duplicate;
+
+// 	size = ft_strlen(src);
+// 	duplicate = (char *)malloc(sizeof(char) * size + 1);
+// 	if (duplicate == NULL)
+// 		return (NULL);
+// 	return (ft_strcpy(duplicate, src));
+// }
 
 /*
 #include <stdlib.h>

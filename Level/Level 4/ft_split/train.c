@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/19 14:11:33 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/24 10:30:33 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/24 10:30:35 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <stdlib.h>
 #include <stddef.h> // For NULL || (void *)0 || 0

@@ -3,29 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:43:22 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/23 21:18:48 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/23 21:24:49 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
-#include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h> // write
+#include <stdlib.h> // EXIT_SUCCESS
+#include <stdio.h> // printf atoi
 
-void	ft_putchar(char c)
+static void	ft_do_op(char *operand_1, char operator, char *operand_2);
+
+int	main(int argc, char **argv)
 {
-	write(1, &c, 1);
+	if (argc == 0x4)
+	{
+		if (argv[0x2][0x1] == '\0')
+			ft_do_op(argv[0x1], argv[0x2][0x0], argv[0x3]);
+	}
+	printf("\n");
+	return (EXIT_SUCCESS);
 }
 
-void	do_op(char *operand_1, char operator, char *operand_2)
+static void	ft_do_op(char *operand_1, char operator, char *operand_2)
 {
-	int		first;
-	int		second;
-	int		result;
+	int	first;
+	int	second;
+	int	result;
 
-	result = 0;
+	result = 0x0;
 	first = atoi(operand_1);
 	second = atoi(operand_2);
 	if (operator == '+')
@@ -41,36 +49,24 @@ void	do_op(char *operand_1, char operator, char *operand_2)
 	printf("%d", result);
 }
 
-int	main(int argc, char **argv)
-{
-	if (argc == 4)
-	{
-		if (argv[2][1] == '\0')
-			do_op(argv[1], argv[2][0], argv[3]);
-	}
-	printf("\n");
-	return (0);
-}
+// #include <stdio.h>
+// #include <stdlib.h>
 
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(int argc, char *argv[])
-{
-	if (argc == 4)
-	{
-		if (argv[2][0] == '+')
-			printf("%d", (atoi(argv[1]) + atoi(argv[3])));
-		if (argv[2][0] == '-')
-			printf("%d", (atoi(argv[1]) - atoi(argv[3])));
-		if (argv[2][0] == '*')
-			printf("%d", (atoi(argv[1]) * atoi(argv[3])));
-		if (argv[2][0] == '/')
-			printf("%d", (atoi(argv[1]) / atoi(argv[3])));
-		if (argv[2][0] == '%')
-			printf("%d", (atoi(argv[1]) % atoi(argv[3])));
-	}
-	printf("\n");
-	return (0);
-}*/
+// int	main(int argc, char *argv[])
+// {
+// 	if (argc == 4)
+// 	{
+// 		if (argv[2][0] == '+')
+// 			printf("%d", (atoi(argv[1]) + atoi(argv[3])));
+// 		if (argv[2][0] == '-')
+// 			printf("%d", (atoi(argv[1]) - atoi(argv[3])));
+// 		if (argv[2][0] == '*')
+// 			printf("%d", (atoi(argv[1]) * atoi(argv[3])));
+// 		if (argv[2][0] == '/')
+// 			printf("%d", (atoi(argv[1]) / atoi(argv[3])));
+// 		if (argv[2][0] == '%')
+// 			printf("%d", (atoi(argv[1]) % atoi(argv[3])));
+// 	}
+// 	printf("\n");
+// 	return (EXIT_SUCCESS);
+// }

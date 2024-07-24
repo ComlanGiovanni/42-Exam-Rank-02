@@ -3,44 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/07/23 19:53:37 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
+#include <stdlib.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	epur_str(char *str)
-{
-	int	idx;
-
-	idx = 0;
-	while (str[idx] == ' ' || str[idx] == '\t')
-		idx++;
-	while (str[idx] != '\0')
-	{
-		if (str[idx] == ' ' || str[idx] == '\t')
-		{
-			if (str[idx + 1] > ' ' && str[idx] != '\0')
-				ft_putchar(' ');
-		}
-		else if (str[idx] != ' ' || str[idx] != '\t')
-			ft_putchar(str[idx]);
-		idx++;
-	}
-}
+static void	ft_putchar_fd(char character,	int file_descriptor);
+static int	ft_isspace(int c);
+static void	ft_epur_str(char *str);
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
-		epur_str(argv[1]);
-	ft_putchar('\n');
-	return (0);
+	if (argc == 0x2)
+		ft_epur_str(argv[1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
+}
+
+static void	ft_putchar_fd(char character,	int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
+}
+
+static int	ft_isspace(int c)
+{
+	return ((c == ' ') || ((c >= '\t') && (c <= '\r')));
+}
+
+static void	ft_epur_str(char *str)
+{
+	while (ft_isspace(*str))
+		str++;
+	while (*str)
+	{
+		if (ft_isspace(*str))
+		{
+			if (*(str + 0x1) > ' ' && *(str + 0x1) != '\0')
+				ft_putchar_fd(' ', STDOUT_FILENO);
+		}
+		else if (!ft_isspace(*str))
+			ft_putchar_fd(*str, STDOUT_FILENO);
+		str++;
+	}
 }

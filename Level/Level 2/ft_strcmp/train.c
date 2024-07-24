@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 12:33:52 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/16 09:47:07 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/23 21:37:27 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/23 21:37:30 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@ int	ft_strcmp(char *s1, char *s2)
 {
 	while (*s1++ == *s2++)
 		if (!*s1 && !*s2)
-			return (0);
+			return (0x0);
 	return (*--s1 - *--s2);
 }
 
-/*		MAIN TEST
+// int	ft_strcmp(char *s1, char *s2)
+// {
+// 	int	idx;
 
+// 	idx = 0;
+// 	while ((s1[idx] == s2[idx]) && (s1[idx] != '\0' && s2[idx] != '\0'))
+// 		idx++;
+// 	return ((unsigned char)s1[idx] - (unsigned char)s2[idx]);
+// }
+/*
 #include <stdio.h> // For printf
 #include <string.h> //For strcmp
 

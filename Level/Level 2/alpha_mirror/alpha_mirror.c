@@ -3,40 +3,85 @@
 /*                                                        :::      ::::::::   */
 /*   alpha_mirror.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:21:43 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/23 02:37:56 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/23 21:06:56 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
+#include <stdlib.h> // EXIT_SUCCESS
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	alpha_mirror(char *str)
-{
-	int	idx;
-
-	idx = 0;
-	while (str[idx] != '\0')
-	{
-		if ((str[idx] >= 'A') && (str[idx] <= 'Z'))
-			str[idx] = ('M' - (str[idx] - 'N'));
-		else if ((str[idx] >= 'a') && (str[idx] <= 'z'))
-			str[idx] = ('m' - (str[idx] - 'n'));
-		ft_putchar(str[idx]);
-		idx++;
-	}
-}
+static void	ft_alpha_mirror(char *str);
+static int	ft_isupper(int c);
+static int	ft_islower(char c);
+static void	ft_putchar_fd(char character,	int file_descriptor);
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
-		alpha_mirror(argv[1]);
-	ft_putchar('\n');
-	return (0);
+	if (argc == 0x2)
+		ft_alpha_mirror(argv[0x1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
+
+static void	ft_alpha_mirror(char *str)
+{
+	while (*str)
+	{
+		if (ft_isupper(*str))
+			*str = ('Z' - (*str - 'A'));
+		else if (ft_islower(*str))
+			*str = ('z' - (*str - 'a'));
+		ft_putchar_fd(*str, STDOUT_FILENO);
+		str++;
+	}
+}
+
+static int	ft_isupper(int c)
+{
+	return ((c >= 'A') && (c <= 'Z'));
+}
+
+static int	ft_islower(char c)
+{
+	return ((c >= 'a') && (c <= 'z'));
+}
+
+static void	ft_putchar_fd(char character,	int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
+}
+
+// #include <unistd.h> // For write
+
+// void	ft_putchar(char c)
+// {
+// 	write(1, &c, 1);
+// }
+
+// void	alpha_mirror(char *str)
+// {
+// 	int	idx;
+
+// 	idx = 0;
+// 	while (str[idx] != '\0')
+// 	{
+// 		if ((str[idx] >= 'A') && (str[idx] <= 'Z'))
+// 			str[idx] = ('M' - (str[idx] - 'N'));
+// 		else if ((str[idx] >= 'a') && (str[idx] <= 'z'))
+// 			str[idx] = ('m' - (str[idx] - 'n'));
+// 		ft_putchar(str[idx]);
+// 		idx++;
+// 	}
+// }
+
+// int	main(int argc, char **argv)
+// {
+// 	if (argc == 2)
+// 		alpha_mirror(argv[1]);
+// 	ft_putchar('\n');
+// 	return (0);
+// }

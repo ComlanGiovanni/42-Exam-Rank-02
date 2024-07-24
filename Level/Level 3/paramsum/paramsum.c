@@ -3,37 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   paramsum.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/07/23 04:45:13 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+static void	ft_putchar_fd(char character,	int file_descriptor)
 {
-	write(1, &c, 1);
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
 }
 
-void	ft_small_putnbr(int nbr)
+static void	ft_small_put_nbr(int number)
 {
-	if (nbr > 9)
+	if (number > 0x9)
 	{
-		ft_small_putnbr(nbr / 10);
-		ft_small_putnbr(nbr % 10);
+		ft_small_put_nbr(number / 0x0a);
+		ft_small_put_nbr(number % 0x0a);
 	}
 	else
-		ft_putchar(nbr + '0');
+		ft_putchar_fd((number + '0'), STDOUT_FILENO);
 }
 
 int	main(int argc, char **argv)
 {
 	(void)argv;
-	ft_small_putnbr(argc - 1);
-	ft_putchar('\n');
-	return (0);
+	ft_small_put_nbr(argc - 0x1);
+	ft_putchar_fd((char)0x0a, STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
 
 /*

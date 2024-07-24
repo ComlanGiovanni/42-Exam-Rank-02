@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 12:12:36 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 18:22:48 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/23 21:37:33 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/23 21:37:37 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int	ft_strcmp(char *s1, char *s2)
 {
 	int	idx;
 
-	idx = 0;
+	idx = 0x0;
 	while ((s1[idx] == s2[idx]) && (s1[idx] != '\0' && s2[idx] != '\0'))
 		idx++;
 	return ((unsigned char)s1[idx] - (unsigned char)s2[idx]);

@@ -3,25 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strpbrk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 16:16:19 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:47:16 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/23 22:00:46 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/23 22:06:19 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h> // For NULL || (void *)0 || 0
+#include <stddef.h> // NULL
 
-char	*ft_strchr(const char *s, int c)
+static char	*ft_strchr(const char *s, int c)
 {
-	size_t	idx;
-
-	idx = 0;
-	while (s[idx] != '\0')
+	while (*s)
 	{
-		if (s[idx] == c)
+		if (*s == c)
 			return ((char *)s);
-		idx++;
+		s++;
 	}
 	return (NULL);
 }

@@ -3,42 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 12:12:36 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:46:58 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/23 02:18:01 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/23 21:47:32 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include <stddef.h> // For NULL || (void *)0 || 0
 
-char	*ft_strchr(const char *s, int c)
+static char *ft_strchr(const char *s, int c)
 {
-	size_t	idx;
-
-	idx = 0;
-	while (s[idx] != '\0')
+	while (*s)
 	{
-		if (s[idx] == c)
+		if (*s == c)
 			return ((char *)s);
-		idx++;
+		s++;
 	}
-	return ((void *)0);
+	return (NULL);
 }
 
-size_t	ft_strcspn(const char *s, const char *reject)
+size_t ft_strcspn(const char *s, const char *reject)
 {
-	size_t	idx;
+	const char *first_char_of_s_ptr;
 
-	idx = 0;
-	while (s[idx] != '\0')
+	first_char_of_s_ptr = s;
+	while (*s)
 	{
-		if (ft_strchr(reject, s[idx]))
-			break ;
-		idx++;
+		if (ft_strchr(reject, *s))
+			break ; ;
+		s++;
 	}
-	return (idx);
+	return (s - first_char_of_s_ptr);
 }
+
+// #include <stddef.h> // For NULL || (void *)0 || 0
+
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	size_t	idx;
+
+// 	idx = 0;
+// 	while (s[idx] != '\0')
+// 	{
+// 		if (s[idx] == c)
+// 			return ((char *)s);
+// 		idx++;
+// 	}
+// 	return ((void *)0);
+// }
+
+// size_t	ft_strcspn(const char *s, const char *reject)
+// {
+// 	size_t	idx;
+
+// 	idx = 0;
+// 	while (s[idx] != '\0')
+// 	{
+// 		if (ft_strchr(reject, s[idx]))
+// 			break ;
+// 		idx++;
+// 	}
+// 	return (idx);
+// }
 
 /*
 #include <stdio.h>

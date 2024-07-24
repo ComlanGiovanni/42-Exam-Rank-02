@@ -3,59 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 14:33:35 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/24 10:00:09 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/24 10:08:37 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write // For Write
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	print_bits(unsigned char octet)
-{
-	int				idx;
-	unsigned char	mask;
-	unsigned char	bit;
-
-	idx = 7;
-	mask = 1;
-	while (idx >= 0)
-	{
-		bit = (((octet >> idx) & mask) + '0');
-		ft_putchar(bit);
-		idx--;
-	}
-}
+#include <unistd.h>
 
 unsigned char	reverse_bits(unsigned char octet)
 {
 	int				idx;
 	unsigned char	bit;
 
-	idx = 7;
-	while (idx >= 0)
+	idx = 0x8;
+	while (idx--)
 	{
-		bit = ((bit * 2) + (octet % 2));
-		octet /= 2;
-		idx--;
+		bit = ((bit * 0x2) + (octet % 0x2));
+		octet /= 0x2;
 	}
 	return (bit);
 }
 
-/*	Main Test
+static void	ft_putchar_fd(char c, int fd)
+{
+	if (fd >= 0x0)
+		write(fd, &c, sizeof(char));
+}
+
+void	print_bits(unsigned char octet)
+{
+	int				index;
+	unsigned char	bit;
+	unsigned char	mask;
+
+	index = (0x1 << 0x3);
+	mask = (0x1 << 0x0);
+	while (index--)
+	{
+		bit = (((octet >> index) & mask) + '0');
+		ft_putchar_fd(bit, STDOUT_FILENO);
+	}
+}
 
 int	main(void)
 {
-	print_bits(2);
-	ft_putchar('\n');
-	print_bits(reverse_bits(2));
-	ft_putchar('\n');
+	print_bits(0x2);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	print_bits(reverse_bits(0x2));
+	ft_putchar_fd('\n', STDOUT_FILENO);
 }
-
-*/

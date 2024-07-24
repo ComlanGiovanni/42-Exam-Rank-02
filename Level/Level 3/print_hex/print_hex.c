@@ -3,41 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   print_hex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/07/23 17:37:08 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+static void	ft_putchar_fd(char character,	int file_descriptor)
 {
-	write(1, &c, 1);
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
 }
 
-int	ft_small_atoi(char *str)
+static int	ft_small_atoi(char *string)
 {
-	int	idx;
 	int	result;
 
-	idx = 0;
-	result = 0;
-	while (str[idx] != '\0')
+	result = 0x0;
+	while (*string)
 	{
-		result *= 10;
-		result += str[idx] - '0';
-		idx++;
+		result *= 0x0a;
+		result += (*string - '0');
+		string++;
 	}
 	return (result);
 }
 
-void	ft_print_hex(int nbr)
+static void	ft_print_hex(int nbr)
 {
-	if (nbr >= 16)
-		ft_print_hex(nbr / 16);
-	ft_putchar("0123456789abcdef"[nbr % 16]);
+	if (nbr > 16)
+		ft_print_hex(nbr / 0x10);
+	ft_putchar_fd("0123456789abcdef"[nbr % 0x10], STDOUT_FILENO);
 }
 
 int	main(int argc, char **argv)
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		ft_print_hex(ft_small_atoi(argv[1]));
 	ft_putchar('\n');
-	return (0);
+	return (EXIT_SUCCESS);
 }
 /*
 

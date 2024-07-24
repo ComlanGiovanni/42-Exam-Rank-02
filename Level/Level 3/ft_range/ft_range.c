@@ -3,49 +3,80 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/11 13:56:13 by gcomlan          ###   ########.fr       */
+/*   Updated: 2024/07/23 18:30:07 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_absolute_value(int nbr)
+static int	ft_absolute_value(int number)
 {
-	if (nbr < 0)
-		return (-nbr);
-	return (nbr);
+	if (number < 0x0)
+		return (-number);
+	return (number);
 }
 
 int	*ft_range(int start, int end)
 {
-	int	idx;
 	int	size;
-	int	*tab;
+	int	step;
+	int *tab;
+	int	index;
 
-	idx = 0;
+	index = 0x0;
+	step = 0x0;
 	size = ft_absolute_value(start - end);
-	tab = (int *)malloc(sizeof(int) * size + 1);
+	tab = (int *)malloc(sizeof(int) * size + 0x1);
 	if (!tab)
-		return (0);
-	while (start < end)
+		return (EXIT_FAILURE);
+	while (index < size)
 	{
-		tab[idx] = start;
-		start++;
-		idx++;
+		tab[index] = start;
+		start = start + step;
+		index++;
 	}
-	tab[idx] = start;
-	while (start > end)
-	{
-		tab[idx] = start;
-		start--;
-		idx++;
-	}
-	tab[idx] = start;
 	return (tab);
 }
+
+// #include <stdlib.h>
+
+// int	ft_absolute_value(int nbr)
+// {
+// 	if (nbr < 0)
+// 		return (-nbr);
+// 	return (nbr);
+// }
+
+// int	*ft_range(int start, int end)
+// {
+// 	int	idx;
+// 	int	size;
+// 	int	*tab;
+
+// 	idx = 0;
+// 	size = ft_absolute_value(start - end);
+// 	tab = (int *)malloc(sizeof(int) * size + 1);
+// 	if (!tab)
+// 		return (0);
+// 	while (start < end)
+// 	{
+// 		tab[idx] = start;
+// 		start++;
+// 		idx++;
+// 	}
+// 	tab[idx] = start;
+// 	while (start > end)
+// 	{
+// 		tab[idx] = start;
+// 		start--;
+// 		idx++;
+// 	}
+// 	tab[idx] = start;
+// 	return (tab);
+// }
 
 /*
 #include <stdio.h>
