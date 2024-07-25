@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/23 18:30:07 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 02:54:07 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 10:55:56 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	*ft_range(int start, int end)
 {
 	int	size;
 	int	step;
-	int *tab;
+	int	*tab;
 	int	index;
 
 	index = 0x0;
@@ -32,6 +32,10 @@ int	*ft_range(int start, int end)
 	tab = (int *)malloc(sizeof(int) * size + 0x1);
 	if (!tab)
 		return (EXIT_FAILURE);
+	if (start < end)
+		step = 1;
+	else
+		step = -1;
 	while (index < size)
 	{
 		tab[index] = start;
@@ -40,6 +44,28 @@ int	*ft_range(int start, int end)
 	}
 	return (tab);
 }
+
+// int	*ft_range(int start, int end)
+// {
+// 	int	size;
+// 	int	step;
+// 	int *tab;
+// 	int	index;
+
+// 	index = 0x0;
+// 	step = 0x0;
+// 	size = ft_absolute_value(start - end);
+// 	tab = (int *)malloc(sizeof(int) * size + 0x1);
+// 	if (!tab)
+// 		return (EXIT_FAILURE);
+// 	while (index < size)
+// 	{
+// 		tab[index] = start;
+// 		start = start + step;
+// 		index++;
+// 	}
+// 	return (tab);
+// }
 
 // #include <stdlib.h>
 

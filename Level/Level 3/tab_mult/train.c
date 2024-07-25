@@ -6,12 +6,12 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 02:57:09 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/23 02:57:12 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/25 01:20:19 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
-#include <stdlib.h>
+#include <stdlib.h> // EXIT_SUCCESS
 
 static int	ft_small_atoi(char *string);
 static void	ft_small_put_nbr(int number);
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 			ft_small_put_nbr(index);
 			ft_putstr_fd(" x ", STDOUT_FILENO);
 			ft_small_put_nbr(number);
-			ft_putstr_fd(" - ", STDOUT_FILENO);
+			ft_putstr_fd(" = ", STDOUT_FILENO);
 			ft_small_put_nbr(number * index);
 			if (index < 0x9)
 				ft_putchar_fd('\n', STDOUT_FILENO);

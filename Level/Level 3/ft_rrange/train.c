@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/23 18:34:01 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 02:54:33 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 11:08:26 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	*ft_range(int start, int end)
 {
 	int	size;
 	int	step;
-	int *tab;
+	int	*tab;
 	int	index;
 
 	index = 0x0;

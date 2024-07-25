@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/23 03:50:14 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 01:34:57 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 01:50:16 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static void	ft_rstr_capitalizer(char *str);
 static int	ft_tolower(int c);
 static int	ft_toupper(int c);
-//static int	ft_isspace(int c);
+static int	ft_islower(char c);
 
 int	main(int argc, char *argv[])
 {
@@ -39,15 +39,11 @@ int	main(int argc, char *argv[])
 
 static void	ft_rstr_capitalizer(char *str)
 {
-	int	capitalize_next;
-
-	capitalize_next = 0x1;
 	while (*str)
 	{
-		if (capitalize_next)
-			*str = ft_tolower(*str);
-		if ((*str >= 'a' && 'z' >= *str) && (*(str + 1) == ' '
-				|| *(str + 1) == '\t' || *(str + 1) == '\0'))
+		*str = ft_tolower(*str);
+		if (ft_islower(*str) && (*(str + 1) == ' ' || *(str + 1) == '\t'
+				|| *(str + 1) == '\0'))
 			*str = ft_toupper(*str);
 		write(STDOUT_FILENO, str, sizeof(char));
 		str++;
@@ -68,7 +64,7 @@ static int	ft_toupper(int c)
 	return (c);
 }
 
-// static int	ft_isspace(int c)
-// {
-// 	return ((c == ' ') || ((c >= '\t') && (c <= '\r')));
-// }
+static int	ft_islower(char c)
+{
+	return ((c >= 'a') && (c <= 'z'));
+}

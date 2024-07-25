@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/23 17:36:55 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 01:59:53 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 02:12:06 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,22 @@ static int	ft_small_atoi(char *string)
 
 static void	ft_print_hex(int nbr)
 {
-	if (nbr > 16)
+	char	*hexa;
+
+	hexa = "0123456789abcdef";
+	if (nbr >= 0x10)
+	{
 		ft_print_hex(nbr / 0x10);
-	ft_putchar_fd("0123456789abcdef"[nbr % 0x10], STDOUT_FILENO);
+		ft_print_hex(nbr % 0x10);
+	}
+	else
+		ft_putchar_fd(hexa[nbr], STDOUT_FILENO);
 }
 
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
 		ft_print_hex(ft_small_atoi(argv[1]));
-	ft_putchar('\n');
+	ft_putchar_fd('\n', STDOUT_FILENO);
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:04:32 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/24 09:34:48 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/25 11:03:45 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ static void	ft_putchar_fd(char character,	int file_descriptor)
 	if (file_descriptor >= 0x0)
 		write(file_descriptor, &character, sizeof(char));
 }
-
 
 // static void	ft_last_word(char *str)
 // {

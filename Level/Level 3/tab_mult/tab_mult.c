@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/23 02:57:25 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 01:34:00 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 01:34:02 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 			ft_small_put_nbr(index);
 			ft_putstr_fd(" x ", STDOUT_FILENO);
 			ft_small_put_nbr(number);
-			ft_putstr_fd(" - ", STDOUT_FILENO);
+			ft_putstr_fd(" = ", STDOUT_FILENO);
 			ft_small_put_nbr(number * index);
 			if (index < 0x9)
 				ft_putchar_fd('\n', STDOUT_FILENO);

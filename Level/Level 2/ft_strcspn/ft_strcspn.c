@@ -6,14 +6,13 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 02:18:01 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/23 21:47:32 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/25 11:06:09 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stddef.h> // For NULL || (void *)0 || 0
 
-static char *ft_strchr(const char *s, int c)
+static char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
@@ -24,15 +23,15 @@ static char *ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-size_t ft_strcspn(const char *s, const char *reject)
+size_t	ft_strcspn(const char *s, const char *reject)
 {
-	const char *first_char_of_s_ptr;
+	const char	*first_char_of_s_ptr;
 
 	first_char_of_s_ptr = s;
 	while (*s)
 	{
 		if (ft_strchr(reject, *s))
-			break ; ;
+			break ;
 		s++;
 	}
 	return (s - first_char_of_s_ptr);

@@ -6,17 +6,17 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 22:46:05 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/23 22:55:17 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/25 11:04:41 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
 #include <stdlib.h> // EXIT_SUCCESS
 
-static void	ft_putstr_fd(char *string, int file_descriptor);
-static char	*ft_strrev(char *str);
-static	size_t	ft_strlen(char *string);
-static void	ft_swap_char(char *char_1, char *char_2);
+static void		ft_putstr_fd(char *string, int file_descriptor);
+static char		*ft_strrev(char *str);
+static size_t	ft_strlen(char *string);
+static void		ft_swap_char(char *char_1, char *char_2);
 
 int	main(int argc, char **argv)
 {

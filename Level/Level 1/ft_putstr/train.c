@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 13:40:07 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 02:07:18 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 10:59:50 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 10:59:51 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_putstr_fd(char *string, int file_descriptor)
 {
-	if (string == NULL)//WARNING IN EXAM
+	if (string == NULL)
 		string = "(null)";
 	if (file_descriptor >= 0x0)
 		while (*string)
@@ -25,7 +25,7 @@ void	ft_putstr(char *str)
 {
 	ft_putstr_fd(str, STDOUT_FILENO);
 }
-
+// //WARNING IN EXAM FOR SECURE
 // int	main(int argc, char **argv)
 // {
 // 	int	index;

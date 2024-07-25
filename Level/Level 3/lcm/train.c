@@ -5,13 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 17:07:36 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/23 04:50:57 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 02:18:04 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 02:20:02 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+unsigned int	lcm(unsigned int a, unsigned int b);
+
+int	main(void)
+{
+	printf("%u\n", lcm(14, 24));
+	return (EXIT_SUCCESS);
+}
 
 unsigned int	lcm(unsigned int a, unsigned int b)
 {
@@ -29,10 +37,4 @@ unsigned int	lcm(unsigned int a, unsigned int b)
 			return (lcm);
 		++lcm;
 	}
-}
-
-int	main(void)
-{
-	printf("%u\n", lcm(14, 24));
-	return (EXIT_SUCCESS);
 }

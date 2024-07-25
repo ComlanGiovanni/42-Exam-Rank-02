@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 18:41:21 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/23 18:46:02 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/25 10:47:35 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static int	ft_islower(char c)
 
 int	ft_atoi_base(const char *str, int str_base)
 {
-	int sign;
-	int result;
+	int	sign;
+	int	result;
 
 	sign = 0x1;
 	result = 0x0;
@@ -41,17 +41,18 @@ int	ft_atoi_base(const char *str, int str_base)
 	{
 		result *= str_base;
 		if (ft_isdigit(*str))
-			result += *str - '0';
+			result += (*str - '0');
 		else if (ft_isupper(*str))
-			result += *str - '7';
+			result += (*str - '7');
 		else if (ft_islower(*str))
-			result += *str - 'W';
+			result += (*str - 'W');
 		str++;
 	}
 	return (result * sign);
 }
-
+/*
 #include <stdio.h>
+#include <stdlib.h>
 
 int	main(void)
 {
@@ -61,6 +62,7 @@ int	main(void)
 	printf("%d\n", ft_atoi_base("D", 16));
 	printf("%d\n", ft_atoi_base("e", 16));
 	printf("%d\n", ft_atoi_base("E", 16));
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
+*/

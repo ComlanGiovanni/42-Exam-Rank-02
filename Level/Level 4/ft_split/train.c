@@ -6,43 +6,16 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:30:33 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/24 10:30:35 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/24 14:15:16 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stdlib.h> // EXIT_SUCCESS
 #include <stddef.h> // For NULL || (void *)0 || 0
-
-char	**ft_split(char *str)
-{
-	int		idx;
-	int		row;
-	int		colum;
-	char	**split;
-
-	idx = 0;
-	row = 0;
-	if (!(split = (char **)malloc(sizeof(char *) * 256)))
-		return (NULL);
-	while (str[idx] == ' ' || str[idx] == '\t' || str[idx] == '\n')
-		idx++;
-	while (str[idx])
-	{
-		colum = 0;
-		if (!(split[row] = (char *)malloc(sizeof(char) * 4092)))
-			return (NULL);
-		while (str[idx] != ' ' && str[idx] != '\t' && str[idx] != '\n')
-			split[row][colum++] = str[idx++];
-		while (str[idx] == ' ' || str[idx] == '\t' || str[idx] == '\n')
-			idx++;
-		split[row][colum] = '\0';
-		row++;
-	}
-	split[row] = NULL;
-	return (split);
-}
-
 #include <stdio.h>
+
+static int	ft_is_delimiter(char c);
+char 		**ft_split(char *str);
 
 int	main(void)
 {
@@ -56,6 +29,38 @@ int	main(void)
 		printf("String %d : %s\n", idx, tab[idx]);
 		idx++;
 	}
-	return (0);
+	return (EXIT_SUCCESS);
+}
+char **ft_split(char *str)
+{
+	size_t idx;
+	size_t row;
+	size_t column;
+	char **split;
+
+	idx = 0;
+	row = 0;
+	if (!(split = (char **)malloc(sizeof(char *) * 256)))
+		return (NULL);
+	while (ft_is_delimiter(str[idx]))
+		idx++;
+	while (str[idx])
+	{
+		column = 0;
+		if (!(split[row] = (char *)malloc(sizeof(char) * 4096)))
+			return (NULL);
+		while (!ft_is_delimiter(str[idx]))
+			split[row][column++] = str[idx++];
+		while (ft_is_delimiter(str[idx]))
+			idx++;
+		split[row][column] = '\0';
+		row++;
+	}
+	split[row] = NULL;
+	return (split);
 }
 
+static int	ft_is_delimiter(char c)
+{
+	return (c == ' ' || c == '\t' || c == '\r');
+}

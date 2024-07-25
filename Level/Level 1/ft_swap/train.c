@@ -5,16 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 00:26:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 02:16:26 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 11:00:09 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 11:01:36 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	(*a ^= *b), (*b ^= *a), (*a ^= *b);
+	*a ^= *b;
+	*b ^= *a;
+	*a ^= *b;
 }
 
+// void	ft_swap(int *a, int *b)
+// {
+// 	(*a ^= *b), (*b ^= *a), (*a ^= *b);
+// }
 /*
 #include <stdio.h> // For printf
 

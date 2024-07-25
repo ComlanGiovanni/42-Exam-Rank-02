@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/23 03:25:51 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 01:25:58 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 01:31:32 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_tolower(int c);
 static int	ft_toupper(int c);
 static int	ft_isspace(int c);
 
-int	main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
 	int	index;
 

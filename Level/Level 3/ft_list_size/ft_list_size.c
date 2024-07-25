@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 15:26:07 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/24 10:31:39 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/24 14:54:31 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,18 @@ int	ft_list_size(t_list *begin_list)
 		size++;
 	}
 	return (size);
+}
+
+t_list	*ft_new_node(void *data)
+{
+	t_list	*node;
+
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
+		return (node = NULL);
+	node->data = data;
+	node->next = NULL;
+	return (node);
 }
 
 */

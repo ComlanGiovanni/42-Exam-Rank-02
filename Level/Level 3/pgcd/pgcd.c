@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 23:41:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/23 04:35:34 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 02:13:35 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 02:21:13 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int argc, char **argv)
 	printf("\n");
 	return (EXIT_SUCCESS);
 }
-
 
 static void	ft_pgcd(int nbr_1, int nbr_2)
 {

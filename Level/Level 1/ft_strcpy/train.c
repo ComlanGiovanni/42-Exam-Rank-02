@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 00:13:42 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 02:11:12 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 11:02:35 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 11:07:51 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,15 @@ void	ft_putstr(char *str)
 
 char	*ft_strcpy(char *s1, char *s2)
 {
-	while ((*s1++ = *s2++))
-		;
+	int	index;
+
+	index = 0x0;
+	while (s2[index] != '\0')
+	{
+		s1[index] = s2[index];
+		index++;
+	}
+	s2[index] = '\0';
 	return (s1);
 }
 
@@ -47,16 +54,9 @@ int	main(void)
 	return (EXIT_FAILURE);
 }
 
-// char *ft_strcpy(char *s1, char *s2)
+// char	*ft_strcpy(char *s1, char *s2)
 // {
-// 	int	index;
-
-// 	index = 0x0;
-// 	while (s2[index] != '\0')
-// 	{
-// 		s1[index] = s2[index];
-// 		index++;
-// 	}
-// 	s2[index] = '\0';
+// 	while ((*s1++ = *s2++))
+// 		;
 // 	return (s1);
 // }

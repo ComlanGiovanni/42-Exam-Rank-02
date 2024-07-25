@@ -1,0 +1,11 @@
+Écrire un programme qui affiche les arguments reçus en ligne de commande triés par
+ordre ascii. Chaque argument devra être sur une ligne séparée. Si aucun argument n’est
+passé au programme, affichez un retour à la ligne.
+Exemples :
+$>./ft_sort_params ga bu zo | cat -e
+bu$
+ga$
+zo$
+$>./ft_sort_params | cat -e
+$
+$>

@@ -6,13 +6,13 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 02:18:07 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/23 21:47:24 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/25 11:05:01 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h> // For NULL || (void *)0 || 0
 
-static char *ft_strchr(const char *s, int c)
+static char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
@@ -23,15 +23,15 @@ static char *ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-size_t ft_strcspn(const char *s, const char *reject)
+size_t	ft_strcspn(const char *s, const char *reject)
 {
-	const char *first_char_of_s_ptr;
+	const char	*first_char_of_s_ptr;
 
 	first_char_of_s_ptr = s;
 	while (*s)
 	{
 		if (ft_strchr(reject, *s))
-			break ; ;
+			break ;
 		s++;
 	}
 	return (s - first_char_of_s_ptr);
@@ -42,21 +42,32 @@ size_t ft_strcspn(const char *s, const char *reject)
 
 int	main(void)
 {
-	const char *test_str1 = "tro3jan";
-	const char *reject1 = "1234";
-	const char *test_str2 = "hello world";
-	const char *reject2 = "o";
-	const char *test_str3 = "abcdef";
-	const char *reject3 = "xyz";
-	const char *test_str4 = "example";
-	const char *reject4 = "mpl";
+	const char	*test_str1;
+	const char	*reject1;
+	const char	*test_str2;
+	const char	*reject2;
+	const char	*test_str3;
+	const char	*reject3;
+	const char	*test_str4;
+	const char	*reject4;
 
+	test_str1 = "tro3jan";
+	reject1 = "1234";
+	test_str2 = "hello world";
+	reject2 = "o";
+	test_str3 = "abcdef";
+	reject3 = "xyz";
+	test_str4 = "example";
+	reject4 = "mpl";
 	printf("Testing ft_strcspn:\n");
-	printf("Input: '%s', Reject: '%s' -> Result: %zu\n", test_str1, reject1, ft_strcspn(test_str1, reject1));
-	printf("Input: '%s', Reject: '%s' -> Result: %zu\n", test_str2, reject2, ft_strcspn(test_str2, reject2));
-	printf("Input: '%s', Reject: '%s' -> Result: %zu\n", test_str3, reject3, ft_strcspn(test_str3, reject3));
-	printf("Input: '%s', Reject: '%s' -> Result: %zu\n", test_str4, reject4, ft_strcspn(test_str4, reject4));
-
+	printf("Input: '%s', Reject: '%s' -> Result: %zu\n", test_str1, reject1,
+			ft_strcspn(test_str1, reject1));
+	printf("Input: '%s', Reject: '%s' -> Result: %zu\n", test_str2, reject2,
+			ft_strcspn(test_str2, reject2));
+	printf("Input: '%s', Reject: '%s' -> Result: %zu\n", test_str3, reject3,
+			ft_strcspn(test_str3, reject3));
+	printf("Input: '%s', Reject: '%s' -> Result: %zu\n", test_str4, reject4,
+			ft_strcspn(test_str4, reject4));
 	return (0);
 }
 */

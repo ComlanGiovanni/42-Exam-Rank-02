@@ -1,0 +1,11 @@
+Assignment name  : ft_djamal
+Expected files   : ft_djamal.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Ecrire une fonction ft_djamal qui prendras en parametre trois int et retournera la valeu mediane. 
+Cette fonction sera protoypee de la facon suivante:
+
+int ft_djamal(int t, int, j, int k);
+
+Examples:

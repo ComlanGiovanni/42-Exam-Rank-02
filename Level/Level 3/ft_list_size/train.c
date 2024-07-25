@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 15:26:33 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/25 10:58:26 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 10:58:28 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ t_list	*ft_new_node(void *data)
 	node->next = NULL;
 	return (node);
 }
-
 
 int	main(void)
 {

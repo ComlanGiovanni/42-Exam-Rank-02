@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_remove_if.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 15:11:26 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/25 02:55:17 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 02:55:19 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
-	t_list	*current;
+	t_list	*temp;
 
-	if ((begin_list == NULL) || (*begin_list == NULL))
+	if (*begin_list == NULL)
 		return ;
-	current = *begin_list;
-	if (cmp(current->data, data_ref) == 0)
+	if (cmp((*begin_list)->data, data_ref) == 0)
 	{
-		*begin_list = current->next;
-		free(current);
+		temp = *begin_list;
+		*begin_list = (*begin_list)->next;
+		free(temp);
 		ft_list_remove_if(begin_list, data_ref, cmp);
 	}
-	current = *begin_list;
-	ft_list_remove_if(&current->next, data_ref, cmp);
+	else
+		ft_list_remove_if(&((*begin_list)->next), data_ref, cmp);
 }

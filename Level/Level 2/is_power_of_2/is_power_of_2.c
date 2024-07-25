@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 08:47:32 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/24 09:01:31 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/07/24 12:07:17 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,12 @@ int	main(void)
 // int	is_power_of_2(unsigned int n)
 // {
 // 	return (n != 0 && (n & (n - 1)) == 0);
+// }
+// int	is_power_of_2(unsigned int n)
+// {
+//if (n == 0)
+//       return 0;
+// 	return ((n & (n - 1)) == 0);
 // }
 /*
 int is_power_of_2(unsigned int n)

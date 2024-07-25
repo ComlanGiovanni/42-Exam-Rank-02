@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 14:16:51 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 14:28:52 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 11:02:43 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 11:03:03 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ static void	ft_putchar_fd(char c, int fd)
 	if (fd >= 0x0)
 		write (fd, &c, sizeof(char));
 }
-
 
 // #include <unistd.h> // For write
 // #include <stdlib.h> // For exit && EXIT_SUCCESS

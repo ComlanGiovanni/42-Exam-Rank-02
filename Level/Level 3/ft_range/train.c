@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 11:44:39 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/23 18:32:45 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/07/25 02:54:14 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 10:56:02 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int	ft_absolute_value(int number)
+static	int	ft_absolute_value(int number)
 {
 	if (number < 0x0)
 		return (-number);
@@ -23,7 +23,7 @@ int	*ft_range(int start, int end)
 {
 	int	size;
 	int	step;
-	int *tab;
+	int	*tab;
 	int	index;
 
 	index = 0x0;
