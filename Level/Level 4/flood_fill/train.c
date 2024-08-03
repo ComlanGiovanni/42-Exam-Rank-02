@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 15:32:29 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/25 14:00:54 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 14:01:44 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	flood_fill(char **tab, t_point size, t_point begin)
 	fill(tab, size, begin, tab[begin.y][begin.x]);
 }
 
-/*
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -76,4 +75,4 @@ int	main(void)
 	for (int i = 0; i < size.y; ++i)
 		printf("%s\n", area[i]);
 	return (0);
-}*/
+}

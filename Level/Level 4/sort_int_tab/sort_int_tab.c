@@ -3,26 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   sort_int_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/14 19:25:00 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/25 12:10:00 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 12:10:02 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+static void	ft_swap(int *a, int *b)
 {
-	int	tmp;
-
-	tmp = *b;
-	*b = *a;
-	*a = tmp;
+	*a ^= *b;
+	*b ^= *a;
+	*a ^= *b;
 }
 
 void	sort_int_tab(int *tab, unsigned int size)
 {
-	int	idx;
-	int	bubble;
+	unsigned int	idx;
+	unsigned int	bubble;
 
 	idx = 0;
 	bubble = 0;

@@ -3,26 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 15:30:46 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/25 11:54:02 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 12:09:25 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+static void	ft_swap(int *a, int *b)
 {
-	int	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	*a ^= *b;
+	*b ^= *a;
+	*a ^= *b;
 }
 
 void	sort_int_tab(int *tab, unsigned int size)
 {
-	int	idx;
-	int	bubble;
+	unsigned int	idx;
+	unsigned int	bubble;
 
 	idx = 0;
 	bubble = 0;
@@ -41,12 +39,11 @@ void	sort_int_tab(int *tab, unsigned int size)
 	}
 }
 
-/*
 #include <stdio.h>
 
 void	ft_print_tab_int(int *tab, unsigned int size)
 {
-	int		idx;
+	unsigned int		idx;
 
 	idx = 0;
 	while (idx < size)
@@ -80,5 +77,3 @@ int	main(void)
 	return (0);
 }
 
-//bubble_sort
-*/

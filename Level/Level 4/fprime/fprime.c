@@ -3,60 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   fprime.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 15:21:32 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/07/25 11:38:58 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/07/25 11:50:49 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_is_prime(int nbr)
-{
-	int	check;
+// int	ft_is_prime(int nbr)
+// {
+// 	int	check;
 
-	check = 2;
-	if (nbr <= 1)
-		return (0);
-	while (check < nbr)
-	{
-		if ((nbr % check) == 0)
-			return (0);
-		check++;
-	}
-	return (1);
+// 	check = 2;
+// 	if (nbr <= 1)
+// 		return (0);
+// 	while (check < nbr)
+// 	{
+// 		if ((nbr % check) == 0)
+// 			return (0);
+// 		check++;
+// 	}
+// 	return (1);
+// }
+
+static void	ft_fprime(int number);
+
+int	main(int argc, char **argv)
+{
+	if (argc == 0x2)
+		ft_fprime(atoi(argv[0x1]));
+	printf("\n");
+	return (EXIT_SUCCESS);
 }
 
-void	fprime(int nbr)
+static void	ft_fprime(int number)
 {
-	int	check;
+	int	prime;
 
-	check = 2;
-	if (nbr == 1)
+	prime == 0x2;
+	if (number == 0x1)
 	{
 		printf("1");
 		return ;
 	}
-	while (nbr >= check)
+	while (number >= prime)
 	{
-		if ((nbr % check) == 0)
+		if ((number % prime) == 0x0)
 		{
-			printf("%d", check);
-			if (nbr != check)
+			printf("%d", prime);
+			if(number != prime)
 				printf("*");
-			nbr /= check;
-			check--;
+			number /= prime;
+			prime--;
 		}
-		check++;
+		prime++;
 	}
-}
-
-int	main(int ac, char **av)
-{
-	if (ac == 2)
-		fprime(atoi(av[1]));
-	printf("\n");
-	return (0);
 }
