@@ -3,32 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:06:16 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/17 16:53:23 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/08/19 12:58:52 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/19 13:00:26 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
 
-void	ft_putchar(char c)
+static void	ft_putchar_fd(char character,	int file_descriptor)
 {
-	write(1, &c, 1);
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
 }
 
-int	is_space(char c)
+static int	ft_isspace(int c)
 {
-	if ((c == ' ') || (c == '\t'))
-		return (1);
-	return (0);
+	return ((c == ' ') || ((c >= '\t') && (c <= '\r')));
 }
 
 void	ft_print_first_word(char *str, int begin_space)
 {
-	while (str[begin_space] != '\0' && !is_space(str[begin_space]))
+	while (str[begin_space] != '\0' && !ft_isspace(str[begin_space]))
 	{
-		ft_putchar(str[begin_space]);
+		ft_putchar_fd(str[begin_space], STDOUT_FILENO);
 		begin_space++;
 	}
 }
@@ -39,21 +38,21 @@ void	rostring(char *str)
 	int	begin_space;
 
 	begin_space = 0;
-	while (str[begin_space] != '\0' && is_space(str[begin_space]))
+	while (str[begin_space] != '\0' && ft_isspace(str[begin_space]))
 		begin_space++;
 	idx = begin_space;
-	while (str[idx] != '\0' && !is_space(str[idx]))
+	while (str[idx] != '\0' && !ft_isspace(str[idx]))
 		idx++;
 	while (str[idx] != '\0')
 	{
-		if (str[idx] != '\0' && !is_space(str[idx]) && is_space(str[idx - 1]))
+		if (str[idx] != '\0' && !ft_isspace(str[idx]) && ft_isspace(str[idx - 1]))
 		{
-			while (str[idx] != '\0' && !is_space(str[idx]))
+			while (str[idx] != '\0' && !ft_isspace(str[idx]))
 			{
-				ft_putchar(str[idx]);
+				ft_putchar_fd(str[idx], STDOUT_FILENO);
 				idx++;
 			}
-			ft_putchar(' ');
+			ft_putchar_fd(' ', STDOUT_FILENO);
 		}
 		idx++;
 	}
@@ -64,6 +63,6 @@ int	main(int argc, char **argv)
 {
 	if (argc > 1)
 		rostring(argv[1]);
-	ft_putchar('\n');
+	ft_putchar_fd('\n', STDOUT_FILENO);
 	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   train.c                                            :+:      :+:    :+:   */
+/*   ft_clean_split.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 10:30:33 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/08/19 15:26:46 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/08/19 13:19:31 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/19 14:22:40 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ static int ft_count_words(char *str)
 	{
 		if (!((*str == ' ') || ((*str >= '\t') && (*str <= '\r'))) && !in_word)
 		{
-			in_word = 0x01;
+			in_word = 0x1;
 			word_count++;
 		}
-		else if ((*str == ' ' || ((*str >= '\t') && (*str <= '\r'))))
+		else if (((*str == ' ') || ((*str >= '\t') && (*str <= '\r'))))
 			in_word = 0x0;
 		str++;
 	}
@@ -42,12 +42,12 @@ static char *ft_malloc_word(char *str)
 	length = 0x0;
 	while (str[length] && !((str[length] == ' ') \
 		|| ((str[length] >= '\t') && (str[length] <= '\r'))))
-			length++;
-	word = (char *)malloc(sizeof(char) * (length + 0x1));
+		length++;
+	word = (char *)malloc (sizeof(char) * (length + 0x1));
 	if (!word)
 		return (NULL);
 	word[length] = '\0';
-	while (length--)
+	while(length--)
 		word[length] = str[length];
 	return (word);
 }
@@ -59,7 +59,7 @@ static void	ft_free_words(char **words, int count)
 	free(words);
 }
 
-static char	**ft_split_words(char *str, char **words)
+static	char **ft_split_words(char *str, char **words)
 {
 	int	index;
 
@@ -86,10 +86,10 @@ static char	**ft_split_words(char *str, char **words)
 	return (words);
 }
 
-char **ft_split(char *str)
+char	**ft_split(char *str)
 {
-	char	**words;
-	int		word_count;
+	char **words;
+	int	word_count;
 
 	word_count = ft_count_words(str);
 	words = (char **)malloc(sizeof(char *) * (word_count + 0x1));
@@ -160,35 +160,6 @@ int	ft_display_spilt_result_and_get_length(char **splitted_tab)
 	return (index);
 }
 
-void ft_rev_wstr(char **splitted_tab, int splitted_tab_length)
-{
-	ft_putstr_fd("Reverse word string -->> ", STDOUT_FILENO);
-	while (splitted_tab_length--)
-	{
-		if (splitted_tab[splitted_tab_length])
-		{
-			ft_putstr_fd(splitted_tab[splitted_tab_length], STDOUT_FILENO);
-			ft_putchar_fd(' ', STDOUT_FILENO);
-		}
-	}
-	ft_putchar_fd('\n', STDOUT_FILENO);
-}
-void ft_rostring(char **splitted_tab)
-{
-	int	index;
-
-	index = 0x1;
-	ft_putstr_fd("Rotate word string -->> ", STDOUT_FILENO);
-	while (splitted_tab[index])
-	{
-		ft_putstr_fd(splitted_tab[index], STDOUT_FILENO);
-		ft_putchar_fd(' ', STDOUT_FILENO);
-		index++;
-	}
-	ft_putstr_fd(splitted_tab[0], STDOUT_FILENO);
-	ft_putchar_fd('\n', STDOUT_FILENO);
-}
-
 int	main(int argc, char **argv)
 {
 	int		splitted_tab_length;
@@ -209,11 +180,8 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("Usage: ./split \"string to split\"\n", STDOUT_FILENO);
 		return (EXIT_FAILURE);
 	}
+	ft_putchar_fd('\n', STDOUT_FILENO);
 	splitted_tab_length = ft_display_spilt_result_and_get_length(splitted_tab);
-	ft_putchar_fd('\n', STDOUT_FILENO);
-	ft_rev_wstr(splitted_tab, splitted_tab_length);
-	ft_putchar_fd('\n', STDOUT_FILENO);
-	ft_rostring(splitted_tab);
 	ft_free_words(splitted_tab, splitted_tab_length);
 	return (EXIT_SUCCESS);
 }

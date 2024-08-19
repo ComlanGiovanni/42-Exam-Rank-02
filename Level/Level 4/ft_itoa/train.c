@@ -6,63 +6,69 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:17:02 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/25 12:55:44 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/19 16:48:35 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>  //For printf
-#include <stdlib.h> //For malloc
+#include <stddef.h> //NULL
+#include <stdlib.h> //malloc
 
-static int	ft_length(long number)
+static int ft_length(long number)
 {
 	int	length;
 
-	length = 0;
-	if (number == 0)
-		return (1);
-	if (number < 0)
+	length = 0x0;
+	if (number == 0x0)
+		return (0x1);
+	if (number < 0x0)
 	{
 		number *= -1;
 		length++;
 	}
-	while (number > 0)
+	while (number > 0x0)
 	{
-		number /= 10;
+		number /= 0xa;
 		length++;
 	}
 	return (length);
 }
 
-char	*ft_itoa(int nbr)
+static void	ft_fill_string(char *string, long number, int length)
 {
-	int		index;
-	long	number;
-	char	*string;
-
-	number = nbr;
-	index = ft_length(number);
-	string = ((char *)malloc(index + 1));
-	if (!string)
-		return (NULL);
-	string[index--] = '\0';
-	if (number == 0)
-		string[0] = '0';
+	string[length] = '\0';
+	if (number == 0x0)
+		string[0x0] = '0';
 	else
 	{
-		if (number < 0)
+		if (number < 0x0)
 		{
-			string[0] = '-';
+			string[0x0] = '-';
 			number *= -1;
 		}
-		while (number > 0)
+		while (number)
 		{
-			string[index] = (number % 10) + '0';
-			number /= 10;
-			index--;
+			length--;
+			string[length] = (number % 0xa) + '0';
+			number /= 0xa;
 		}
 	}
+}
+
+char *ft_itoa(int nbr)
+{
+	int length;
+	long number;
+	char *string;
+
+	number = nbr;
+	length = ft_length(number);
+	string = ((char *)malloc (length + 0x1));
+	if (!string)
+		return (NULL);
+	ft_fill_string(string, number, length);
 	return (string);
 }
+#include <stdio.h>
 
 int	main(void)
 {

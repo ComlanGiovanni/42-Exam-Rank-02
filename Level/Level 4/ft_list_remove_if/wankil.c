@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 13:51:12 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/08/18 22:50:55 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/19 11:56:05 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,51 @@ static void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 		ft_list_remove_if(&((*begin_list)->next), data_ref, cmp);
 }
 
+static size_t ft_strlen(char *string)
+{
+	const char *last_char_string_pointer = string;
+
+	last_char_string_pointer = string;
+	if (!string)
+		return (0x0);
+	while (*last_char_string_pointer != '\0')
+		last_char_string_pointer++;
+	return (last_char_string_pointer - string);
+}
+
+static int ft_ascending(void *a, void *b)
+{
+	return ((ft_strlen((char *)a) <= ft_strlen((char *)b)));
+}
+
+static void 	ft_swap_void(void **a, void **b)
+{
+	void	*tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+static t_list *ft_sort_list(t_list *lst, int(*cmp)(void*, void *))
+{
+	t_list *tmp;
+
+	tmp = lst;
+	while (lst->next != NULL)
+	{
+		if ((*cmp)(lst->data, lst->next->data) == 0x0)
+		{
+			ft_swap_void(&lst->data, &lst->next->data);
+			lst = tmp;
+		}
+		else
+			lst = lst->next;
+	}
+	lst = tmp;
+	return (lst);
+}
+
 static void	ft_linked_list(int argc, char **argv)
 {
 	t_list	**begin_list;
@@ -191,6 +236,7 @@ static void	ft_linked_list(int argc, char **argv)
 	ft_small_put_nbr(ft_list_size(my_list));
 	ft_putchar_fd('\n', STDOUT_FILENO);
 	ft_list_foreach(my_list, (void *)ft_putendl_fd);
+	my_list = ft_sort_list(my_list, ft_ascending);
 	ft_putchar_fd('\n', STDOUT_FILENO);
 	ft_list_remove_if(begin_list, "delete", ft_strcmp);
 	ft_list_foreach(my_list, (void *)ft_putendl_fd);

@@ -6,14 +6,14 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:16:42 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/25 12:21:14 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/19 16:41:37 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>	//For malloc
-#include <stdio.h>	//For printf
+#include <stdio.h>  //For printf
+#include <stdlib.h> //For malloc
 
-int	length(long number)
+static int	ft_length(long number)
 {
 	int	length;
 
@@ -33,82 +33,50 @@ int	length(long number)
 	return (length);
 }
 
-char	*ft_itoa(int nbr)
+static void	ft_fill_string(char *string, long number, int len)
 {
-	int		index;
+	string[len] = '\0';
+	if (number == 0x0)
+		string[0x0] = '0';
+	else
+	{
+		if (number < 0x0)
+		{
+			string[0x0] = '-';
+			number = -number;
+		}
+		while (number)
+		{
+			string[--len] = (number % 0xa) + '0';
+			number /= 0xa;
+		}
+	}
+}
+
+char *ft_itoa(int nbr)
+{
+	int		length;
 	long	number;
 	char	*string;
 
 	number = nbr;
-	index = length(number);
-	string = ((char *)malloc(index + 1));
+	length = ft_length(number);
+	string = ((char *)malloc(length + 0x1));
 	if (!string)
 		return (NULL);
-	string[index--] = '\0';
-	if (number == 0)
-		string[0] = '0';
-	else
-	{
-		if (number < 0)
-		{
-			string[0] = '-';
-			number *= -1;
-		}
-		while (number > 0)
-		{
-			string[index] = (number % 10) + '0';
-			number /= 10;
-			index--;
-		}
-	}
+	ft_fill_string(string, number, length);
 	return (string);
 }
 
-
-// #include <stdlib.h>	//For malloc
-
-// int	len_nb(long nbr)
-// {
-// 	int	len;
-
-// 	len = 0;
-// 	if (nbr == 0)
-// 		return (1);
-// 	if (nbr < 0)
-// 		len++;
-// 	while (nbr != 0)
-// 	{
-// 		nbr = nbr / 10;
-// 		len++;
-// 	}
-// 	return (len);
-// }
-
-// char	*ft_itoa(int nbr)
-// {
-// 	long	len;
-// 	long	tmp_len;
-// 	char	*res;
-
-// 	len = len_nb(nbr);
-// 	tmp_len = nbr;
-// 	if (nbr < 0)
-// 		tmp_len *= -1;
-// 	res = malloc(sizeof(char) * (len + 1));
-// 	if (!res)
-// 		return (NULL);
-// 	res[len] = 0;
-// 	if (tmp_len == 0)
-// 		res[0] = '0';
-// 	else
-// 	{
-// 		while (len--, tmp_len != 0)
-// 		{
-// 			res[len] = (tmp_len % 10) + '0';
-// 			tmp_len = (tmp_len - (tmp_len % 10)) / 10;
-// 		}
-// 		if (nbr < 0)
-// 			res[len] = '-';
-// 	}
-// 	return (res);
-// }
+int	main(void)
+{
+	printf("0 -> %s\n", ft_itoa(0));
+	printf("1 -> %s\n", ft_itoa(1));
+	printf("42 -> %s\n", ft_itoa(42));
+	printf("1001 -> %s\n", ft_itoa(1001));
+	printf("0-> %s\n", ft_itoa(-0));
+	printf("-2-> %s\n", ft_itoa(-2));
+	printf("-24-> %s\n", ft_itoa(-24));
+	printf("-2147483648-> %s\n", ft_itoa(-2147483648));
+	printf("2147483647-> %s\n", ft_itoa(2147483647));
+}

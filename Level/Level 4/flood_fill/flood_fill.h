@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcomlan <gcomlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/13 23:49:12 by gcomlan           #+#    #+#             */
-/*   Updated: 2022/08/16 15:31:49 by gcomlan          ###   ########.fr       */
+/*   Created: 2024/08/19 15:47:59 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/19 15:48:00 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ typedef struct s_point
 {
 	int	x;
 	int	y;
-}				t_point;
+}		t_point;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 12:10:00 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/25 12:10:02 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/19 12:32:38 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,22 @@ static void	ft_swap(int *a, int *b)
 	*a ^= *b;
 }
 
-void	sort_int_tab(int *tab, unsigned int size)
+void sort_int_tab(int *tab, unsigned int size)
 {
-	unsigned int	idx;
+	unsigned int	index;
 	unsigned int	bubble;
 
-	idx = 0;
-	bubble = 0;
-	if (size <= 1)
+	bubble = 0x0;
+	if (size <= 0x1)
 		return ;
 	while (bubble < size)
 	{
-		idx = 0;
-		while (idx < (size - 1))
+		index = 0x0;
+		while (index < (size - 1))
 		{
-			if (tab[idx] > tab[idx + 1])
-				ft_swap(&tab[idx], &tab[idx + 1]);
-			idx++;
+			if (tab[index] > tab[index + 0x1])
+				ft_swap(&tab[index], &tab[index + 1]);
+			index++;
 		}
 		bubble++;
 	}
