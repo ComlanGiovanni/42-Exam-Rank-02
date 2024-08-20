@@ -5,25 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 21:50:56 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 11:22:12 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/08/20 14:28:01 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/20 14:55:40 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
+#include <unistd.h> // write
+#include <stdlib.h> //EXIT_SUCCESS STDOUT_FILENO
 
-static void	ft_repeat_alpha(char *str);
-static int	ft_isalpha(int c);
-static int	ft_isupper(int c);
-static void	ft_repeat(char alphabet, int repeat_count);
-
-int	main(int argc, char **argv)
+static int	ft_isupper(char character)
 {
-	if (argc == 0x2)
-		ft_repeat_alpha(argv[1]);
-	write(STDOUT_FILENO, "\n", sizeof(char));
-	return (EXIT_SUCCESS);
+	return ((character >= 'A') && (character <= 'Z'));
+}
+
+static int	ft_isalpha(char character)
+{
+	return (ft_isupper(character) \
+		|| ((character >= 'a') && (character <= 'z')));
+}
+
+static void	ft_repeat(char alphabet, int repeat_count, int file_descriptor)
+{
+	while (repeat_count-- >= 0x0)
+		write (file_descriptor, &alphabet, sizeof(char));
 }
 
 static void	ft_repeat_alpha(char *str)
@@ -33,9 +37,9 @@ static void	ft_repeat_alpha(char *str)
 		if (ft_isalpha(*str))
 		{
 			if (ft_isupper(*str))
-				ft_repeat(*str, (*str - 'A'));
+				ft_repeat(*str, (*str - 'A'), STDOUT_FILENO);
 			else
-				ft_repeat(*str, (*str - 'a'));
+				ft_repeat(*str, (*str - 'a'), STDOUT_FILENO);
 		}
 		else
 			write (STDOUT_FILENO, str, sizeof(char));
@@ -43,24 +47,10 @@ static void	ft_repeat_alpha(char *str)
 	}
 }
 
-static int	ft_isalpha(int c)
+int	main(int argc, char **argv)
 {
-	return (ft_isupper(c) || ((c >= 'a') && (c <= 'z')));
+	if (argc == 0x2)
+		ft_repeat_alpha(argv[0x1]);
+	write(STDOUT_FILENO, "\n", sizeof(char));
+	return (EXIT_SUCCESS);
 }
-
-static int	ft_isupper(int c)
-{
-	return ((c >= 'A') && (c <= 'Z'));
-}
-
-static void	ft_repeat(char alphabet, int repeat_count)
-{
-	while (repeat_count-- >= 0x0)
-		write (STDOUT_FILENO, &alphabet, sizeof(char));
-}
-
-// static void	ft_putchar_fd(char character, int file_descriptor)
-// {
-// 	if (file_descriptor >= 0x0)
-// 		write (file_descriptor, &character, sizeof(char));
-// }

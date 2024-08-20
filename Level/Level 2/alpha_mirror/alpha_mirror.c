@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 02:37:56 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/23 21:06:56 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:49:31 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ static void	ft_alpha_mirror(char *str)
 	}
 }
 
-static int	ft_isupper(int c)
+static int	ft_isupper(int character)
 {
-	return ((c >= 'A') && (c <= 'Z'));
+	return ((character >= 'A') && (character <= 'Z'));
 }
 
-static int	ft_islower(char c)
+static int	ft_islower(char character)
 {
-	return ((c >= 'a') && (c <= 'z'));
+	return ((character >= 'a') && (character <= 'z'));
 }
 
 static void	ft_putchar_fd(char character,	int file_descriptor)

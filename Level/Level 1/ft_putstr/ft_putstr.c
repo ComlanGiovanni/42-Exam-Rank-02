@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 23:14:06 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 02:07:47 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/08/20 14:08:52 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/20 14:09:16 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_putstr_fd(char *string, int file_descriptor)
 {
 	if (file_descriptor >= 0x0)
 		while (*string)
-			ft_putchar_fd(*string++, STDOUT_FILENO);
+			write(file_descriptor, string++, sizeof(char));
 }
 
 void	ft_putstr(char *str)

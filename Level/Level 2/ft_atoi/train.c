@@ -6,21 +6,18 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 21:29:23 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/23 21:31:11 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:25:40 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isspace(char c);
-static int	ft_isdigit(int c);
-
-static int	ft_isspace(char c)
+static int	ft_isspace(char character)
 {
-	return (c == ' ' || ((c >= '\t') && (c <= '\r')));
+	return (character == ' ' || ((character >= '\t') && (character <= '\r')));
 }
 
-static int	ft_isdigit(int c)
+static int	ft_isdigit(int character)
 {
-	return (('0' <= c) && (c <= '9'));
+	return (('0' <= character) && (character <= '9'));
 }
 
 int	ft_atoi(const char *str)
@@ -41,7 +38,7 @@ int	ft_atoi(const char *str)
 		str++;
 	while (*str && ft_isdigit(*str))
 	{
-		result *= 0x0a;
+		result *= 0xa;
 		result += (*str - '0');
 		str++;
 	}

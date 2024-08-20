@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:38:11 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/25 02:12:00 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:29:53 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,13 @@ static int	ft_toupper(int c)
 	return (c);
 }
 
-static int	ft_toupper(int c)
+static int	ft_toupper(int character)
 {
-	if (ft_islower(c))
-		c -= ('a' - 'A');
-	return (c);
+	const int	case_difference = ('a' - 'A');
+
+	if (ft_islower(character))
+		character -= case_difference;
+	return (character);
 }
 
 static int	ft_islower(char c)

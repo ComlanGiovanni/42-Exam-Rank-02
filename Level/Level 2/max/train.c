@@ -6,27 +6,28 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:38:17 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/24 09:55:17 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:24:02 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
 #include <stdlib.h> // EXIT_SUCCESS
+#include <unistd.h> // write STDOUT_FILENO
 
 int	max(int *tab, unsigned int len)
 {
-	int	max;
+	static int	max;
 
 	if (len <= 0x0 || tab == NULL)
 		return (0x0);
-	max = tab[--len];
+	len--;
+	max = tab[len];
 	while (len--)
 		if (tab[len] > max)
 			max = tab[len];
 	return (max);
 }
-/*
-static void	ft_putchar_fd(char character,	int file_descriptor)
+
+static void	ft_putchar_fd(char character, int file_descriptor)
 {
 	if (file_descriptor >= 0x0)
 		write(file_descriptor, &character, sizeof(char));
@@ -48,4 +49,3 @@ int	main(void)
 	ft_putchar_fd('\n', STDOUT_FILENO);
 	return (EXIT_SUCCESS);
 }
-*/

@@ -6,24 +6,27 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 21:06:50 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/23 21:06:51 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:09:22 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
+#include <unistd.h> // write STDOUT_FILENO
 #include <stdlib.h> // EXIT_SUCCESS
 
-static void	ft_alpha_mirror(char *str);
-static int	ft_isupper(int c);
-static int	ft_islower(char c);
-static void	ft_putchar_fd(char character,	int file_descriptor);
-
-int	main(int argc, char **argv)
+static int	ft_isupper(int character)
 {
-	if (argc == 0x2)
-		ft_alpha_mirror(argv[0x1]);
-	ft_putchar_fd('\n', STDOUT_FILENO);
-	return (EXIT_SUCCESS);
+	return ((character >= 'A') && (character <= 'Z'));
+}
+
+static int	ft_islower(char character)
+{
+	return ((character >= 'a') && (character <= 'z'));
+}
+
+static void	ft_putchar_fd(char character,	int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
 }
 
 static void	ft_alpha_mirror(char *str)
@@ -39,18 +42,10 @@ static void	ft_alpha_mirror(char *str)
 	}
 }
 
-static int	ft_isupper(int c)
+int	main(int argc, char **argv)
 {
-	return ((c >= 'A') && (c <= 'Z'));
-}
-
-static int	ft_islower(char c)
-{
-	return ((c >= 'a') && (c <= 'z'));
-}
-
-static void	ft_putchar_fd(char character,	int file_descriptor)
-{
-	if (file_descriptor >= 0x0)
-		write(file_descriptor, &character, sizeof(char));
+	if (argc == 0x2)
+		ft_alpha_mirror(argv[0x1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }

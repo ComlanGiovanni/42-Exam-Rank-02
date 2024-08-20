@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 11:02:35 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/25 11:07:51 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/08/20 14:23:24 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/20 14:31:14 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write && STDOUT_FILENO
-#include <stdlib.h>
+#include <stdlib.h> //EXIT_SUCCESS STDOUT_FILENO
 
 void	ft_putstr(char *str)
 {
@@ -21,7 +21,7 @@ void	ft_putstr(char *str)
 
 char	*ft_strcpy(char *s1, char *s2)
 {
-	int	index;
+	static int	index;
 
 	index = 0x0;
 	while (s2[index] != '\0')
@@ -29,7 +29,7 @@ char	*ft_strcpy(char *s1, char *s2)
 		s1[index] = s2[index];
 		index++;
 	}
-	s2[index] = '\0';
+	s1[index] = '\0';
 	return (s1);
 }
 

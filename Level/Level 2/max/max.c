@@ -6,25 +6,26 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:42:05 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/24 09:45:37 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:23:40 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
-#include <stdlib.h> // EXIT_SUCCESS
+#include <stddef.h> // NULL
 
 int	max(int *tab, unsigned int len)
 {
-	int	max;
+	static int	max;
 
 	if (len <= 0x0 || tab == NULL)
 		return (0x0);
-	max = tab[--len];
+	len--;
+	max = tab[len];
 	while (len--)
 		if (tab[len] > max)
 			max = tab[len];
 	return (max);
 }
+
 /*
 static void	ft_putchar_fd(char character,	int file_descriptor)
 {

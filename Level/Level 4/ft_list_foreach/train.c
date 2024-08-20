@@ -6,13 +6,21 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:06:16 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/08/18 23:35:40 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/19 16:56:30 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-z
+void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
+{
+	while (begin_list != NULL)
+	{
+		if (begin_list->data)
+			(*f)(begin_list->data);
+		begin_list = begin_list->next;
+	}
+}
 
 /*		Main Test
 

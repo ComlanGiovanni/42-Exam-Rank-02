@@ -5,55 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 00:27:38 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 12:26:42 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/08/20 14:59:59 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/20 15:11:01 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+#include <stdlib.h> // EXIT_SUCCESS
+#include <unistd.h> // write STDOUT_FILENO
 
-static void		ft_rev_print(char *str);
-static size_t	ft_strlen(char *string);
-static void		ft_putchar_fd(char character, int file_descriptor);
-
-int	main(int argc, char **argv)
+static size_t	ft_strlen(char *string)
 {
-	if (argc == 0x2)
-		ft_rev_print(argv[1]);
-	ft_putchar_fd('\n', STDOUT_FILENO);
-	return (EXIT_SUCCESS);
-}
+	const char	*pointer_of_last_char;
 
-static void	ft_rev_print(char *str)
-{
-	size_t	index;
-
-	index = ft_strlen(str);
-	while (index > 0x0)
-	{
-		ft_putchar_fd(str[index - 0x1], STDOUT_FILENO);
-		index--;
-	}
-}
-
-static	size_t	ft_strlen(char *string)
-{
-	const char	*last_char_string_pointer;
-
-	last_char_string_pointer = string;
+	pointer_of_last_char = string;
 	if (!string)
 		return (0x0);
-	while (*last_char_string_pointer != '\0')
-		last_char_string_pointer++;
-	return (last_char_string_pointer - string);
+	while (*pointer_of_last_char != '\0')
+		pointer_of_last_char++;
+	return (pointer_of_last_char - string);
 }
 
 static void	ft_putchar_fd(char character, int file_descriptor)
 {
 	if (file_descriptor >= 0x0)
-		write (file_descriptor, &character, sizeof(char));
+		write(file_descriptor, &character, sizeof(char));
+}
+
+static void	ft_rev_print(char *str)
+{
+	size_t	length;
+
+	length = ft_strlen(str);
+	while (length > 0x0)
+	{
+		ft_putchar_fd(str[length - 0x1], STDOUT_FILENO);
+		length--;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 0x2)
+		ft_rev_print(argv[0x1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
 
 /*

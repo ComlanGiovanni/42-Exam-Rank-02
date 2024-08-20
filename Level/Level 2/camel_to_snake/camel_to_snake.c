@@ -6,24 +6,31 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 21:16:41 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/23 21:16:44 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:13:30 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // For write
 #include <stdlib.h> // EXIT_SUCCESS
 
-static void	ft_camel_to_snake(char *str);
-static int	ft_isupper(int c);
-static void	ft_putchar_fd(char character,	int file_descriptor);
-static int	ft_tolower(int c);
-
-int	main(int argc, char **argv)
+static int	ft_isupper(int character)
 {
-	if (argc == 0x2)
-		ft_camel_to_snake(argv[1]);
-	ft_putchar_fd('\n', STDOUT_FILENO);
-	return (EXIT_SUCCESS);
+	return ((character >= 'A') && (character <= 'Z'));
+}
+
+static int	ft_tolower(int character)
+{
+	const int	case_difference = ('a' - 'A');
+
+	if (ft_isupper(character))
+		character += case_difference;
+	return (character);
+}
+
+static void	ft_putchar_fd(char character,	int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
 }
 
 static void	ft_camel_to_snake(char *str)
@@ -40,22 +47,12 @@ static void	ft_camel_to_snake(char *str)
 	}
 }
 
-static int	ft_isupper(int c)
+int	main(int argc, char **argv)
 {
-	return ((c >= 'A') && (c <= 'Z'));
-}
-
-static void	ft_putchar_fd(char character,	int file_descriptor)
-{
-	if (file_descriptor >= 0x0)
-		write(file_descriptor, &character, sizeof(char));
-}
-
-static int	ft_tolower(int c)
-{
-	if ((c >= 'A') && (c <= 'Z'))
-		c += ('a' - 'A');
-	return (c);
+	if (argc == 0x2)
+		ft_camel_to_snake(argv[0x1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
 
 // #include <unistd.h> // For write

@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 13:44:11 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 02:20:47 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/08/20 14:25:51 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/20 14:31:27 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stddef.h> //NULL
 
 int	ft_strlen(char *str)
 {
-	int	index;
+	static int	index;
 
 	index = 0x0;
 	if (str == NULL)

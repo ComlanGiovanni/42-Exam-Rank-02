@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 22:49:06 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 02:12:26 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/08/20 14:24:00 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/20 14:26:08 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	index;
+	static int	index;
 
 	index = 0x0;
 	while (str[index] != '\0')

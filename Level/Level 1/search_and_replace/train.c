@@ -5,25 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 22:16:21 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 14:29:04 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/08/20 15:29:36 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/20 15:32:08 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
+#include <unistd.h> // write STDOUT_FILENO
 #include <stdlib.h> // For exit && EXIT_SUCCESS
 
-static void	ft_search_and_replace(char *string, char search, char replace);
-static void	ft_putchar_fd(char c, int fd);
-
-int	main(int argc, char **argv)
+static void	ft_putchar_fd(char character,	int file_descriptor)
 {
-	if (argc == 0x4)
-	{
-		if (argv[0x2][0x1] == '\0' && argv[0x3][0x1] == '\0')
-			ft_search_and_replace(argv[0x1], argv[0x2][0x0], argv[3][0x0]);
-	}
-	return (EXIT_SUCCESS);
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
 }
 
 static void	ft_search_and_replace(char *string, char search, char replace)
@@ -38,10 +31,14 @@ static void	ft_search_and_replace(char *string, char search, char replace)
 	}
 }
 
-static void	ft_putchar_fd(char c, int fd)
+int	main(int argc, char **argv)
 {
-	if (fd >= 0x0)
-		write (fd, &c, sizeof(char));
+	if (argc == 0x4)
+	{
+		if (argv[0x2][0x1] == '\0' && argv[0x3][0x1] == '\0')
+			ft_search_and_replace(argv[0x1], argv[0x2][0x0], argv[3][0x0]);
+	}
+	return (EXIT_SUCCESS);
 }
 
 /* 		Other short or long way to do

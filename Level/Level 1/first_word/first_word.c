@@ -6,23 +6,22 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 00:45:54 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/22 01:08:58 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/20 13:41:42 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> // write
-#include <stdlib.h> // EXIT_SUCCESS STDOUT_FILENO
+#include <stdlib.h> //EXIT_SUCCESS STDOUT_FILENO
 
-static void	ft_first_word(char *str);
-static int	ft_isspace(char c);
-static void	ft_putchar_fd(char character,	int file_descriptor);
-
-int	main(int argc, char **argv)
+static void	ft_putchar_fd(char character, int file_descriptor)
 {
-	if (argc == 0x2)
-		ft_first_word(argv[0x1]);
-	ft_putchar_fd('\n', STDOUT_FILENO);
-	return (EXIT_SUCCESS);
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
+}
+
+static int	ft_isspace(char character)
+{
+	return ((character == ' ') || ((character >= '\t') && (character <= '\r')));
 }
 
 static void	ft_first_word(char *string)
@@ -30,18 +29,15 @@ static void	ft_first_word(char *string)
 	while (ft_isspace(*string))
 		string++;
 	while (*string && !ft_isspace(*string))
-		ft_putchar_fd(string++, STDOUT_FILENO);
+		ft_putchar_fd(*string++, STDOUT_FILENO);
 }
 
-static int	ft_isspace(char c)
+int	main(int argc, char **argv)
 {
-	return (c == ' ' || ((c >= '\t') && (c <= '\r')));
-}
-
-static void	ft_putchar_fd(char character,	int file_descriptor)
-{
-	if (file_descriptor >= 0x0)
-		write(file_descriptor, &character, sizeof(char));
+	if (argc == 0x2)
+		ft_first_word(argv[0x1]);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	return (EXIT_SUCCESS);
 }
 
 // #include <unistd.h> // For write && STDOUT_FILENO

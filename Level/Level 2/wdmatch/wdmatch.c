@@ -6,19 +6,12 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:26:50 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/24 10:27:14 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:42:21 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> // For write
-#include <stdlib.h>
-
-static void	ft_putstr_fd(char *string, int file_descriptor)
-{
-	if (file_descriptor >= 0x0)
-		while (*string)
-			write(file_descriptor, string++, sizeof(char));
-}
+#include <unistd.h> // write STDOUT_FILENO
+#include <stdlib.h> // EXIT_SUCCESS
 
 static	size_t	ft_strlen(char *string)
 {
@@ -32,10 +25,17 @@ static	size_t	ft_strlen(char *string)
 	return (last_char_string_pointer - string);
 }
 
+static void	ft_putstr_fd(char *string, int file_descriptor)
+{
+	if (file_descriptor >= 0x0)
+		while (*string)
+			write(file_descriptor, string++, sizeof(char));
+}
+
 static size_t	ft_count_matching_char(char *first, char *second)
 {
-	size_t	idx_first;
-	size_t	idx_second;
+	static size_t	idx_first;
+	static size_t	idx_second;
 
 	idx_first = 0x0;
 	idx_second = 0x0;
@@ -50,7 +50,7 @@ static size_t	ft_count_matching_char(char *first, char *second)
 
 void	ft_wd_match(char *first, char *second)
 {
-	size_t	matching_chars;
+	static size_t	matching_chars;
 
 	matching_chars = ft_count_matching_char(first, second);
 	if (matching_chars == ft_strlen(first))

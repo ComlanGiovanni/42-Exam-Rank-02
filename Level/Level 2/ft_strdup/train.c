@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 21:50:50 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/23 21:59:40 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:16:13 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strdup(char *src)
 	char	*duplicate;
 
 	size = ft_strlen(src);
-	duplicate = (char *)malloc(sizeof(char) * size + 1);
+	duplicate = (char *)malloc(sizeof(char) * size + 0x1);
 	if (duplicate == NULL)
 		return (NULL);
 	return (ft_strcpy(duplicate, src));

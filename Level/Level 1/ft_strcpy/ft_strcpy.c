@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 11:32:00 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/22 02:11:07 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/08/20 14:23:20 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/20 14:23:22 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *s1, char *s2)
 {
-	int	idx;
+	static int	index;
 
-	idx = 0x0;
-	while (s2[idx] != '\0')
+	index = 0x0;
+	while (s2[index] != '\0')
 	{
-		s1[idx] = s2[idx];
-		idx++;
+		s1[index] = s2[index];
+		index++;
 	}
-	s1[idx] = '\0';
+	s1[index] = '\0';
 	return (s1);
 }
 

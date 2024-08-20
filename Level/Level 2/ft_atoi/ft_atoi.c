@@ -5,13 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 13:31:01 by gcomlan           #+#    #+#             */
-/*   Updated: 2024/07/23 21:31:22 by gicomlan         ###   ########.fr       */
+/*   Created: 2024/08/20 17:24:50 by gicomlan          #+#    #+#             */
+/*   Updated: 2024/08/20 17:24:51 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-static int	ft_isspace(char c);
-static int	ft_isdigit(int c);
 
 static int	ft_isspace(char c)
 {
