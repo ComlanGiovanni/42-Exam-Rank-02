@@ -6,16 +6,16 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 13:59:54 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/24 09:58:33 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:00:35 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static void	ft_putchar_fd(char c, int fd)
+static void	ft_putchar_fd(char character, int file_descriptor)
 {
-	if (fd >= 0x0)
-		write(fd, &c, sizeof(char));
+	if (file_descriptor >= 0x0)
+		write(file_descriptor, &character, sizeof(char));
 }
 
 void	print_bits(unsigned char octet)
@@ -26,6 +26,7 @@ void	print_bits(unsigned char octet)
 
 	index = 0x1 << 0x3;
 	mask = 0x1 << 0x0;
+	bit = 0x0 << 0x0;
 	while (index--)
 	{
 		bit = (((octet >> index) & mask) + '0');

@@ -6,28 +6,28 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 08:47:28 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/25 11:05:16 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:38:35 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	is_power_of_2(unsigned int n)
 {
-	unsigned long int	idx;
+	unsigned long int	index;
 
-	idx = 0x1;
-	while (idx <= n)
+	index = 0x1;
+	while (index < n)
 	{
-		if (idx == n)
+		if (index == n)
 			return (0x1);
-		idx *= 0x2;
+		index *= 0x2;
 	}
 	return (0x0);
 }
 
-// int	is_power_of_2(unsigned int n)
-// {
-// 	return (n != 0 && (n & (n - 1)) == 0);
-// }
+int	is_power_of_2(unsigned int n)
+{
+	return (n != 0 && (n & (n - 1)) == 0);
+}
 /*
 #include <stdio.h>
 

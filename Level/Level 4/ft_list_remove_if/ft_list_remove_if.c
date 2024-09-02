@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 02:55:17 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/25 02:55:19 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/26 23:11:12 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
-	t_list	*temp;
+	t_list	*tmp;
 
-	if (*begin_list == NULL)
+	if ((*begin_list == NULL) || (begin_list == NULL))
 		return ;
-	if (cmp((*begin_list)->data, data_ref) == 0)
+	if (cmp((*begin_list)->data, data_ref) == 0x0)
 	{
-		temp = *begin_list;
+		tmp = *begin_list;
 		*begin_list = (*begin_list)->next;
-		free(temp);
+		free(tmp);
 		ft_list_remove_if(begin_list, data_ref, cmp);
 	}
 	else

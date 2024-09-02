@@ -6,95 +6,99 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:30:33 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/08/20 12:56:45 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:21:21 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h> //NULL
-#include <stdlib.h> //malloc
+#include <stdlib.h>
 
-int		ft_count_word(char *str)
+static int	ft_count_words(char *string)
 {
-	int count_word;
-	int in_word;
+	static int	in_word;
+	int			word_count;
 
-	count_word = 0x0;
-	in_word = 0x1;//we assume that we are inside a word
-	while (*str)
+	word_count = 0x0;
+	in_word = 0x0;
+	while (*string)
 	{
-		if (!((*str == ' ') || ((*str >= '\t') && (*str <= '\r'))) && !in_word)
-		{
-			count_word++;
-			in_word = 0x1;
-		}
-		else if (((*str == ' ') || ((*str >= '\t') && (*str <= '\r'))))
+		if (!((*string == ' ') || ((*string >= '\t') && (*string <= '\r'))) \
+			&& !in_word)
+			{
+				in_word = 0x1;
+				word_count++;
+			}
+		else if ((*string == ' ') || ((*string >= '\t') && (*string <= 'r')))
 			in_word = 0x0;
-		str++;
+		string++;
 	}
-	return(count_word);
+	return (word_count);
 }
 
-void	ft_free_words(char **words, int number_of_element)
-{
-	while (number_of_element--)
-		free(words[number_of_element]);
-	free(words);
-}
 
-char *ft_get_word(char *str)
+static char *ft_get_and_malloc_word(char *string)
 {
-	int		length;
-	char	*word;
+	static	 int	length_word;
+	char			*word;
 
-	length = 0x0;
-	while (str[length] && !((str[length] == ' ') \
-		|| ((str[length] >= '\t') && (str[length] <= '\r')))) //motor and skipp whitespace
-		length++;
-	word = (char *)malloc(sizeof(char) * (length + 0x1));
+	length_word = 0x0;
+	while (string[length_word] && !((string[length_word] == ' ') \
+		|| ((string[length_word] >= '\t') && (string[length_word] <= '\r'))))
+		length_word++;
+	word = (char *)malloc(sizeof(char) * (length_word + 0x1));
 	if (!word)
-		return (NULL);
-	word[length] = '\0';
-	while (length--)
-		word[length] = str[length];
+		return (((void *)0x0));
+	word[length_word] = '\0';
+	while (length_word--)
+		word[length_word] = string[length_word];
 	return (word);
 }
 
-char	**ft_fill_word(char *str, char **words)
+static void	ft_free_words(char **words, int number_of_word)
+{
+	while (number_of_word--)
+		free(words[number_of_word]);
+	free(words);
+}
+
+static char	**ft_split_word(char *string, char *words)
 {
 	int	index;
 
 	index = 0x0;
-	while (*str)
+	while (*string)
 	{
-		if (!((*str == ' ') || ((*str >= '\t') && (*str <= '\r'))))
+		if (!((*string == ' ') || ((*string >= '\t') && (*string <= '\r'))))
 		{
-			words[index] = ft_get_word(str);
+			words[index] = ft_get_and_malloc_word(string);
 			if (!words[index])
 			{
 				ft_free_words(words, index);
-				return (NULL);//or a malloc that we can free
+				return ((void *)0x0);
 			}
-			index++; //increment right after
-			while (*str && !((*str == ' ') \
-				|| ((*str >= '\t') && (*str <= '\r')))) //we need a motor to move
-				str++;
+			index++;
+			while (*string && !((*string == ' ') \
+				|| ((*string >= '\t') && (*string <= '\r'))))
+				string++;
 		}
-		else //no need to specifier that we are skipping whitespace here
-			str++;
+		else
+			string++;
 	}
-	words[index] = NULL;
+	words[index] = ((void *)0x0);
 	return (words);
 }
 
 char	**ft_split(char *str)
 {
-	char	**words;
-	int		count_word;
-	count_word = ft_count_word(str);
-	words = (char **)malloc(sizeof(char *) * (count_word + 0x1));
+	char		**words;
+	static int	word_count;
+
+	if (!str)
+		return ((void *)0x0);
+	word_count = ft_count_words(str);
+	words = (char **)malloc(sizeof(char *) * (word_count + 0x1));
 	if (!words)
-		return (NULL);
-	return (ft_fill_word(str, words));
+		return ((void *)0x0);
+	return (ft_split_words(str, words));
 }
 
 #include <stdio.h>
@@ -141,7 +145,7 @@ int	ft_display_spilt_result_and_get_length(char **splitted_tab)
 	int	index;
 
 	index = 0;
-	while (splitted_tab[index] != NULL)
+	while (splitted_tab[index] != ((void *)0))
 	{
 		ft_putstr_fd("Index -> {", STDOUT_FILENO);
 		ft_small_put_nbr(index);
@@ -209,10 +213,10 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	splitted_tab_length = ft_display_spilt_result_and_get_length(splitted_tab);
-	ft_putchar_fd('\n', STDOUT_FILENO);
-	ft_rev_wstr(splitted_tab, splitted_tab_length);
-	ft_putchar_fd('\n', STDOUT_FILENO);
-	ft_rostring(splitted_tab);
+	//ft_putchar_fd('\n', STDOUT_FILENO);
+	//ft_rev_wstr(splitted_tab, splitted_tab_length);
+	//ft_putchar_fd('\n', STDOUT_FILENO);
+	//ft_rostring(splitted_tab);
 	ft_free_words(splitted_tab, splitted_tab_length);
 	return (EXIT_SUCCESS);
 }

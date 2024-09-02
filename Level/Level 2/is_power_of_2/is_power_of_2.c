@@ -6,20 +6,20 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 08:47:32 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/24 12:07:17 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:38:44 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	is_power_of_2(unsigned int n)
 {
-	unsigned long int	idx;
+	unsigned long int	index;
 
-	idx = 0x1;
-	while (idx <= n)
+	index = 0x1;
+	while (index < n)
 	{
-		if (idx == n)
+		if (index == n)
 			return (0x1);
-		idx *= 0x2;
+		index *= 0x2;
 	}
 	return (0x0);
 }

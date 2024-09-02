@@ -6,9 +6,99 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:30:39 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/24 14:15:17 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/30 11:38:15 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h> /// for malloc free ((void *)0)
+
+static int	ft_count_words(char *string)
+{
+	static int	in_word;
+	int			word_count;
+
+	word_count = 0x0;
+	in_word = 0x0;
+	while (*string)
+	{
+		if (!((*string == ' ') || ((*string >= '\t') && (*string <= '\r'))) \
+			&& !in_word)
+		{
+			in_word = 0x1;
+			word_count++;
+		}
+		else if ((*string == ' ') || ((*string >= '\t') && (*string <= '\r')))
+			in_word = 0x0;
+		string++;
+	}
+	return (word_count);
+}
+
+static char	*ft_get_and_malloc_word(char *string)
+{
+	static int	length_word;
+	char		*word;
+
+	length_word = 0x0;
+	while (string[length_word] && !((string[length_word] == ' ' ) \
+		|| ((string[length_word] <= '\t') && (string[length_word] <= '\r'))))
+		length_word++;
+	word = (char *)malloc(sizeof(char) * (length_word + 0x1));
+	if (!word)
+		return (((void *)0));
+	word[length_word] = '\0';
+	while (length_word--)
+		word[length_word] = string[length_word];
+	return (word);
+}
+
+static void	ft_free_words(char **words, int count)
+{
+	while (count--)
+		free(words[count]);
+	free(words);
+}
+
+static char	**ft_split_words(char *string, char **words)
+{
+	int	index;
+
+	index = 0x0;
+	while (*string)
+	{
+		if (!((*string == ' ') || ((*string >= '\t') && (*string <= '\r'))))
+		{
+			words[index] = ft_get_and_malloc_word(string);
+			if (!words[index])
+			{
+				ft_free_words(words, index);
+				return (((void *)0));
+			}
+			index++;
+			while (*string && !((*string == ' ') \
+				|| ((*string >= '\t') && (*string <= '\r'))))
+				string++;
+		}
+		else
+			string++;
+	}
+	words[index] = ((void *)0);
+	return (words);
+}
+
+char	**ft_split(char *str)
+{
+	char	**words;
+	int		word_count;
+
+	if (!str)
+		return (((void *)0));
+	word_count = ft_count_words(str);
+	words = (char **)malloc(sizeof(char *) * (word_count + 0x1));
+	if (!words)
+		return (((void *)0));
+	return (ft_split_words(str, words));
+}
 
 
 /*
@@ -43,78 +133,79 @@ char	**ft_split(char *str)
 	return (split);
 }
 */
-#include <stdlib.h>
 
-int	ft_is_delimiter(char c)
-{
-	return (c == ' ' || c == '\n' || c == '\t');
-}
+// #include <stdlib.h>
 
-int	ft_words_len(char *str)
-{
-	int	idx;
-	int	length;
+// static int	ft_is_delimiter(char c)
+// {
+// 	return (c == ' ' || (c >= '\t' && c <= '\r'));
+// }
 
-	idx = 0;
-	length = 0;
-	while (str[idx] != '\0')
-	{
-		if (!ft_is_delimiter(str[idx]))
-		{
-			length++;
-			idx++;
-		}
-		else
-			idx++;
-	}
-	return (length);
-}
+// int	ft_words_len(char *str)
+// {
+// 	int	idx;
+// 	int	length;
 
-char	*ft_get_word(char *str)
-{
-	int			idx;
-	char		*word;
+// 	idx = 0;
+// 	length = 0;
+// 	while (str[idx] != '\0')
+// 	{
+// 		if (!ft_is_delimiter(str[idx]))
+// 		{
+// 			length++;
+// 			idx++;
+// 		}
+// 		else
+// 			idx++;
+// 	}
+// 	return (length);
+// }
 
-	idx = 0;
-	while (str[idx] != '\0' && !ft_is_delimiter(str[idx]))
-		idx++;
-	word = (char *)malloc(sizeof(char) * (idx + 1));
-	if (!word)
-		return (NULL);
-	idx = 0;
-	while (str[idx] != '\0' && !ft_is_delimiter(str[idx]))
-	{
-		word[idx] = str[idx];
-		idx++;
-	}
-	word[idx] = '\0';
-	return (word);
-}
+// char	*ft_get_word(char *str)
+// {
+// 	int			idx;
+// 	char		*word;
 
-char	**ft_split(char *str)
-{
-	int		idx;
-	char	**split;
+// 	idx = 0;
+// 	while (str[idx] != '\0' && !ft_is_delimiter(str[idx]))
+// 		idx++;
+// 	word = (char *)malloc(sizeof(char) * (idx + 1));
+// 	if (!word)
+// 		return (NULL);
+// 	idx = 0;
+// 	while (str[idx] != '\0' && !ft_is_delimiter(str[idx]))
+// 	{
+// 		word[idx] = str[idx];
+// 		idx++;
+// 	}
+// 	word[idx] = '\0';
+// 	return (word);
+// }
 
-	idx = 0;
-	split = (char **)malloc(sizeof(char *) * ft_words_len(str) + 1);
-	if (!split)
-		return (NULL);
-	while (*str)
-	{
-		while (*str && ft_is_delimiter(*str))
-			str++;
-		if (*str && !ft_is_delimiter(*str))
-		{
-			split[idx] = ft_get_word(str);
-			idx++;
-		}
-		while (*str && !ft_is_delimiter(*str))
-			str++;
-	}
-	split[idx] = NULL;
-	return (split);
-}
+// char	**ft_split(char *str)
+// {
+// 	int		idx;
+// 	char	**split;
+
+// 	idx = 0;
+// 	split = (char **)malloc(sizeof(char *) * ft_words_len(str) + 1);
+// 	if (!split)
+// 		return (NULL);
+// 	while (*str)
+// 	{
+// 		while (*str && ft_is_delimiter(*str))
+// 			str++;
+// 		if (*str && !ft_is_delimiter(*str))
+// 		{
+// 			split[idx] = ft_get_word(str);
+// 			idx++;
+// 		}
+// 		while (*str && !ft_is_delimiter(*str))
+// 			str++;
+// 	}
+// 	split[idx] = NULL;
+// 	return (split);
+// }
 
 /*
 #include <stdio.h>

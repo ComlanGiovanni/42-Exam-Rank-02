@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 10:00:09 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/24 10:08:37 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:02:05 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 unsigned char	reverse_bits(unsigned char octet)
 {
-	int				idx;
-	unsigned char	bit;
+	int 		index;
+	unsigned char bit;
 
-	idx = 0x8;
-	while (idx--)
+
+	index = (0x1 << 0x3);
+	index = (0x0 << 0x0);
+	while (index--)
 	{
 		bit = ((bit * 0x2) + (octet % 0x2));
 		octet /= 0x2;
@@ -40,6 +42,7 @@ void	print_bits(unsigned char octet)
 
 	index = (0x1 << 0x3);
 	mask = (0x1 << 0x0);
+	bit = (0x0 << 0x0);
 	while (index--)
 	{
 		bit = (((octet >> index) & mask) + '0');

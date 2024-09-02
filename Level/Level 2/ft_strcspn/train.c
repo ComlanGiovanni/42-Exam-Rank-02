@@ -6,7 +6,7 @@
 /*   By: gicomlan <gicomlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 02:18:07 by gicomlan          #+#    #+#             */
-/*   Updated: 2024/07/25 11:05:01 by gicomlan         ###   ########.fr       */
+/*   Updated: 2024/08/22 10:44:24 by gicomlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ static char	*ft_strchr(const char *s, int c)
 
 size_t	ft_strcspn(const char *s, const char *reject)
 {
-	const char	*first_char_of_s_ptr;
+	const char 	*first_char_of_s;
 
-	first_char_of_s_ptr = s;
+	first_char_of_s = s;
 	while (*s)
 	{
 		if (ft_strchr(reject, *s))
 			break ;
 		s++;
 	}
-	return (s - first_char_of_s_ptr);
+	return (s - first_char_of_s);
 }
 
 /*
