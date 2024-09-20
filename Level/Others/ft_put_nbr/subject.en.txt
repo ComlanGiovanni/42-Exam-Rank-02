@@ -1,0 +1,13 @@
+Assignment name  : ft_putnbr
+Expected files   : ft_putnbr.c
+version 1        :
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Reproduce the behavior of the function ft_putnbr (man ft_putnbr).
+
+Your function must be declared as follows:
+
+Example:
+
+void	ft_putnbr(int n);

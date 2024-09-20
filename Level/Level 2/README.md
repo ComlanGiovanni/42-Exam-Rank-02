@@ -1,0 +1,21 @@
+----
+## Table of 19 Assignment
+- [Level 2](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/)
+	+ [alpha_mirror](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/alpha_mirror)
+	+ [camel_to_snake](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/camel_to_snake)
+	+ [do_op](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/do_op)
+	+ [ft_atoi](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/ft_atoi)
+	+ [ft_strcmp](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/ft_strcmp)
+	+ [ft_strcspn](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/ft_strcspn)
+	+ [ft_strdup](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/ft_strdup)
+	+ [inter](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/inter)
+	+ [is_power_of_2](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/is_power_of_2)
+	+ [last_word](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/last_word)
+	+ [max](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/max)
+	+ [print_bits](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/print_bits)
+	+ [reverse_bits](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/reverse_bits)
+	+ [snake_to_camel](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/snake_to_camel)
+	+ [swap_bits](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/swap_bits)
+	+ [union](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/union)
+	+ [wdmatch](https://github.com/ComlanGiovanni/42-Exam-Rank-02/tree/main/Level/Level%202/wdmatch)
+----

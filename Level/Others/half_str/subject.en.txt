@@ -1,0 +1,36 @@
+Assignment name  : halft_str
+Expected files   : halft_str.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui prends en parametre une ou plusieurs chaines de caractere et
+qui afficher chaque chaine dans lordere un cractere sur deux. 
+
+ce programme doit afficher le result sur la sortie standard suivi dun retour a la ligne.
+
+L'affichage se termine toujouts par un retourn a la ligne 
+Le programme doit renvoyer un retourn a la ligne si il n'y a aucun parametre.
+
+exmapls:
+
+$>./half_str "abc"
+ac
+$>
+$>./half_str "test de phrase" "deuxieme test" "un avant dernier test" "" "enfin c est finis" |
+ts eprs$
+duim et$
+u vn ene et$
+$
+efncetfns$
+$>
+$>./half_str "a btcfdceqf gehdiajikhllmgnaovpyqer srttuuvawcxayaz" "142637415869728395" "
+" "Baodnxnce
+cshja4nycrew qaq dtdoduqsq" | cat -e
+abcdefghijklmnopqrstuvwxyz$
+123456789$
+$
+Bonne chance a tous$
+$>
+$>./half_str | cat -e
+$
+$>

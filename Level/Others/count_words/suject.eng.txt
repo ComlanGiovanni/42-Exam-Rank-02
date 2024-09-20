@@ -1,0 +1,13 @@
+Assignment name  : count_words
+Expected files   : count_words.c
+Allowed functions:
+--------------------------------------------------------------------------------
+
+Write a function that takes a string as a parameter, splits it into words, and returns an integer representing the number of words.
+
+A "word" is defined as a part of a string delimited by spaces or by the start/end of the string.
+
+Your function must be declared as follows:
+
+int	 count_words(char *str);
+

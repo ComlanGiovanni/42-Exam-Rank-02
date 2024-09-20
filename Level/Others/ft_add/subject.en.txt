@@ -1,0 +1,12 @@
+Assignment name  : ft_add
+Expected files   : ft_add.c
+Allowed functions:
+--------------------------------------------------------------------------------
+
+Write a function that takes two parameters: a pointer to an integer and an integer.
+
+This function adds the second parameter, an integer, to the integer pointed to by the first parameter (the pointer).
+
+Your function must be declared as follows:
+
+void	ft_add(int *ptr, int number);
